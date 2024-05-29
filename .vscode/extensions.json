@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "yusukehirao.vscode-markuplint",
+    "bradlc.vscode-tailwindcss"
+  ]
+}

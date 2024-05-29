@@ -1,0 +1,18 @@
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "rootDir": "src",
+    "outDir": "./dist",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "module": "ESNext"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "src/**/*.test.tsx", "src/**/*.stories.tsx", "src/**/__tests__"]
+}

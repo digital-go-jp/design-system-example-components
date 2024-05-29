@@ -1,0 +1,74 @@
+{
+  "name": "@digital-go-jp/design-system-example-components",
+  "version": "1.4.2",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.es.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/digital-go-jp/design-system-example-components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digital-go-jp/design-system-example-components"
+  },
+  "bugs": {
+    "url": "https://github.com/digital-go-jp/design-system-example-components/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc && vite build",
+    "format": "biome format --write src",
+    "lint": "biome lint src",
+    "lint:fix": "biome check --apply src",
+    "lint:markup": "markuplint \"./src/**/*.{jsx,tsx}\"",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build",
+    "storybook:test": "test-storybook"
+  },
+  "dependencies": {
+    "@digital-go-jp/tailwind-theme-plugin": "^0.1.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.3",
+    "@markuplint/jsx-parser": "^4.7.3",
+    "@markuplint/react-spec": "^4.5.3",
+    "@storybook/addon-a11y": "^8.1.4",
+    "@storybook/addon-essentials": "^8.1.4",
+    "@storybook/addon-interactions": "^8.1.4",
+    "@storybook/addon-links": "^8.1.4",
+    "@storybook/blocks": "^8.1.4",
+    "@storybook/react": "^8.1.4",
+    "@storybook/react-vite": "^8.1.4",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "autoprefixer": "^10.4.19",
+    "markuplint": "^4.9.0",
+    "postcss": "^8.4.38",
+    "storybook": "^8.1.4",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "engineStrict": true
+}
