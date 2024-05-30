@@ -1,0 +1,33 @@
+name: "バグ報告"
+description: "バグを報告するためのチケットです。"
+body:
+  - type: textarea
+    id: asIsCurrent
+    attributes:
+      label: "As Is(今の状態)"
+      description: |
+        今の状態を記載する。
+      value: |
+        現状どんなバグが発生しており、どんな影響が発生しているのかを具体的かつ詳細に記載する。
+  - type: textarea
+    id: toBeChanged
+    attributes:
+      label: "To Be(理想の状態)"
+      description: |
+        理想の状態を記載する。
+      value: |
+        どのような状態が理想の状態であるかを具体的かつ詳細に記載する。
+  - type: textarea
+    id: solution
+    attributes:
+      label: "課題"
+      description: |
+        現状分かっている課題を記載する。
+      value: |
+        発生したバグを解決するために現状分かっている課題を番号順にリスト化して記載する。
+  - type: textarea
+    id: extra
+    attributes:
+      label: "備考欄"
+      description: |
+        特記事項がありましたら表記してください。

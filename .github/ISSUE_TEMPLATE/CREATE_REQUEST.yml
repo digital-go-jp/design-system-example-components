@@ -1,0 +1,28 @@
+name: "機能・ページ作成チケット"
+description: "新規機能やページの作成のチケットです"
+body:
+  - type: textarea
+    id: content
+    attributes:
+      label: "追加機能"
+      description: "どの機能を追加するかを記載"
+      placeholder: |
+        〇〇の処理を作成する
+    validations:
+      required: true
+  - type: textarea
+    id: howTo
+    attributes:
+      label: "どのように"
+      description: |
+        どのような手順で作成するか
+      value: |
+        1. 〇〇の処理を作成
+        2. 〇〇のコンポーネントを作成
+        3. ページを作成
+  - type: textarea
+    id: issue
+    attributes:
+      label: "関連issue"
+      description: |
+        関連するissueの番号を表記してください

@@ -1,0 +1,27 @@
+name: "タスク割り振りチケット"
+description: "タスクを割り振るチケットです"
+body:
+  - type: textarea
+    id: taskName
+    attributes:
+      label: "タスク"
+      description: "タスク名を記載"
+      placeholder: |
+        タスク名を作成する
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: "タスク内容"
+      description: |
+        タスクの内容を作成する。
+      value: |
+        1.見積もり時間を作成
+        2.工数を作成
+  - type: textarea
+    id: issue
+    attributes:
+      label: "備考欄"
+      description: |
+        特記事項がありましたら表記してください。
