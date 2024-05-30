@@ -40,3 +40,9 @@ npm run storybook
 
 - サンプルコードは Google Chrome / Microsoft Edge / Safari / Firefox の最新版で動作を確認しています。
 - サンプルコードはプロジェクトの特性に合わせて自由に拡張してください。
+
+## Issues, Pull Requests
+
+ご興味を持って頂きありがとうございます。  
+リリース直後のため、現在体制がまだ整っておりません。  
+そのため、何かお気づきの点やご要望がございましたら、PRの前にIssuesからお願いいたします。
