@@ -32,7 +32,7 @@ npm run storybook
 
 [@digital-go-jp/tailwind-theme-plugin](https://www.npmjs.com/package/@digital-go-jp/tailwind-theme-plugin) は、デジタル庁デザインシステムのデザイントークンをベースにしたTailwind CSSのプラグインです。
 
-プラグインで定義されるトークン一覧は、[トークン一覧](https://github.com/digital-go-jp/design-system-example-components/tree/1.4.2/src/tokens) をご確認ください。
+プラグインで定義されるトークン一覧は、[トークン一覧](https://github.com/digital-go-jp/design-system-example-components/tree/main/src/tokens) をご確認ください。
 
 プロジェクト固有のトークン等については `tailwind.config.js` の extend で拡張してください。
 
