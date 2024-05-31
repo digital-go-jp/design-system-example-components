@@ -68,7 +68,7 @@ export const Example: Story = {
             required
           />
           <ErrorText aria-live='polite' id='test-error-text' role='alert'>
-            エラーテキスト
+            ＊エラーテキスト
           </ErrorText>
         </div>
 
@@ -85,7 +85,7 @@ export const Example: Story = {
             isError={true}
           />
           <ErrorText aria-live='polite' id='test-filled-error-text' role='alert'>
-            エラーテキスト
+            ＊エラーテキスト
           </ErrorText>
         </div>
 

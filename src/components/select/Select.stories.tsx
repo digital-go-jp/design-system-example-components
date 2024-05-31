@@ -50,7 +50,7 @@ export const Example: Story = {
             <option value='3'>選択肢3</option>
           </Select>
           <ErrorText aria-live='polite' id='test-error-text' role='alert'>
-            エラーテキスト
+            ＊エラーテキスト
           </ErrorText>
         </div>
 

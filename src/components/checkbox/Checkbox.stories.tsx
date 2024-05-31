@@ -70,7 +70,7 @@ export const Example: Story = {
             </Checkbox>
           </div>
           <ErrorText aria-live='polite' className='mt-2' id='test-error-text' role='alert'>
-            エラーテキスト
+            ＊エラーテキスト
           </ErrorText>
         </fieldset>
 

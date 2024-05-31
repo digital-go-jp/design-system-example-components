@@ -70,7 +70,7 @@ export const Example: Story = {
             </TiledRadio>
           </div>
           <ErrorText aria-live='polite' id='test-error-text' role='alert'>
-            エラーテキスト
+            ＊エラーテキスト
           </ErrorText>
         </fieldset>
 
