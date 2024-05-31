@@ -20,7 +20,7 @@ body:
         1. 〇〇の処理を作成
         2. 〇〇のコンポーネントを作成
         3. ページを作成
-  - type: textarea
+  - type: input
     id: issue
     attributes:
       label: "関連issue"
