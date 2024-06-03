@@ -63,7 +63,7 @@
     "autoprefixer": "^10.4.19",
     "markuplint": "^4.9.0",
     "postcss": "^8.4.38",
-    "storybook": "^8.1.4",
+    "storybook": "^8.1.5",
     "typescript": "^5.4.5",
     "vite": "^5.2.12"
   },
