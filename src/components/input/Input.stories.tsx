@@ -17,9 +17,7 @@ export const Example: Story = {
     return (
       <div className='flex flex-col gap-8'>
         <div className='flex flex-col gap-2'>
-          <Label htmlFor='test'>
-            ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
-          </Label>
+          <Label htmlFor='test'>ラベル</Label>
           <SupportText id='test-support-text'>サポートテキスト</SupportText>
           <Input aria-describedby='test-support-text' id='test' />
         </div>
@@ -48,7 +46,7 @@ export const Example: Story = {
             id='test-error'
             isError={true}
             required
-            value=''
+            defaultValue=''
           />
           <ErrorText aria-live='polite' id='test-error-text' role='alert'>
             ＊エラーテキスト
