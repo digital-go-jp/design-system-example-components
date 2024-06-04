@@ -1,0 +1,19 @@
+name: 機能リクエスト
+description: 新機能リクエストもしくは既存機能の更新リクエストについて記載してください。
+title: "機能リクエストの概要"
+labels: [feature]
+assignees: []
+body:
+  - type: checkboxes
+    attributes:
+      label: 事前確認
+      options:
+        - label: Issuesに同一の機能リクエストがないか確認しましたか
+          required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: リクエスト内容
+      description: リクエストの詳細を記載してください。（スクリーンショット、デモ等を合わせてご提供ください。）
+    validations:
+      required: true

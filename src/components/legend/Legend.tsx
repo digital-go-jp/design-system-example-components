@@ -10,8 +10,8 @@ export const Legend = (props: LegendProps) => {
   return (
     <legend
       className={`
-        flex w-fit items-center gap-2 text-dns-16B-2 text-solid-grey-900
-        ${isDisabled ? 'text-solid-grey-600' : ''}
+        flex w-fit items-center gap-2 text-dns-16B-2
+        ${isDisabled ? 'text-solid-grey-420' : 'text-solid-grey-900'}
         ${className ?? ''}
       `}
       {...rest}
