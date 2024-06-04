@@ -1,0 +1,50 @@
+name: バグレポート
+description: バグの詳細について記載してください。
+title: "バグの概要"
+labels: [bug]
+assignees: "-"
+body:
+  - type: checkboxes
+    attributes:
+      label: 事前確認
+      options:
+        - label: Issuesに同一の機能リクエストがないか確認しましたか
+          required: true
+  - type: textarea
+    id: overview
+    attributes:
+      label: バグ概要
+      description: 再現手順、バグの概要、期待される結果を記載してください。（必要に応じて画像を添付してください。）
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: バグが再現したOS
+      multiple: true
+      options:
+        - Windows
+        - macOS
+        - Android
+        - iOS
+        - Linux
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: バグが再現したブラウザ
+      multiple: true
+      options:
+        - Chrome
+        - Safari
+        - Firefox
+        - Microsoft Edge
+        - Opera
+  - type: input
+    id: version
+    attributes:
+      label: サンプルコンポーネントのバージョン
+      placeholder: "e.g., v1.4.2 or v2.0.0"
+    validations:
+      required: true

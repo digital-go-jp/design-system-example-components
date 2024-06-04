@@ -12,14 +12,14 @@ export const TiledRadioItem = (props: TiledRadioItemProps) => {
   return (
     <span className='flex flex-1 flex-col'>
       <span
-        className={`text-std-16N-7 text-solid-grey-900 ${isDisabled ? 'text-solid-grey-600' : ''}`}
+        className={`text-std-16N-7 ${isDisabled ? 'text-solid-grey-420' : 'text-solid-grey-900'}`}
       >
         {props.title}
       </span>
       {props.description && (
         <span
-          className={`text-[0.75rem] leading-1-7 text-solid-grey-600 ${
-            isDisabled ? '!text-solid-grey-600' : ''
+          className={`text-[0.75rem] leading-1-7 ${
+            isDisabled ? 'text-solid-grey-420' : 'text-solid-grey-600'
           }`}
         >
           {props.description}
@@ -61,7 +61,7 @@ export const TiledRadio = forwardRef<HTMLInputElement, TiledRadioProps>((props, 
         className={`
           hidden
           peer-checked:inline-block
-          peer-checked:fill-sea-800
+          peer-checked:fill-blue-900
         `}
         fill='none'
         height='24'
@@ -77,9 +77,9 @@ export const TiledRadio = forwardRef<HTMLInputElement, TiledRadioProps>((props, 
       <svg
         aria-hidden={true}
         className={`
-          ${isError ? 'fill-error-1' : 'fill-sumi-900'}
+          ${isError ? 'fill-error-1' : 'fill-solid-grey-900'}
           peer-checked:hidden
-          peer-disabled:fill-sumi-500
+          peer-disabled:fill-solid-grey-420
         `}
         height='24'
         viewBox='0 0 24 24'

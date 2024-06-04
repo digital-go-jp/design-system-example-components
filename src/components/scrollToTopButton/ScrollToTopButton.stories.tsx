@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { ScrollToTopButton } from './ScrollToTopButton';
 
 const meta = {
@@ -12,6 +13,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    href: '#',
+    onClick: fn(),
   },
 };

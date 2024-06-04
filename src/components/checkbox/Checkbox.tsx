@@ -18,7 +18,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
           hidden
           flex-none
           peer-checked:inline-block
-          peer-checked:fill-sea-800
+          peer-checked:fill-blue-900
           peer-focus-visible:rounded-[4px]
           peer-focus-visible:outline
           peer-focus-visible:outline-2
@@ -41,14 +41,14 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
         className={`
           my-[2px]
           flex-none
-          ${isError ? 'fill-sun-800' : 'fill-sumi-900'}
+          ${isError ? 'fill-error-1' : 'fill-solid-grey-900'}
           peer-checked:hidden
           peer-focus-visible:rounded-[4px]
           peer-focus-visible:outline
           peer-focus-visible:outline-2
           peer-focus-visible:-outline-offset-1
           peer-focus-visible:outline-focus-yellow
-          peer-disabled:fill-sumi-500
+          peer-disabled:fill-solid-grey-420
         `}
         fill='none'
         height='24'
@@ -65,7 +65,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
         className={`
           text-std-16N-7
           ${isError ? 'text-error-1' : 'text-solid-grey-900'}
-          peer-disabled:text-solid-grey-600
+          peer-disabled:text-solid-grey-420
         `}
       >
         {children}

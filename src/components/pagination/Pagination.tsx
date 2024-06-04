@@ -29,11 +29,11 @@ export const PaginationItem = (props: PaginationItemProps) => {
 };
 
 export const PaginationFirst = (props: PaginationItemProps) => {
-  const { className, ...rest } = props;
+  const { className, 'aria-label': ariaLabel, ...rest } = props;
   return (
     <a className={`${paginationItemStyle} ${className}`} {...rest}>
       <svg
-        aria-label={rest['aria-label'] ?? '最初のページに移動する'}
+        aria-label={ariaLabel ?? '最初のページに移動する'}
         fill='none'
         height='24'
         role='img'
@@ -53,11 +53,11 @@ export const PaginationFirst = (props: PaginationItemProps) => {
 };
 
 export const PaginationPrev = (props: PaginationItemProps) => {
-  const { className, ...rest } = props;
+  const { className, 'aria-label': ariaLabel, ...rest } = props;
   return (
     <a className={`${paginationItemStyle} ${className}`} {...rest}>
       <svg
-        aria-label={rest['aria-label'] ?? '前のページへ戻る'}
+        aria-label={ariaLabel ?? '前のページへ戻る'}
         fill='none'
         height='24'
         role='img'
@@ -71,11 +71,11 @@ export const PaginationPrev = (props: PaginationItemProps) => {
 };
 
 export const PaginationLast = (props: PaginationItemProps) => {
-  const { className, ...rest } = props;
+  const { className, 'aria-label': ariaLabel, ...rest } = props;
   return (
     <a className={`${paginationItemStyle} ${className}`} {...rest}>
       <svg
-        aria-label={rest['aria-label'] ?? '最後のページに移動する'}
+        aria-label={ariaLabel ?? '最後のページに移動する'}
         className='-scale-x-100'
         fill='none'
         height='24'
@@ -99,11 +99,11 @@ export const PaginationLast = (props: PaginationItemProps) => {
 };
 
 export const PaginationNext = (props: PaginationItemProps) => {
-  const { className, ...rest } = props;
+  const { className, 'aria-label': ariaLabel, ...rest } = props;
   return (
     <a className={`${paginationItemStyle} ${className}`} {...rest}>
       <svg
-        aria-label={rest['aria-label'] ?? '次のページへ進む'}
+        aria-label={ariaLabel ?? '次のページへ進む'}
         fill='none'
         height='24'
         role='img'
