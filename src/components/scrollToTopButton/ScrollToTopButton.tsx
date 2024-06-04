@@ -7,15 +7,15 @@ export const scrollToTopButtonStyle = `
   active:border-blue-1200 active:bg-blue-300 active:text-blue-1200
 `;
 
-export type ScrollToTopButtonProps = ComponentProps<'a'>;
+export type ScrollToTopButtonProps = ComponentProps<'button'>;
 
 export const ScrollToTopButton = (props: ScrollToTopButtonProps) => {
-  const { className, ...rest } = props;
+  const { className, 'aria-label': ariaLabel, ...rest } = props;
 
   return (
-    <a className={`${scrollToTopButtonStyle} ${className ?? ''}`} {...rest}>
+    <button type='button' className={`${scrollToTopButtonStyle} ${className ?? ''}`} {...rest}>
       <svg
-        aria-label={rest['aria-label'] ?? 'ページ上部に戻る'}
+        aria-label={ariaLabel ?? 'ページの先頭へ戻る'}
         fill='none'
         height='16'
         role='img'
@@ -27,6 +27,6 @@ export const ScrollToTopButton = (props: ScrollToTopButtonProps) => {
           fill='currentColor'
         />
       </svg>
-    </a>
+    </button>
   );
 };
