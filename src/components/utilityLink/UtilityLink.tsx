@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
 
 export const utilityLinkStyle =
-  'text-solid-grey-900 text-std-16N-7 underline hover:bg-solid-grey-50 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus-yellow';
+  'text-solid-grey-900 text-std-16N-7 underline underline-offset-[0.1875rem] hover:bg-solid-grey-50 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus-yellow';
 
 export type UtilityLinkProps = ComponentProps<'a'> & {
   icon?: {

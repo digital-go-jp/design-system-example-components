@@ -24,6 +24,14 @@ export const Example: Story = {
         <p>
           これは<Link href='#'>文中のリンク</Link>です。
         </p>
+
+        <p>
+          これは
+          <Link href='https://www.digital.go.jp' target='_blank'>
+            文中の外部リンク
+          </Link>
+          です。
+        </p>
       </div>
     );
   },
