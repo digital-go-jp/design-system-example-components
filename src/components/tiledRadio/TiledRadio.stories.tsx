@@ -4,7 +4,7 @@ import { ErrorText, Legend, RequirementBadge, SupportText } from '../';
 import { TiledRadio, TiledRadioItem } from './TiledRadio';
 
 const meta = {
-  title: 'Component/TiledRadio',
+  title: 'Deprecated/TiledRadio',
   component: TiledRadio,
   tags: ['autodocs'],
 } satisfies Meta<typeof TiledRadio>;
