@@ -33,6 +33,9 @@ export type TiledRadioProps = ComponentProps<'input'> & {
   isError?: boolean;
 };
 
+/**
+ * TiledRadio（タイル型ラジオボタン）は、デジタル庁デザインシステムv2で再定義する予定のため、v1のものは廃止予定です。
+ */
 export const TiledRadio = forwardRef<HTMLInputElement, TiledRadioProps>((props, ref) => {
   const { children, id, isError, ...rest } = props;
 
