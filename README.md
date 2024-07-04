@@ -1,6 +1,6 @@
 # React サンプルコンポーネント
 
-[デジタル庁デザインシステム](https://design.digital.go.jp/) v.1.4.2のコンポーネントの一部をReact / Tailwind CSSベースで実装したサンプル集です。
+[デジタル庁デザインシステム](https://design.digital.go.jp/) v1のコンポーネントの一部をReact / Tailwind CSSベースで実装したサンプル集です。
 
 ## 未実装コンポーネント
 
