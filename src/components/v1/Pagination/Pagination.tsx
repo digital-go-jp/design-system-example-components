@@ -143,12 +143,15 @@ export const PaginationCurrent = (props: PaginationCurrentProps) => {
   const { current, max } = props;
 
   return (
-    <span className='text-[0.75rem] leading-1-7'>
+    <span className='text-[calc(12/16*1rem)] leading-1-7'>
       <span aria-current='page'>{current}</span> / {max}
     </span>
   );
 };
 
+/**
+ * ※ Pagination は v1 のみのコンポーネントのため、v2 では非推奨となっています。
+ */
 export const Pagination = (props: PaginationProps) => {
   const { children, className, ...rest } = props;
   return (

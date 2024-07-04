@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import { ScrollToTopButton } from './ScrollToTopButton';
 
 const meta = {
-  title: 'Component/ScrollToTopButton',
+  title: 'Component/DADS v1/ScrollToTopButton',
   component: ScrollToTopButton,
   tags: ['autodocs'],
 } satisfies Meta<typeof ScrollToTopButton>;

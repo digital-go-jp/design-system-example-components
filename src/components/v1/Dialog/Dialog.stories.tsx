@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { useRef } from 'react';
-import { Button } from '../';
+import { Button } from '../../';
 import { Dialog, DialogBody } from './Dialog';
 
 const meta = {
-  title: 'Component/Dialog',
+  title: 'Component/DADS v1/ModalDialog',
   component: Dialog,
   tags: ['autodocs'],
 } satisfies Meta<typeof Dialog>;
@@ -19,11 +19,15 @@ export const Example: Story = {
       const dialogRef = useRef<HTMLDialogElement>(null);
       return (
         <div>
-          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
+          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='solid-fill'>
             ダイアログ表示
           </Button>
 
-          <Dialog aria-labelledby='example-heading1' className='max-w-[35rem]' ref={dialogRef}>
+          <Dialog
+            aria-labelledby='example-heading1'
+            className='max-w-[calc(560/16*1rem)]'
+            ref={dialogRef}
+          >
             <DialogBody>
               <h2 className='text-std-24B-5 desktop:text-std-28B-5' id='example-heading1'>
                 ダイアログタイトル
@@ -37,7 +41,7 @@ export const Example: Story = {
                     dialogRef.current?.close();
                   }}
                   size='lg'
-                  variant='primary'
+                  variant='solid-fill'
                 >
                   中断する
                 </Button>
@@ -46,7 +50,7 @@ export const Example: Story = {
                     dialogRef.current?.close();
                   }}
                   size='lg'
-                  variant='tertiary'
+                  variant='text'
                 >
                   キャンセル
                 </Button>
@@ -67,11 +71,15 @@ export const DialogWithHorizontalActions: Story = {
 
       return (
         <div>
-          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
+          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='solid-fill'>
             ダイアログ表示
           </Button>
 
-          <Dialog aria-labelledby='example-heading2' className='max-w-[40rem]' ref={dialogRef}>
+          <Dialog
+            aria-labelledby='example-heading2'
+            className='max-w-[calc(640/16*1rem)]'
+            ref={dialogRef}
+          >
             <DialogBody>
               <h2 className='text-std-24B-5 desktop:text-std-28B-5' id='example-heading2'>
                 ダイアログタイトル
@@ -85,7 +93,7 @@ export const DialogWithHorizontalActions: Story = {
                     dialogRef.current?.close();
                   }}
                   size='lg'
-                  variant='primary'
+                  variant='solid-fill'
                 >
                   確定する
                 </Button>
@@ -94,7 +102,7 @@ export const DialogWithHorizontalActions: Story = {
                     dialogRef.current?.close();
                   }}
                   size='lg'
-                  variant='secondary'
+                  variant='outline'
                 >
                   前の画面に戻る
                 </Button>
@@ -104,7 +112,7 @@ export const DialogWithHorizontalActions: Story = {
                     dialogRef.current?.close();
                   }}
                   size='lg'
-                  variant='tertiary'
+                  variant='text'
                 >
                   キャンセル
                 </Button>
@@ -125,7 +133,7 @@ export const AlertDialog: Story = {
 
       return (
         <div>
-          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='primary'>
+          <Button onClick={() => dialogRef.current?.showModal()} size='lg' variant='solid-fill'>
             アラートダイアログ表示
           </Button>
 
@@ -143,7 +151,7 @@ export const AlertDialog: Story = {
                     dialogRef.current?.close();
                   }}
                   size='md'
-                  variant='primary'
+                  variant='solid-fill'
                 >
                   OK
                 </Button>

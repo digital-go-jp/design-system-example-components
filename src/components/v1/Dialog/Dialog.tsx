@@ -2,6 +2,10 @@ import { type ComponentProps, forwardRef } from 'react';
 
 export type DialogProps = ComponentProps<'dialog'>;
 
+/**
+ * ※ ModalDialog は v1 のみのコンポーネントのため、v2 では非推奨となっています。
+ * v2 に対応したダイアログは今後提供予定です。
+ */
 export const Dialog = forwardRef<HTMLDialogElement, DialogProps>((props, ref) => {
   const { children, className, ...rest } = props;
 

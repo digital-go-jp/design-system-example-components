@@ -6,7 +6,7 @@ export const SupportText = (props: SupportTextProps) => {
   const { children, className, ...rest } = props;
 
   return (
-    <p className={`text-[0.75rem] leading-1-7 text-solid-grey-600 ${className ?? ''}`} {...rest}>
+    <p className={`text-std-16N-7 text-solid-grey-700 ${className ?? ''}`} {...rest}>
       {children}
     </p>
   );

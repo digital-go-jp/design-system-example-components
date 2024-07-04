@@ -3,9 +3,20 @@ import React from 'react';
 import { Label } from './Label';
 
 const meta = {
-  title: 'Component/Label',
+  title: 'Component/DADS v2/Label',
   component: Label,
   tags: ['autodocs'],
+  argTypes: {
+    size: {
+      options: ['lg', 'md', 'sm'],
+      control: { type: 'radio' },
+      description: 'ラベルのフォントサイズの大きさを以下から選択します。',
+      table: {
+        defaultValue: { summary: 'md' },
+        type: { summary: "'lg', 'md', 'sm'" },
+      },
+    },
+  },
 } satisfies Meta<typeof Label>;
 
 export default meta;
@@ -15,9 +26,33 @@ export const Example: Story = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
-        <Label>ラベル</Label>
-        <Label isDisabled={true}>ラベル</Label>
+        <div>
+          <div className='flex items-center gap-4'>
+            <Label size='lg'>ラベル LG</Label>
+            <Label>ラベル MD</Label>
+            <Label size='sm'>ラベル SM</Label>
+          </div>
+        </div>
+
+        <div>
+          <div className='flex items-center gap-4'>
+            <Label className='font-normal' size='lg'>
+              ラベル LG
+            </Label>
+            <Label className='font-normal'>ラベル MD</Label>
+            <Label className='font-normal' size='sm'>
+              ラベル SM
+            </Label>
+          </div>
+        </div>
       </div>
     );
+  },
+};
+
+export const Playground: Story = {
+  args: {
+    size: 'md',
+    children: 'ラベル',
   },
 };

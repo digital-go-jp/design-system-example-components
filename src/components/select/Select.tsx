@@ -1,22 +1,46 @@
 import { type ComponentProps, forwardRef } from 'react';
 
+export type SelectBlockSize = 'lg' | 'md' | 'sm';
+
+export const SelectBlockSizeStyle: { [key in SelectBlockSize]: string } = {
+  // NOTE:
+  // Tailwind CSS (v3.4.4) does not have any utility classes for logical properties of sizing.
+  // Once it　is officially released, we will replace them with classes like `bs-14`.
+  lg: 'h-14',
+  md: 'h-12',
+  sm: 'h-10',
+};
+
 export type SelectProps = ComponentProps<'select'> & {
   isError?: boolean;
+  blockSize?: SelectBlockSize;
 };
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
-  const { children, className, isError, ...rest } = props;
+  const { children, className, isError, blockSize = 'lg', onKeyDown, onMouseDown, ...rest } = props;
+
+  const handleDisabledKeyDown = (e: React.KeyboardEvent<HTMLSelectElement>) => {
+    if (e.code !== 'Tab') {
+      e.preventDefault();
+    }
+  };
+
+  const handleDisabledMouseDown = (e: React.MouseEvent<HTMLSelectElement, MouseEvent>) => {
+    e.preventDefault();
+  };
 
   return (
-    <div className='relative min-w-80 max-w-full h-14'>
+    <div className={`relative min-w-80 max-w-full ${SelectBlockSizeStyle[blockSize]}`}>
       <select
         className={`
-          size-full appearance-none rounded-8 bg-white px-4 py-3 text-std-16N-7 text-solid-grey-900
-          ${isError ? 'border-2 border-error-1' : 'border border-solid-grey-900'}
-          focus:border-transparent focus:outline focus:outline-4 focus:outline-focus-yellow
-          disabled:border-solid-grey-420 disabled:bg-solid-grey-50 disabled:text-solid-grey-600
+          size-full appearance-none border rounded-lg bg-white px-4 py-[calc(11/16*1rem)] text-oln-16N-1 text-solid-grey-800
+          ${isError ? 'border-error-1' : 'border-solid-grey-900'}
+          focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
+          aria-disabled:border-solid-grey-300 aria-disabled:bg-solid-grey-50 aria-disabled:text-solid-grey-420 aria-disabled:pointer-events-none
           ${className ?? ''}
         `}
+        onMouseDown={props['aria-disabled'] ? handleDisabledMouseDown : onMouseDown}
+        onKeyDown={props['aria-disabled'] ? handleDisabledKeyDown : onKeyDown}
         ref={ref}
         {...rest}
       >
@@ -26,7 +50,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
         aria-hidden={true}
         className={`
           pointer-events-none absolute right-4 top-1/2 -translate-y-1/2
-          ${rest.disabled ? 'text-solid-grey-600' : 'text-solid-grey-900'}
+          ${props['aria-disabled'] ? 'text-solid-grey-420' : 'text-solid-grey-900'}
         `}
         fill='none'
         height='16'

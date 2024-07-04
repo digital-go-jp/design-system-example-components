@@ -1,0 +1,1 @@
+export { RequirementBadge } from './RequirementBadge';

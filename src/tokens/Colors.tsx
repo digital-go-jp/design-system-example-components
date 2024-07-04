@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Divider } from '../';
 import { ColorItem } from './ColorItem';
 import { rgb2hex } from './utils';
 
@@ -6,7 +7,7 @@ export const Colors = () => {
   useEffect(() => {
     const items = document.querySelectorAll('.c');
     for (const item of items) {
-      const bgColor = getComputedStyle(item.childNodes[0] as HTMLElement).backgroundColor;
+      const bgColor = getComputedStyle(item.childNodes[2] as HTMLElement).backgroundColor;
       item.childNodes[1].textContent = `#${rgb2hex(bgColor)}`;
     }
   }, []);
@@ -15,9 +16,10 @@ export const Colors = () => {
     <>
       <section className='flex flex-col gap-8'>
         <div>
-          <h2 className='text-std-28B-5'>Color2.0</h2>
+          <h2 className='text-std-28B-5'>Color 2.0</h2>
           <p className='my-4'>
-            例ではbg-*を利用していますが、text-*やfill-*、border-*等、色関連は全てに適用されます。
+            例では<code>bg-*</code>を利用していますが、<code>text-*</code>や<code>fill-*</code>、
+            <code>border-*</code>等、色関連は全てに適用されます。
           </p>
         </div>
         <ColorItem
@@ -54,7 +56,7 @@ export const Colors = () => {
             'bg-light-blue-1100',
             'bg-light-blue-1200',
           ]}
-          title='LightBlue'
+          title='Light Blue'
         />
         <ColorItem
           colorClasses={[
@@ -215,7 +217,7 @@ export const Colors = () => {
             'bg-solid-grey-800',
             'bg-solid-grey-900',
           ]}
-          title='SolidGrey'
+          title='Solid Grey'
         />
         <ColorItem colorClasses={['bg-success-1', 'bg-success-2']} title='Success' />
         <ColorItem colorClasses={['bg-error-1', 'bg-error-2']} title='Error' />
@@ -231,7 +233,7 @@ export const Colors = () => {
         <ColorItem colorClasses={['bg-focus-blue']} title='Focus（Blue）' />
       </section>
 
-      <hr className='my-8'></hr>
+      <Divider className='!my-8' />
 
       <section className='flex flex-col gap-8'>
         <div>

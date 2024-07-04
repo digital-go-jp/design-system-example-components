@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from './Link';
 
 const meta = {
-  title: 'Component/Link',
+  title: 'Component/DADS v2/Link',
   component: Link,
   tags: ['autodocs'],
 } satisfies Meta<typeof Link>;
@@ -24,11 +24,10 @@ export const Example: Story = {
         <p>
           これは<Link href='#'>文中のリンク</Link>です。
         </p>
-
-        <p>
+        <p className='w-[calc(160/16*1rem)]'>
           これは
           <Link href='https://www.digital.go.jp' target='_blank'>
-            文中の外部リンク
+            複数行にまたがる文中のインラインリンク
           </Link>
           です。
         </p>

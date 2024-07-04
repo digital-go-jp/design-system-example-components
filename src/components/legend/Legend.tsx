@@ -1,17 +1,25 @@
 import type { ComponentProps } from 'react';
 
+export type LegendSize = 'lg' | 'md' | 'sm';
+
+export const legendSizeStyle: { [key in LegendSize]: string } = {
+  lg: 'text-std-18B-6',
+  md: 'text-dns-17B-2',
+  sm: 'text-dns-16B-2',
+};
+
 export type LegendProps = ComponentProps<'legend'> & {
-  isDisabled?: boolean;
+  size?: LegendSize;
 };
 
 export const Legend = (props: LegendProps) => {
-  const { children, className, isDisabled, ...rest } = props;
+  const { children, className, size = 'md', ...rest } = props;
 
   return (
     <legend
       className={`
-        flex w-fit items-center gap-2 text-dns-16B-2
-        ${isDisabled ? 'text-solid-grey-420' : 'text-solid-grey-900'}
+        flex w-fit items-center gap-2 text-solid-grey-800
+        ${legendSizeStyle[size]}
         ${className ?? ''}
       `}
       {...rest}

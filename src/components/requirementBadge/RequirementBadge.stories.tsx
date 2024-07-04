@@ -3,9 +3,19 @@ import React from 'react';
 import { RequirementBadge } from './RequirementBadge';
 
 const meta = {
-  title: 'Component/RequirementBadge',
+  title: 'Component/DADS v2/RequirementBadge',
   component: RequirementBadge,
   tags: ['autodocs'],
+  argTypes: {
+    isOptional: {
+      description: '任意項目の場合に `true` を指定します。',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
+  },
 } satisfies Meta<typeof RequirementBadge>;
 
 export default meta;
@@ -16,8 +26,15 @@ export const Example: Story = {
     return (
       <div className='flex flex-col gap-8'>
         <RequirementBadge>※必須</RequirementBadge>
-        <RequirementBadge isOptional={true}>任意</RequirementBadge>
+        <RequirementBadge isOptional={true}>※任意</RequirementBadge>
       </div>
     );
+  },
+};
+
+export const Playground: Story = {
+  args: {
+    isOptional: false,
+    children: '※必須',
   },
 };

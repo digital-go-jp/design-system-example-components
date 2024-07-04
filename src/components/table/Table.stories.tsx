@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Ol } from '../ol/Ol';
+import { Ol } from '../';
 import { Table, Tbody, Td, Th, Thead, Tr } from './Table';
 
 const meta = {
-  title: 'Component/Table',
+  title: 'Component/DADS v2/Table',
   component: Table,
   tags: ['autodocs'],
 } satisfies Meta<typeof Table>;
@@ -134,7 +134,7 @@ export const FirstRowAndColumnAsHeaderCell: Story = {
           <caption className='p-4 font-bold'>1行目と1列目の両方が見出しセル</caption>
           <Thead>
             <Tr>
-              <Td className='border-r bg-solid-grey-50' scope='col'></Td>
+              <Td className='border-r bg-solid-grey-50'></Td>
               <Th className='bg-solid-grey-50' scope='col'>
                 ラベル
               </Th>
@@ -524,7 +524,7 @@ export const VerticalAlignedTextInCell: Story = {
   render: () => {
     return (
       <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-[40rem]'>
+        <Table className='w-full min-w-[calc(640/16*1rem)]'>
           <caption className='p-4 font-bold'>セル内でのテキスト上揃え</caption>
           <Thead>
             <Tr>

@@ -3,7 +3,7 @@ import React from 'react';
 import { UtilityLink } from './UtilityLink';
 
 const meta = {
-  title: 'Component/UtilityLink',
+  title: 'Component/DADS v2/UtilityLink',
   component: UtilityLink,
   tags: ['autodocs'],
 } satisfies Meta<typeof UtilityLink>;

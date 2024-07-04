@@ -3,7 +3,7 @@ import React from 'react';
 import { BreadcrumbItem, BreadcrumbLink, Breadcrumbs } from './Breadcrumbs';
 
 const meta = {
-  title: 'Component/Breadcrumbs',
+  title: 'Component/DADS v2/Breadcrumbs',
   component: Breadcrumbs,
   tags: ['autodocs'],
 } satisfies Meta<typeof Breadcrumbs>;
@@ -35,7 +35,7 @@ export const Example: Story = {
             長いページタイトルが入ります長いページタイトルが入ります
           </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbItem className='text-oln-14N-1' isCurrent>
+        <BreadcrumbItem className='text-oln-16N-1' isCurrent>
           長いページタイトルが入ります長いページタイトルが入ります
         </BreadcrumbItem>
       </Breadcrumbs>

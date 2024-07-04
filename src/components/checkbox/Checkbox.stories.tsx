@@ -4,7 +4,7 @@ import { ErrorText, Legend, RequirementBadge, SupportText } from '../';
 import { Checkbox } from './Checkbox';
 
 const meta = {
-  title: 'Component/Checkbox',
+  title: 'Component/DADS v2/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
 } satisfies Meta<typeof Checkbox>;
@@ -18,19 +18,39 @@ export const Example: Story = {
       <div className='flex flex-col gap-8'>
         <fieldset className='flex flex-col'>
           <Legend className='mt-2'>
-            ラベル<RequirementBadge isOptional={true}>任意</RequirementBadge>
+            ラベル<RequirementBadge isOptional={true}>※任意</RequirementBadge>
           </Legend>
           <SupportText className='mt-2' id='test-support-text'>
             サポートテキスト
           </SupportText>
           <div className='flex flex-col'>
-            <Checkbox aria-describedby='test-support-text' name='x'>
+            <Checkbox aria-describedby='test-support-text' name='w'>
               選択肢1
             </Checkbox>
-            <Checkbox aria-describedby='test-support-text' name='x'>
+            <Checkbox aria-describedby='test-support-text' name='w'>
               選択肢2
             </Checkbox>
-            <Checkbox aria-describedby='test-support-text' name='x'>
+            <Checkbox aria-describedby='test-support-text' name='w'>
+              選択肢3
+            </Checkbox>
+          </div>
+        </fieldset>
+
+        <fieldset className='flex flex-col'>
+          <Legend className='mt-2'>
+            ラベル<RequirementBadge>※必須</RequirementBadge>
+          </Legend>
+          <SupportText className='mt-2' id='test-inline-support-text'>
+            サポートテキスト
+          </SupportText>
+          <div className='flex gap-8'>
+            <Checkbox aria-describedby='test-inline-support-text' name='x'>
+              選択肢1
+            </Checkbox>
+            <Checkbox aria-describedby='test-inline-support-text' name='x'>
+              選択肢2
+            </Checkbox>
+            <Checkbox aria-describedby='test-inline-support-text' name='x'>
               選択肢3
             </Checkbox>
           </div>
@@ -45,50 +65,52 @@ export const Example: Story = {
           </SupportText>
           <div className='flex flex-col'>
             <Checkbox
-              aria-describedby='test-error-text'
-              aria-invalid={true}
+              aria-describedby='test-error-support-text test-error-text'
               isError={true}
               name='y'
             >
               選択肢1
             </Checkbox>
             <Checkbox
-              aria-describedby='test-error-text'
-              aria-invalid={true}
+              aria-describedby='test-error-support-text test-error-text'
               isError={true}
               name='y'
             >
               選択肢2
             </Checkbox>
             <Checkbox
-              aria-describedby='test-error-text'
-              aria-invalid={true}
+              aria-describedby='test-error-support-text test-error-text'
               isError={true}
               name='y'
             >
               選択肢3
             </Checkbox>
           </div>
-          <ErrorText aria-live='polite' className='mt-2' id='test-error-text' role='alert'>
+          <ErrorText className='mt-2' id='test-error-text'>
             ＊エラーテキスト
           </ErrorText>
         </fieldset>
 
         <fieldset className='flex flex-col gap-2'>
-          <Legend className='mt-2' isDisabled={true}>
+          <Legend className='mt-2'>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
           <SupportText className='mt-2' id='test-disabled-support-text'>
-            サポートテキスト
+            〜の理由により、この項目は無効化されています。
           </SupportText>
           <div className='flex flex-col'>
-            <Checkbox aria-describedby='test-disabled-support-text' disabled name='z'>
+            <Checkbox aria-describedby='test-disabled-support-text' aria-disabled={true} name='z'>
               選択肢1
             </Checkbox>
-            <Checkbox aria-describedby='test-disabled-support-text' disabled name='z'>
+            <Checkbox
+              aria-describedby='test-disabled-support-text'
+              checked
+              aria-disabled={true}
+              name='z'
+            >
               選択肢2
             </Checkbox>
-            <Checkbox aria-describedby='test-disabled-support-text' disabled name='z'>
+            <Checkbox aria-describedby='test-disabled-support-text' aria-disabled={true} name='z'>
               選択肢3
             </Checkbox>
           </div>

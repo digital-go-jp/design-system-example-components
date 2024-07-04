@@ -1,6 +1,6 @@
 {
   "name": "@digital-go-jp/design-system-example-components",
-  "version": "1.4.2",
+  "version": "2.0.1",
   "type": "module",
   "main": "dist/index.cjs.js",
   "typings": "dist/index.d.ts",
@@ -45,16 +45,16 @@
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.2",
+    "@biomejs/biome": "^1.8.3",
     "@markuplint/jsx-parser": "^4.7.5",
     "@markuplint/react-spec": "^4.5.5",
-    "@storybook/addon-a11y": "^8.1.10",
-    "@storybook/addon-essentials": "^8.1.10",
-    "@storybook/addon-interactions": "^8.1.10",
-    "@storybook/addon-links": "^8.1.10",
-    "@storybook/blocks": "^8.1.10",
-    "@storybook/react": "^8.1.10",
-    "@storybook/react-vite": "^8.1.10",
+    "@storybook/addon-a11y": "^8.1.11",
+    "@storybook/addon-essentials": "^8.1.11",
+    "@storybook/addon-interactions": "^8.1.11",
+    "@storybook/addon-links": "^8.1.11",
+    "@storybook/blocks": "^8.1.11",
+    "@storybook/react": "^8.1.11",
+    "@storybook/react-vite": "^8.1.11",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
@@ -63,9 +63,9 @@
     "autoprefixer": "^10.4.19",
     "markuplint": "^4.9.2",
     "postcss": "^8.4.38",
-    "storybook": "^8.1.10",
-    "typescript": "^5.5.2",
-    "vite": "^5.3.1"
+    "storybook": "^8.1.11",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3"
   },
   "engines": {
     "node": ">=18"

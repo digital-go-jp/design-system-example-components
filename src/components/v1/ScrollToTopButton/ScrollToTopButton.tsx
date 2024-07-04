@@ -9,6 +9,9 @@ export const scrollToTopButtonStyle = `
 
 export type ScrollToTopButtonProps = ComponentProps<'button'>;
 
+/**
+ * ※ ScrollToTopButton は v1 のみのコンポーネントのため、v2 では非推奨となっています。
+ */
 export const ScrollToTopButton = (props: ScrollToTopButtonProps) => {
   const { className, 'aria-label': ariaLabel, ...rest } = props;
 

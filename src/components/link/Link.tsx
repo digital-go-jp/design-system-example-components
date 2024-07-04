@@ -1,11 +1,18 @@
 import type { ComponentProps } from 'react';
 
+export const linkDefaultStyle = 'text-blue-1000 underline underline-offset-[calc(3/16*1rem)]';
+export const linkVisitedStyle = 'visited:text-magenta-900';
+export const linkHoverStyle = 'hover:text-blue-1000 hover:decoration-[calc(3/16*1rem)]';
+export const linkFocusStyle =
+  'focus-visible:rounded focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:text-blue-1000 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300';
+export const linkActiveStyle = 'active:text-orange-700 active:decoration-1';
+
 export const linkStyle = `
-  rounded text-blue-1000 underline underline-offset-[0.1875rem]
-  visited:text-magenta-900
-  hover:text-blue-900
-  focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus-yellow
-  active:text-orange-700
+  ${linkDefaultStyle}
+  ${linkVisitedStyle}
+  ${linkHoverStyle}
+  ${linkFocusStyle}
+  ${linkActiveStyle}
 `;
 
 export type LinkProps = ComponentProps<'a'> & {
@@ -25,7 +32,7 @@ export const Link = (props: LinkProps) => {
       {props.target === '_blank' && (
         <svg
           aria-label={`${icon?.ariaLabel ?? '新規タブで開きます'}`}
-          className={`mb-[0.1875rem] ml-[0.1875rem] inline ${icon ? icon.className ?? '' : ''}`}
+          className={`mb-[calc(3/16*1rem)] ml-[calc(3/16*1rem)] inline ${icon ? icon.className ?? '' : ''}`}
           fill='none'
           height='17'
           role='img'
