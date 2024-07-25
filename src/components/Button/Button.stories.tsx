@@ -26,11 +26,30 @@ const meta = {
         type: { summary: "'lg' | 'md' | 'sm' | 'xs'" },
       },
     },
+    'aria-disabled': {
+      description:
+        '無効化する必要がある場合は `disabled` 属性ではなく `aria-disabled` 属性を使用します。',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+export const Playground: Story = {
+  args: {
+    variant: 'solid-fill',
+    size: 'lg',
+    children: 'ボタン',
+    onClick: fn(),
+    'aria-disabled': false,
+  },
+};
 
 export const AllButtons = {
   render: () => {
