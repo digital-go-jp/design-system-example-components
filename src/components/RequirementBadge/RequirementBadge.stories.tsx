@@ -21,6 +21,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const Playground: Story = {
+  args: {
+    isOptional: false,
+    children: '※必須',
+  },
+};
+
 export const Example: Story = {
   render: () => {
     return (
@@ -29,12 +36,5 @@ export const Example: Story = {
         <RequirementBadge isOptional={true}>※任意</RequirementBadge>
       </div>
     );
-  },
-};
-
-export const Playground: Story = {
-  args: {
-    isOptional: false,
-    children: '※必須',
   },
 };

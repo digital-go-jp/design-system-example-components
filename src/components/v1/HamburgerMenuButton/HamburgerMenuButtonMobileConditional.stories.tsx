@@ -28,6 +28,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const Playground: Story = {
+  args: {
+    isOpen: false,
+    isEnglish: false,
+  },
+};
+
 export const Example = {
   render: () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -46,12 +53,5 @@ export const Example = {
         )}
       </div>
     );
-  },
-};
-
-export const Playground: Story = {
-  args: {
-    isOpen: false,
-    isEnglish: false,
   },
 };

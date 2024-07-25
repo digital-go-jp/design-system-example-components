@@ -30,7 +30,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
+export const Playground: Story = {
+  args: {
+    size: 'md',
+    children: '凡例',
+  },
+};
+
+export const All: Story = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
@@ -54,12 +61,5 @@ export const Example: Story = {
         </div>
       </div>
     );
-  },
-};
-
-export const Playground: Story = {
-  args: {
-    size: 'md',
-    children: '凡例',
   },
 };

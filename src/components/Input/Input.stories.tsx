@@ -25,11 +25,41 @@ const meta = {
         type: { summary: 'boolean' },
       },
     },
+    'aria-disabled': {
+      description:
+        '無効化する必要がある場合は `disabled` 属性ではなく `aria-disabled` 属性を使用します。',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 } satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+export const Playground: Story = {
+  decorators: [
+    (Story, context) => (
+      <div className='flex flex-col gap-2'>
+        <Label htmlFor={context.args.id}>
+          ラベル<RequirementBadge>※必須</RequirementBadge>
+        </Label>
+        <SupportText id={context.args['aria-describedby']}>サポートテキスト</SupportText>
+        <Story />
+      </div>
+    ),
+  ],
+  args: {
+    blockSize: 'lg',
+    isError: false,
+    id: 'test-playground',
+    'aria-describedby': 'test-playground-support-text',
+    'aria-disabled': false,
+  },
+};
 
 export const Example: Story = {
   render: () => {
@@ -106,26 +136,5 @@ export const Example: Story = {
         </div>
       </div>
     );
-  },
-};
-
-export const Playground: Story = {
-  decorators: [
-    (Story) => (
-      <div className='flex flex-col gap-2'>
-        <Label htmlFor='test-playground'>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Label>
-        <SupportText id='test-playground-support-text'>サポートテキスト</SupportText>
-        <Story />
-      </div>
-    ),
-  ],
-  args: {
-    blockSize: 'lg',
-    isError: false,
-    id: 'test-playground',
-    'aria-describedby': 'test-playground-support-text',
-    'aria-disabled': false,
   },
 };

@@ -7,6 +7,25 @@ const meta = {
   title: 'Component/DADS v2/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
+  argTypes: {
+    isError: {
+      description: 'エラー状態であるかどうかを指定します。',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
+    'aria-disabled': {
+      description:
+        '無効化する必要がある場合は `disabled` 属性ではなく `aria-disabled` 属性を使用します。',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
+  },
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;

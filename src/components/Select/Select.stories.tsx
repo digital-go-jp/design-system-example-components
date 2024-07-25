@@ -11,7 +11,7 @@ const meta = {
     blockSize: {
       options: ['lg', 'md', 'sm'],
       control: { type: 'radio' },
-      description: 'セレクターの垂直方向のサイズ（高さ）を以下から選択します。',
+      description: 'セレクトボックスの垂直方向のサイズ（高さ）を以下から選択します。',
       table: {
         defaultValue: { summary: 'lg' },
         type: { summary: "'lg', 'md', 'sm'" },
@@ -25,11 +25,52 @@ const meta = {
         type: { summary: 'boolean' },
       },
     },
+    'aria-disabled': {
+      description:
+        '無効化する必要がある場合は `disabled` 属性ではなく `aria-disabled` 属性を使用します。',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 } satisfies Meta<typeof Select>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+export const Playground: Story = {
+  decorators: [
+    (Story, context) => (
+      <div className='flex flex-col gap-2'>
+        <Label htmlFor={context.args.id}>
+          ラベル{context.args.required && <RequirementBadge>※必須</RequirementBadge>}
+        </Label>
+        <SupportText id={context.args['aria-describedby']}>サポートテキスト</SupportText>
+        <Story />
+      </div>
+    ),
+  ],
+  args: {
+    blockSize: 'lg',
+    isError: false,
+    id: 'test-playground',
+    'aria-describedby': 'test-playground-support-text',
+    'aria-disabled': false,
+    required: true,
+    children: (
+      <>
+        <option hidden value=''>
+          選択してください
+        </option>
+        <option value='1'>選択肢1</option>
+        <option value='2'>選択肢2</option>
+        <option value='3'>選択肢3</option>
+      </>
+    ),
+  },
+};
 
 export const Example: Story = {
   render: () => {
@@ -61,6 +102,7 @@ export const Example: Story = {
             id={`${formId}-test-error`}
             isError={true}
             name='test-error'
+            required
           >
             <option hidden value=''>
               選択してください
@@ -93,33 +135,5 @@ export const Example: Story = {
         </div>
       </div>
     );
-  },
-};
-
-export const Playground: Story = {
-  decorators: [
-    (Story) => (
-      <div className='flex flex-col gap-2'>
-        <Label htmlFor='test-playground'>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Label>
-        <SupportText id='test-playground-support-text'>サポートテキスト</SupportText>
-        <Story />
-      </div>
-    ),
-  ],
-  args: {
-    blockSize: 'lg',
-    isError: false,
-    id: 'test-playground',
-    'aria-describedby': 'test-playground-support-text',
-    'aria-disabled': false,
-    children: (
-      <>
-        <option value='1'>選択肢1</option>
-        <option value='2'>選択肢2</option>
-        <option value='3'>選択肢3</option>
-      </>
-    ),
   },
 };
