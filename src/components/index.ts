@@ -18,6 +18,15 @@ export {
 export { ErrorText } from './ErrorText';
 export { Input } from './Input';
 export { Label } from './Label';
+export {
+  LanguageSelector,
+  LanguageSelectorArrowIcon,
+  LanguageSelectorButton,
+  LanguageSelectorGlobeIcon,
+  LanguageSelectorGlobeWithLabelIcon,
+  LanguageSelectorMenu,
+  LanguageSelectorMenuItem,
+} from './LanguageSelector';
 export { Legend } from './Legend';
 export {
   Link,
