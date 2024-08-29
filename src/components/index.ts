@@ -21,6 +21,7 @@ export { Label } from './Label';
 export { Legend } from './Legend';
 export {
   Link,
+  LinkExternalLinkIcon,
   linkStyle,
   linkDefaultStyle,
   linkVisitedStyle,
@@ -39,8 +40,9 @@ export { Ol, olStyle } from './Ol';
 export { Radio } from './Radio';
 export { RequirementBadge } from './RequirementBadge';
 export { Select } from './Select';
+export { Slot } from './Slot';
 export { SupportText } from './SupportText';
 export { Table, Thead, Tbody, Tr, Th, Td, thStyle, tdStyle } from './Table';
 export { Textarea } from './Textarea';
 export { Ul, ulStyle } from './Ul';
-export { UtilityLink, utilityLinkStyle } from './UtilityLink';
+export { UtilityLink, UtilityLinkExternalLinkIcon, utilityLinkStyle } from './UtilityLink';

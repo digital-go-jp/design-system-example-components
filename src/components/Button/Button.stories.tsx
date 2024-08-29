@@ -181,6 +181,46 @@ export const DisabledButtons = {
   },
 };
 
+export const LinkButtons = {
+  render: () => {
+    const href = location.href;
+    return (
+      <div className='flex flex-col gap-8'>
+        <div>
+          <h2 className='mb-6 text-std-32B-5'>ボタンの見た目をしたリンク（Solid Fill）</h2>
+          <div className='flex items-center gap-4'>
+            <Button asChild variant='solid-fill' size='lg'>
+              <a className='text-center' href={href}>
+                ラベル
+              </a>
+            </Button>
+          </div>
+        </div>
+        <div>
+          <h2 className='mb-6 text-std-32B-5'>ボタンの見た目をしたリンク（Outline）</h2>
+          <div className='flex items-center gap-4'>
+            <Button asChild variant='outline' size='lg'>
+              <a className='text-center' href={href}>
+                ラベル
+              </a>
+            </Button>
+          </div>
+        </div>
+        <div>
+          <h2 className='mb-6 text-std-32B-5'>ボタンの見た目をしたリンク（Text）</h2>
+          <div className='flex items-center gap-4'>
+            <Button asChild variant='text' size='lg'>
+              <a className='text-center' href={href}>
+                ラベル
+              </a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  },
+};
+
 export const SolidFillLG: Story = {
   args: {
     variant: 'solid-fill',

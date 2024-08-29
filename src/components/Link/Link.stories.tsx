@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Link } from './Link';
+import { Link, LinkExternalLinkIcon } from './Link';
 
 const meta = {
   title: 'Component/DADS v2/Link',
@@ -31,6 +31,13 @@ export const Example: Story = {
           </Link>
           です。
         </p>
+
+        <Link asChild>
+          <a href='https://www.digital.go.jp' target='_blank' rel='noreferrer'>
+            Slotを使ったリンク
+            <LinkExternalLinkIcon />
+          </a>
+        </Link>
       </div>
     );
   },

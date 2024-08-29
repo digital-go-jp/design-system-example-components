@@ -1,4 +1,5 @@
 import type { ComponentProps } from 'react';
+import { Slot } from '../Slot';
 
 export type BreadcrumbsProps = ComponentProps<'nav'>;
 
@@ -50,10 +51,20 @@ export const breadcrumbLinkStyle = `
   focus-visible:rounded focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:text-blue-1000 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
 `;
 
-export type BreadcrumbLinkProps = ComponentProps<'a'>;
+export type BreadcrumbLinkProps = {
+  className?: string;
+} & (({ asChild?: false } & ComponentProps<'a'>) | { asChild: true; children: React.ReactNode });
 
 export const BreadcrumbLink = (props: BreadcrumbLinkProps) => {
-  const { children, className, ...rest } = props;
+  const { asChild, children, className, ...rest } = props;
+
+  if (asChild) {
+    return (
+      <Slot className={`${breadcrumbLinkStyle} ${className ?? ''}`} {...rest}>
+        {children}
+      </Slot>
+    );
+  }
 
   return (
     <a className={`${breadcrumbLinkStyle} ${className ?? ''}`} {...rest}>
