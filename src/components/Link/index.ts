@@ -1,5 +1,6 @@
 export {
   Link,
+  LinkExternalLinkIcon,
   linkStyle,
   linkDefaultStyle,
   linkVisitedStyle,
