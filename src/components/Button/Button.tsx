@@ -1,4 +1,5 @@
 import { type ComponentProps, forwardRef } from 'react';
+import { Slot } from '..';
 
 export type ButtonVariant = 'solid-fill' | 'outline' | 'text';
 export type ButtonSize = 'lg' | 'md' | 'sm' | 'xs';
@@ -57,13 +58,29 @@ export const buttonSizeStyle: { [key in ButtonSize]: string } = {
   xs: 'relative min-w-18 rounded px-2 py-1.5 text-oln-14B-1 after:absolute after:-inset-x-[calc(1/16*1rem)] after:-inset-y-[calc(9/16*1rem)]',
 };
 
-export type ButtonProps = ComponentProps<'button'> & {
+export type ButtonProps = {
+  className?: string;
   variant?: ButtonVariant;
   size: ButtonSize;
-};
+} & (
+  | ({ asChild?: false } & ComponentProps<'button'>)
+  | { asChild: true; children: React.ReactNode }
+);
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { children, className, onClick, variant, size, ...rest } = props;
+  const { asChild, children, className, variant, size, ...rest } = props;
+
+  const classNames = `${buttonBaseStyle} ${buttonSizeStyle[size]} ${
+    variant ? buttonVariantStyle[variant] : ''
+  } ${className ?? ''}`;
+
+  if (asChild) {
+    return (
+      <Slot className={classNames} {...rest}>
+        {children}
+      </Slot>
+    );
+  }
 
   const handleDisabled = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
@@ -71,10 +88,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) =>
 
   return (
     <button
-      className={`${buttonBaseStyle} ${buttonSizeStyle[size]} ${
-        variant ? buttonVariantStyle[variant] : ''
-      } ${className ?? ''}`}
-      onClick={props['aria-disabled'] ? handleDisabled : onClick}
+      className={classNames}
+      onClick={props['aria-disabled'] ? handleDisabled : props.onClick}
       {...rest}
       ref={ref}
     >

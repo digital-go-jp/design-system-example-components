@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { Link } from '../Link/Link';
 import { BreadcrumbItem, BreadcrumbLink, Breadcrumbs } from './Breadcrumbs';
 
 const meta = {
@@ -14,31 +15,63 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   render: () => {
     return (
-      <Breadcrumbs>
-        <BreadcrumbItem>
-          <BreadcrumbLink href='#' key='home'>
-            ホーム
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink href='#' key='organization'>
-            組織情報
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink href='#' key='a'>
+      <div className='flex flex-col gap-8'>
+        <Breadcrumbs>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='#' key='home'>
+              ホーム
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='#' key='organization'>
+              組織情報
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='#' key='a'>
+              長いページタイトルが入ります長いページタイトルが入ります
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink href='#' key='b'>
+              長いページタイトルが入ります長いページタイトルが入ります
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrent>
             長いページタイトルが入ります長いページタイトルが入ります
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink href='#' key='b'>
+          </BreadcrumbItem>
+        </Breadcrumbs>
+
+        <Breadcrumbs>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild key='home'>
+              <Link href='#'>Slotを使ったホーム</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild key='organization'>
+              <Link href='#'>Slotを使った組織情報</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild key='a'>
+              <Link href='#'>
+                Slotを使った長いページタイトルが入りますSlotを使った長いページタイトルが入ります
+              </Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild key='b'>
+              <Link href='#'>
+                Slotを使った長いページタイトルが入りますSlotを使った長いページタイトルが入ります
+              </Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrent>
             長いページタイトルが入ります長いページタイトルが入ります
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem isCurrent>
-          長いページタイトルが入ります長いページタイトルが入ります
-        </BreadcrumbItem>
-      </Breadcrumbs>
+          </BreadcrumbItem>
+        </Breadcrumbs>
+      </div>
     );
   },
 };
