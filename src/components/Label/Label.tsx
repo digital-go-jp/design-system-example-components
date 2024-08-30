@@ -4,8 +4,8 @@ export type LabelSize = 'lg' | 'md' | 'sm';
 
 export const labelSizeStyle: { [key in LabelSize]: string } = {
   lg: 'text-std-18B-6',
-  md: 'text-dns-17B-2',
-  sm: 'text-dns-16B-2',
+  md: 'text-std-17B-7',
+  sm: 'text-std-16B-7',
 };
 
 export type LabelProps = ComponentProps<'label'> & {
