@@ -16,6 +16,13 @@ export {
   EmergencyBannerButton,
 } from './EmergencyBanner';
 export { ErrorText } from './ErrorText';
+export {
+  HamburgerMenuButton,
+  CloseIcon,
+  CloseWithLabelIcon,
+  HamburgerIcon,
+  HamburgerWithLabelIcon,
+} from './HamburgerMenuButton';
 export { Input } from './Input';
 export { Label } from './Label';
 export {
