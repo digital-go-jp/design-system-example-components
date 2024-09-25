@@ -12,6 +12,7 @@ export const LanguageSelectorMenuItem = forwardRef<
   const { children, className, isCurrent, isCondensed, ...rest } = props;
 
   return (
+    // biome-ignore lint/a11y/useSemanticElements: this role is necessary
     <li role='presentation'>
       <a
         className={`

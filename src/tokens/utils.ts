@@ -2,7 +2,7 @@ export const rgb2hex = (rgb: string): string => {
   const regRgb = /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/;
   const regRgba = /^rgba\((\d+),\s*(\d+),\s*(\d+),\s*(\d+|\d\.\d+)\)$/;
   const isRgb = rgb.match(/,/g)?.length === 2;
-  const matched = isRgb ? rgb.match(regRgb) ?? [] : rgb.match(regRgba) ?? [];
+  const matched = isRgb ? (rgb.match(regRgb) ?? []) : (rgb.match(regRgba) ?? []);
   return (
     matched
       .slice(1)
