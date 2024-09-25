@@ -4,7 +4,7 @@ export {
   AccordionDefaultIconWrapper,
   AccordionDefaultIcon,
 } from './Accordion';
-export { Breadcrumbs, BreadcrumbItem, BreadcrumbLink } from './Breadcrumbs';
+export { Breadcrumbs, BreadcrumbsLabel, BreadcrumbItem, BreadcrumbList } from './Breadcrumbs';
 export { Button, buttonBaseStyle, buttonVariantStyle, buttonSizeStyle } from './Button';
 export { Checkbox } from './Checkbox';
 export { Divider } from './Divider';
