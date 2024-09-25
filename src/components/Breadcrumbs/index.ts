@@ -1,1 +1,7 @@
-export { Breadcrumbs, BreadcrumbItem, BreadcrumbLink } from './Breadcrumbs';
+export {
+  Breadcrumbs,
+  BreadcrumbsLabel,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+} from './Breadcrumbs';

@@ -559,7 +559,7 @@ export const WithPopoverAPI: Story = {
             <LanguageSelectorArrowIcon className='mt-0.5 group-[:has(:popover-open)]:rotate-180' />
           </LanguageSelectorButton>
           <LanguageSelectorMenu
-            className='absolute top-[anchor(--trigger_bottom)] left-[anchor(--trigger_left)] [position-try-options:flip-block] inset-[unset]'
+            className='absolute top-[anchor(--trigger_bottom)] left-[anchor(--trigger_left)] [position-try-fallbacks:flip-block] inset-[unset]'
             id={`${sampleId}-menu`}
             popover='auto'
             ref={menuRef}

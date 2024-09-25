@@ -17,6 +17,7 @@ export const LanguageSelectorMenu = forwardRef<HTMLUListElement, LanguageSelecto
         ${className ?? ''}
       `}
         ref={ref}
+        // biome-ignore lint/a11y/useSemanticElements: there is no HTML element that has role=menu
         role='menu'
         {...rest}
       >

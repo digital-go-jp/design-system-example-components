@@ -4,7 +4,7 @@ export {
   AccordionDefaultIconWrapper,
   AccordionDefaultIcon,
 } from './Accordion';
-export { Breadcrumbs, BreadcrumbItem, BreadcrumbLink } from './Breadcrumbs';
+export { Breadcrumbs, BreadcrumbsLabel, BreadcrumbItem, BreadcrumbList } from './Breadcrumbs';
 export { Button, buttonBaseStyle, buttonVariantStyle, buttonSizeStyle } from './Button';
 export { Checkbox } from './Checkbox';
 export { Divider } from './Divider';
@@ -16,6 +16,13 @@ export {
   EmergencyBannerButton,
 } from './EmergencyBanner';
 export { ErrorText } from './ErrorText';
+export {
+  HamburgerMenuButton,
+  CloseIcon,
+  CloseWithLabelIcon,
+  HamburgerIcon,
+  HamburgerWithLabelIcon,
+} from './HamburgerMenuButton';
 export { Input } from './Input';
 export { Label } from './Label';
 export {
