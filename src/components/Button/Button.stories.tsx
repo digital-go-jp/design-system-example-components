@@ -118,9 +118,10 @@ export const DisabledButtons = {
         <div>
           <h2 className='mb-4 text-std-32B-5'>Disabledの作例（aria-disabled 属性を使用）</h2>
           <p className='mb-8'>
-            ※ ボタンの無効化にはアクセシビリティ上の問題から<code>disabled</code>属性ではなく
+            ※ ボタンの無効化に<code>disabled</code>
+            コンテンツ属性ではなく、キーボード操作のタブフォーカスでもアクセスできる
             <code>aria-disabled</code>
-            属性の使用を推奨しています。
+            を使用しています。
             <br />
             詳しくはデジタル庁デザインシステム専用サイトの
             <Link

@@ -6,7 +6,7 @@ export const LanguageSelector = (props: LanguageSelectorProps) => {
   const { children, className, ...rest } = props;
 
   return (
-    <div className='group relative' {...rest}>
+    <div className={`group relative ${className ?? ''}`} {...rest}>
       {children}
     </div>
   );
