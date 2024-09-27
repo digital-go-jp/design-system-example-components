@@ -41,8 +41,8 @@ export const Playground: Story = {
         </EmergencyBannerHeading>
         <EmergencyBannerBody>
           <div className='flex flex-col gap-2 desktop:gap-4'>
-            <p className='text-std-16N-7'>年月日</p>
-            <p className='text-std-16N-7 desktop:text-std-20N-5'>バナーデスクリプション</p>
+            <p className='text-std-16N-170'>年月日</p>
+            <p className='text-std-16N-170 desktop:text-std-20N-150'>バナーデスクリプション</p>
           </div>
           <EmergencyBannerButton>ラベル</EmergencyBannerButton>
         </EmergencyBannerBody>
@@ -61,10 +61,10 @@ export const Example = {
           </EmergencyBannerHeading>
           <EmergencyBannerBody>
             <div className='flex flex-col gap-2 desktop:gap-4'>
-              <p className='text-std-16N-7'>
+              <p className='text-std-16N-170'>
                 <time dateTime='2024-01-01T06:00'>2024年1月1日 06:00更新</time>
               </p>
-              <p className='text-std-16N-7 desktop:text-std-20N-5'>
+              <p className='text-std-16N-170 desktop:text-std-20N-150'>
                 1時23分に○○地区に対して避難準備情報が発令されました。お年寄りの方等避難に時間がかかる方は、直ちに指定避難所へ避難してください。
               </p>
             </div>

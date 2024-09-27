@@ -29,10 +29,10 @@ export const Example: Story = {
             ref={dialogRef}
           >
             <DialogBody>
-              <h2 className='text-std-24B-5 desktop:text-std-28B-5' id='example-heading1'>
+              <h2 className='text-std-24B-150 desktop:text-std-28B-150' id='example-heading1'>
                 ダイアログタイトル
               </h2>
-              <p className='text-std-16N-7'>
+              <p className='text-std-16N-170'>
                 ダイアログの補助テキストが入ります。ダイアログの補助テキストが入ります。
               </p>
               <div className='mt-2 flex w-full max-w-xs flex-col gap-4 desktop:mt-6'>
@@ -81,10 +81,10 @@ export const DialogWithHorizontalActions: Story = {
             ref={dialogRef}
           >
             <DialogBody>
-              <h2 className='text-std-24B-5 desktop:text-std-28B-5' id='example-heading2'>
+              <h2 className='text-std-24B-150 desktop:text-std-28B-150' id='example-heading2'>
                 ダイアログタイトル
               </h2>
-              <p className='text-std-16N-7'>
+              <p className='text-std-16N-170'>
                 ダイアログの補助テキストが入ります。ダイアログの補助テキストが入ります。ダイアログの補助テキストが入ります。ダイアログの補助テキストが入ります。ダイアログの補助テキストが入ります。ダイアログの補助テキストが入ります。
               </p>
               <div className='mt-2 flex w-full flex-col gap-4 desktop:mt-6 desktop:flex-row-reverse'>
@@ -139,10 +139,10 @@ export const AlertDialog: Story = {
 
           <Dialog aria-labelledby='alertdialog-heading' ref={dialogRef} role='alertdialog'>
             <DialogBody>
-              <h2 className='text-std-24B-5 desktop:text-std-28B-5' id='alertdialog-heading'>
+              <h2 className='text-std-24B-150 desktop:text-std-28B-150' id='alertdialog-heading'>
                 アラートダイアログタイトル
               </h2>
-              <p className='text-std-16N-7'>
+              <p className='text-std-16N-170'>
                 これはアラートダイアログの例です。ユーザーにとって緊急性の高い通知内容が入ります。
               </p>
               <div className='mt-2 flex w-full flex-col gap-4 desktop:mt-6 desktop:flex-row-reverse'>

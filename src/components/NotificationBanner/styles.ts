@@ -8,7 +8,7 @@ export const bannerStyleClasses: { [key in NotifiationBannerStyle]: string } = {
 
 export const bannerTypeClasses: { [key in NotifiationBannerType]: string } = {
   info1: 'text-blue-900 [--color-chip-color:currentColor]',
-  info2: 'text-solid-grey-536 [--color-chip-color:currentColor]',
+  info2: 'text-solid-gray-536 [--color-chip-color:currentColor]',
   warning: 'text-warning-yellow-2 [--color-chip-color:theme(colors.yellow.400)]',
   error: 'text-error-1 [--color-chip-color:currentColor]',
   success: 'text-success-2 [--color-chip-color:currentColor]',

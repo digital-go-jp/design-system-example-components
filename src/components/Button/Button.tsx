@@ -19,8 +19,8 @@ export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
     hover:underline
     active:bg-blue-1200
     active:underline
-    aria-disabled:bg-solid-grey-300
-    aria-disabled:text-solid-grey-50
+    aria-disabled:bg-solid-gray-300
+    aria-disabled:text-solid-gray-50
   `,
   outline: `
     bg-white
@@ -33,7 +33,7 @@ export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
     active:text-blue-1200
     active:underline
     aria-disabled:bg-white
-    aria-disabled:text-solid-grey-300
+    aria-disabled:text-solid-gray-300
   `,
   text: `
     bg-transparent
@@ -47,15 +47,15 @@ export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
     focus-visible:bg-yellow-300
     aria-disabled:bg-transparent
     aria-disabled:focus-visible:bg-yellow-300
-    aria-disabled:text-solid-grey-300
+    aria-disabled:text-solid-gray-300
   `,
 };
 
 export const buttonSizeStyle: { [key in ButtonSize]: string } = {
-  lg: 'min-w-[calc(136/16*1rem)] rounded-lg p-4 text-oln-16B-1 leading-snug',
-  md: 'min-w-24 rounded-lg px-4 py-3 text-oln-16B-1 leading-snug',
-  sm: 'relative min-w-20 rounded-md px-3 py-1.5 text-oln-16B-1 leading-snug after:absolute after:-inset-x-[calc(1/16*1rem)] after:-inset-y-[calc(5/16*1rem)]',
-  xs: 'relative min-w-18 rounded px-2 py-1.5 text-oln-14B-1 after:absolute after:-inset-x-[calc(1/16*1rem)] after:-inset-y-[calc(9/16*1rem)]',
+  lg: 'min-w-[calc(136/16*1rem)] rounded-lg p-4 text-oln-16B-100 leading-snug',
+  md: 'min-w-24 rounded-lg px-4 py-3 text-oln-16B-100 leading-snug',
+  sm: 'relative min-w-20 rounded-md px-3 py-1.5 text-oln-16B-100 leading-snug after:absolute after:-inset-x-[calc(1/16*1rem)] after:-inset-y-[calc(5/16*1rem)]',
+  xs: 'relative min-w-18 rounded px-2 py-1.5 text-oln-14B-100 after:absolute after:-inset-x-[calc(1/16*1rem)] after:-inset-y-[calc(9/16*1rem)]',
 };
 
 export type ButtonProps = {

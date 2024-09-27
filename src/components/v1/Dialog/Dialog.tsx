@@ -29,7 +29,7 @@ export const DialogBody = (props: DialogBodyProps) => {
   const { children, className, ...rest } = props;
   return (
     <div
-      className={`flex flex-col items-center gap-4 rounded-xl border border-solid-grey-200 bg-white p-6 desktop:p-10 ${
+      className={`flex flex-col items-center gap-4 rounded-xl border border-solid-gray-200 bg-white p-6 desktop:p-10 ${
         className ?? ''
       }`}
       onClick={(e) => {
