@@ -129,7 +129,7 @@ export const WithSquareIcon: Story = {
             </AccordionSummary>
             <div className='px-1 py-2 desktop:px-2 desktop:py-4'>
               <h4
-                className={`md:text-std-20B-6 mb-4 ${focusVisibleStyles}`}
+                className={`md:text-std-20B-160 mb-4 ${focusVisibleStyles}`}
                 ref={focusTargetRef1}
                 tabIndex={-1}
               >

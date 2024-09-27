@@ -3,131 +3,116 @@ import { Divider } from '../';
 export const Typography = () => {
   return (
     <section className='flex flex-col gap-8'>
-      <h2 className='text-std-28B-5'>Typography</h2>
+      <h2 className='text-std-28B-150'>Typography</h2>
 
       <div className='flex flex-col gap-4'>
-        <h3 className='text-std-24B-5'>Display (Dsp)</h3>
+        <h3 className='text-std-24B-150'>Display (Dsp)</h3>
         <div className='flex flex-col gap-2'>
-          <p className='text-dsp-64N-4'>dsp-64N-4 デザインシステム</p>
-          <p className='text-dsp-57N-4'>dsp-57N-4 デザインシステム</p>
-          <p className='text-dsp-48N-4'>dsp-48N-4 デザインシステム</p>
+          <p className='text-dsp-64N-140'>dsp-64N-140 デザインシステム</p>
+          <p className='text-dsp-57N-140'>dsp-57N-140 デザインシステム</p>
+          <p className='text-dsp-48N-140'>dsp-48N-140 デザインシステム</p>
         </div>
 
         <Divider />
 
-        <h3 className='text-std-24B-5 mb-4'>Standard (Std) </h3>
+        <h3 className='text-std-24B-150 mb-4'>Standard (Std) </h3>
         <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Bold</h4>
-          <p className='text-std-45B-4'>std-45B-4 デザインシステム</p>
-          <p className='text-std-36B-4'>std-36B-4 デザインシステム</p>
-          <p className='text-std-32B-5'>std-32B-5 デザインシステム</p>
-          <p className='text-std-28B-5'>std-28B-5 デザインシステム</p>
-          <p className='text-std-24B-5'>std-24B-5 デザインシステム</p>
-          <p className='text-std-22B-5'>std-22B-5 デザインシステム</p>
-          <p className='text-std-20B-6'>std-20B-6 デザインシステム</p>
-          <p className='text-std-18B-6'>std-18B-6 デザインシステム</p>
-          <p className='text-std-17B-7'>std-17B-7 デザインシステム</p>
-          <p className='text-std-16B-7'>std-16B-7 デザインシステム</p>
+          <h4 className='text-std-20B-160 my-4'>Bold</h4>
+          <p className='text-std-45B-140'>std-45B-140 デザインシステム</p>
+          <p className='text-std-36B-140'>std-36B-140 デザインシステム</p>
+          <p className='text-std-32B-150'>std-32B-150 デザインシステム</p>
+          <p className='text-std-28B-150'>std-28B-150 デザインシステム</p>
+          <p className='text-std-24B-150'>std-24B-150 デザインシステム</p>
+          <p className='text-std-22B-150'>std-22B-150 デザインシステム</p>
+          <p className='text-std-20B-160'>std-20B-160 デザインシステム</p>
+          <p className='text-std-18B-160'>std-18B-160 デザインシステム</p>
+          <p className='text-std-17B-170'>std-17B-170 デザインシステム</p>
+          <p className='text-std-16B-170'>std-16B-170 デザインシステム</p>
+          <p className='text-std-16B-175'>std-16B-175 デザインシステム</p>
         </div>
 
         <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Medium</h4>
-          <p className='text-std-32M-5'>std-32M-5 デザインシステム</p>
-          <p className='text-std-28M-5'>std-28M-5 デザインシステム</p>
-          <p className='text-std-24M-5'>std-24M-5 デザインシステム</p>
-          <p className='text-std-20M-5'>std-20M-5 デザインシステム</p>
-          <p className='text-std-17M-7'>std-17M-7 デザインシステム</p>
-          <p className='text-std-16M-7'>std-16M-7 デザインシステム</p>
-        </div>
-
-        <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Normal</h4>
-          <p className='text-std-45N-4'>std-45N-4 デザインシステム</p>
-          <p className='text-std-36N-4'>std-36N-4 デザインシステム</p>
-          <p className='text-std-32N-5'>std-32N-5 デザインシステム</p>
-          <p className='text-std-28N-5'>std-28N-5 デザインシステム</p>
-          <p className='text-std-26N-5'>std-26N-5 デザインシステム</p>
-          <p className='text-std-24N-5'>std-24N-5 デザインシステム</p>
-          <p className='text-std-22N-5'>std-22N-5 デザインシステム</p>
-          <p className='text-std-20N-5'>std-20N-5 デザインシステム</p>
-          <p className='text-std-18N-6'>std-18N-6 デザインシステム</p>
-          <p className='text-std-17N-7'>std-17N-7 デザインシステム</p>
-          <p className='text-std-16N-7'>std-16N-7 デザインシステム</p>
+          <h4 className='text-std-20B-160 my-4'>Normal</h4>
+          <p className='text-std-45N-140'>std-45N-140 デザインシステム</p>
+          <p className='text-std-36N-140'>std-36N-140 デザインシステム</p>
+          <p className='text-std-32N-150'>std-32N-150 デザインシステム</p>
+          <p className='text-std-28N-150'>std-28N-150 デザインシステム</p>
+          <p className='text-std-26N-150'>std-26N-150 デザインシステム</p>
+          <p className='text-std-24N-150'>std-24N-150 デザインシステム</p>
+          <p className='text-std-22N-150'>std-22N-150 デザインシステム</p>
+          <p className='text-std-20N-150'>std-20N-150 デザインシステム</p>
+          <p className='text-std-18N-160'>std-18N-160 デザインシステム</p>
+          <p className='text-std-17N-170'>std-17N-170 デザインシステム</p>
+          <p className='text-std-16N-170'>std-16N-170 デザインシステム</p>
+          <p className='text-std-16N-175'>std-16N-175 デザインシステム</p>
         </div>
 
         <Divider />
 
-        <h3 className='text-std-24B-5 mb-4'>Dense (Dns) </h3>
+        <h3 className='text-std-24B-150 mb-4'>Dense (Dns) </h3>
         <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Bold</h4>
-          <p className='text-dns-17B-3'>dns-17B-3 デザインシステム</p>
-          <p className='text-dns-17B-2'>dns-17B-2 デザインシステム</p>
-          <p className='text-dns-16B-3'>dns-16B-3 デザインシステム</p>
-          <p className='text-dns-16B-2'>dns-16B-2 デザインシステム</p>
-          <p className='text-dns-14B-3'>dns-14B-3 デザインシステム</p>
-          <p className='text-dns-14B-2'>dns-14B-2 デザインシステム</p>
+          <h4 className='text-std-20B-160 my-4'>Bold</h4>
+          <p className='text-dns-17B-130'>dns-17B-130 デザインシステム</p>
+          <p className='text-dns-17B-120'>dns-17B-120 デザインシステム</p>
+          <p className='text-dns-16B-130'>dns-16B-130 デザインシステム</p>
+          <p className='text-dns-16B-120'>dns-16B-120 デザインシステム</p>
+          <p className='text-dns-14B-130'>dns-14B-130 デザインシステム</p>
+          <p className='text-dns-14B-120'>dns-14B-120 デザインシステム</p>
         </div>
 
         <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Normal</h4>
-          <p className='text-dns-17N-3'>dns-17N-3 デザインシステム</p>
-          <p className='text-dns-17N-2'>dns-17N-2 デザインシステム</p>
-          <p className='text-dns-16N-3'>dns-16N-3 デザインシステム</p>
-          <p className='text-dns-16N-2'>dns-16N-2 デザインシステム</p>
-          <p className='text-dns-14N-3'>dns-14N-3 デザインシステム</p>
-          <p className='text-dns-14N-2'>dns-14N-2 デザインシステム</p>
-        </div>
-
-        <Divider />
-
-        <h3 className='text-std-24B-5 mb-4'>Oneline (Oln) </h3>
-        <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Bold</h4>
-          <p className='text-oln-17B-1'>oln-17B-2 デザインシステム</p>
-          <p className='text-oln-16B-1'>oln-16B-2 デザインシステム</p>
-          <p className='text-oln-14B-1'>oln-14B-2 デザインシステム</p>
-        </div>
-
-        <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Medium</h4>
-          <p className='text-oln-17M-1'>oln-17M-2 デザインシステム</p>
-          <p className='text-oln-16M-1'>oln-16M-2 デザインシステム</p>
-          <p className='text-oln-14M-1'>oln-14M-2 デザインシステム</p>
-        </div>
-
-        <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Normal</h4>
-          <p className='text-oln-17N-1'>oln-17N-2 デザインシステム</p>
-          <p className='text-oln-16N-1'>oln-16N-2 デザインシステム</p>
-          <p className='text-oln-14N-1'>oln-14N-2 デザインシステム</p>
+          <h4 className='text-std-20B-160 my-4'>Normal</h4>
+          <p className='text-dns-17N-130'>dns-17N-130 デザインシステム</p>
+          <p className='text-dns-17N-120'>dns-17N-120 デザインシステム</p>
+          <p className='text-dns-16N-130'>dns-16N-130 デザインシステム</p>
+          <p className='text-dns-16N-120'>dns-16N-120 デザインシステム</p>
+          <p className='text-dns-14N-130'>dns-14N-130 デザインシステム</p>
+          <p className='text-dns-14N-120'>dns-14N-120 デザインシステム</p>
         </div>
 
         <Divider />
 
-        <h3 className='text-std-24B-5 mb-4'>Mono (Mono) </h3>
+        <h3 className='text-std-24B-150 mb-4'>Oneline (Oln) </h3>
         <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Bold</h4>
-          <p className='font-mono text-mono-17B-5'>
-            mono-17B-5 &lt;meta charset=&quot;UTF-8&quot;&gt;
+          <h4 className='text-std-20B-160 my-4'>Bold</h4>
+          <p className='text-oln-17B-100'>oln-17B-100 デザインシステム</p>
+          <p className='text-oln-16B-100'>oln-16B-100 デザインシステム</p>
+          <p className='text-oln-14B-100'>oln-14B-100 デザインシステム</p>
+        </div>
+
+        <div className='flex flex-col gap-2'>
+          <h4 className='text-std-20B-160 my-4'>Normal</h4>
+          <p className='text-oln-17N-100'>oln-17N-100 デザインシステム</p>
+          <p className='text-oln-16N-100'>oln-16N-100 デザインシステム</p>
+          <p className='text-oln-14N-100'>oln-14N-100 デザインシステム</p>
+        </div>
+
+        <Divider />
+
+        <h3 className='text-std-24B-150 mb-4'>Mono (Mono) </h3>
+        <div className='flex flex-col gap-2'>
+          <h4 className='text-std-20B-160 my-4'>Bold</h4>
+          <p className='font-mono text-mono-17B-150'>
+            mono-17B-150 &lt;meta charset=&quot;UTF-8&quot;&gt;
           </p>
-          <p className='font-mono text-mono-16B-5'>
-            mono-16B-5 &lt;meta charset=&quot;UTF-8&quot;&gt;
+          <p className='font-mono text-mono-16B-150'>
+            mono-16B-105 &lt;meta charset=&quot;UTF-8&quot;&gt;
           </p>
-          <p className='font-mono text-mono-14B-5'>
-            mono-14B-5 &lt;meta charset=&quot;UTF-8&quot;&gt;
+          <p className='font-mono text-mono-14B-150'>
+            mono-14B-150 &lt;meta charset=&quot;UTF-8&quot;&gt;
           </p>
         </div>
 
         <div className='flex flex-col gap-2'>
-          <h4 className='text-std-20B-6 my-4'>Normal</h4>
-          <p className='font-mono text-mono-17N-5'>
-            mono-17B-5 &lt;meta charset=&quot;UTF-8&quot;&gt;
+          <h4 className='text-std-20B-160 my-4'>Normal</h4>
+          <p className='font-mono text-mono-17N-150'>
+            mono-17N-150 &lt;meta charset=&quot;UTF-8&quot;&gt;
           </p>
-          <p className='font-mono text-mono-16N-5'>
-            mono-16B-5 &lt;meta charset=&quot;UTF-8&quot;&gt;
+          <p className='font-mono text-mono-16N-150'>
+            mono-16N-150 &lt;meta charset=&quot;UTF-8&quot;&gt;
           </p>
-          <p className='font-mono text-mono-14N-5'>
-            mono-14B-5 &lt;meta charset=&quot;UTF-8&quot;&gt;
+          <p className='font-mono text-mono-14N-150'>
+            mono-14N-150 &lt;meta charset=&quot;UTF-8&quot;&gt;
           </p>
         </div>
       </div>

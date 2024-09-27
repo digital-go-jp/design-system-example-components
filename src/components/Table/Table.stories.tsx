@@ -20,22 +20,22 @@ export const FirstRowAsHeaderCell: Story = {
           <caption className='p-4 font-bold'>1行目が見出しセル</caption>
           <Thead>
             <Tr>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
             </Tr>
@@ -80,7 +80,7 @@ export const FirstColumnAsHeaderCell: Story = {
           <caption className='p-4 font-bold'>1列目が見出しセル</caption>
           <Tbody>
             <Tr>
-              <Th className='border-black bg-solid-grey-50' scope='row'>
+              <Th className='border-black bg-solid-gray-50' scope='row'>
                 ラベル
               </Th>
               <Td>データ</Td>
@@ -90,7 +90,7 @@ export const FirstColumnAsHeaderCell: Story = {
               <Td>データ</Td>
             </Tr>
             <Tr>
-              <Th className='border-black bg-solid-grey-50' scope='row'>
+              <Th className='border-black bg-solid-gray-50' scope='row'>
                 ラベル
               </Th>
               <Td>データ</Td>
@@ -100,7 +100,7 @@ export const FirstColumnAsHeaderCell: Story = {
               <Td>データ</Td>
             </Tr>
             <Tr>
-              <Th className='border-black bg-solid-grey-50' scope='row'>
+              <Th className='border-black bg-solid-gray-50' scope='row'>
                 ラベル
               </Th>
               <Td>データ</Td>
@@ -110,7 +110,7 @@ export const FirstColumnAsHeaderCell: Story = {
               <Td>データ</Td>
             </Tr>
             <Tr>
-              <Th className='border-black bg-solid-grey-50' scope='row'>
+              <Th className='border-black bg-solid-gray-50' scope='row'>
                 ラベル
               </Th>
               <Td>データ</Td>
@@ -134,27 +134,27 @@ export const FirstRowAndColumnAsHeaderCell: Story = {
           <caption className='p-4 font-bold'>1行目と1列目の両方が見出しセル</caption>
           <Thead>
             <Tr>
-              <Td className='border-r bg-solid-grey-50'></Td>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Td className='border-r bg-solid-gray-50'></Td>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
             </Tr>
           </Thead>
           <Tbody className=' [&_th]:border-r'>
             <Tr>
-              <Th className='bg-solid-grey-50' scope='row'>
+              <Th className='bg-solid-gray-50' scope='row'>
                 ラベル
               </Th>
               <Td>データ</Td>
@@ -164,7 +164,7 @@ export const FirstRowAndColumnAsHeaderCell: Story = {
               <Td>データ</Td>
             </Tr>
             <Tr>
-              <Th className='bg-solid-grey-50' scope='row'>
+              <Th className='bg-solid-gray-50' scope='row'>
                 ラベル
               </Th>
               <Td>データ</Td>
@@ -174,7 +174,7 @@ export const FirstRowAndColumnAsHeaderCell: Story = {
               <Td>データ</Td>
             </Tr>
             <Tr>
-              <Th className='bg-solid-grey-50' scope='row'>
+              <Th className='bg-solid-gray-50' scope='row'>
                 ラベル
               </Th>
               <Td>データ</Td>
@@ -198,22 +198,22 @@ export const CondensedTable: Story = {
           <caption className='p-4 font-bold'>セルの高さが狭いテーブル</caption>
           <Thead>
             <Tr>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
             </Tr>
@@ -258,22 +258,22 @@ export const BorderOnRowAndColumn: Story = {
           <caption className='p-4 font-bold'>行と列に罫線</caption>
           <Thead>
             <Tr>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
             </Tr>
@@ -314,36 +314,36 @@ export const TableHeaderWithColspan: Story = {
   render: () => {
     return (
       <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max border border-solid-grey-420'>
+        <Table className='w-full min-w-max border border-solid-gray-420'>
           <caption className='p-4 font-bold'>
             テーブルヘッダーがcolspanで列結合され、階層化されたパターン
           </caption>
           <Thead className='[&_th]:border-r'>
             <Tr>
-              <Th className='bg-solid-grey-50' colSpan={3} scope='col'>
+              <Th className='bg-solid-gray-50' colSpan={3} scope='col'>
                 親ラベル
               </Th>
-              <Th className='bg-solid-grey-50' colSpan={3} scope='col'>
+              <Th className='bg-solid-gray-50' colSpan={3} scope='col'>
                 親ラベル
               </Th>
             </Tr>
             <Tr>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 子ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 子ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 子ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 子ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 子ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='col'>
+              <Th className='bg-solid-gray-50' scope='col'>
                 子ラベル
               </Th>
             </Tr>
@@ -384,14 +384,14 @@ export const TableHeaderWithRowspan: Story = {
   render: () => {
     return (
       <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max border border-solid-grey-420 [&_th]:border-r'>
+        <Table className='w-full min-w-max border border-solid-gray-420 [&_th]:border-r'>
           <caption className='p-4 font-bold'>1列目が見出しセル</caption>
           <Tbody>
             <Tr>
-              <Th className='bg-solid-grey-50' rowSpan={2} scope='row'>
+              <Th className='bg-solid-gray-50' rowSpan={2} scope='row'>
                 親ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='row'>
+              <Th className='bg-solid-gray-50' scope='row'>
                 子ラベル
               </Th>
               <Td>データ</Td>
@@ -400,7 +400,7 @@ export const TableHeaderWithRowspan: Story = {
               <Td>データ</Td>
             </Tr>
             <Tr>
-              <Th className='bg-solid-grey-50' scope='row'>
+              <Th className='bg-solid-gray-50' scope='row'>
                 子ラベル
               </Th>
               <Td>データ</Td>
@@ -409,10 +409,10 @@ export const TableHeaderWithRowspan: Story = {
               <Td>データ</Td>
             </Tr>
             <Tr>
-              <Th className='bg-solid-grey-50' rowSpan={2} scope='row'>
+              <Th className='bg-solid-gray-50' rowSpan={2} scope='row'>
                 親ラベル
               </Th>
-              <Th className='bg-solid-grey-50' scope='row'>
+              <Th className='bg-solid-gray-50' scope='row'>
                 子ラベル
               </Th>
               <Td>データ</Td>
@@ -421,7 +421,7 @@ export const TableHeaderWithRowspan: Story = {
               <Td>データ</Td>
             </Tr>
             <Tr>
-              <Th className='bg-solid-grey-50' scope='row'>
+              <Th className='bg-solid-gray-50' scope='row'>
                 子ラベル
               </Th>
               <Td>データ</Td>
@@ -444,22 +444,22 @@ export const StripeTable: Story = {
           <caption className='p-4 font-bold'>背景色ストライプ</caption>
           <Thead>
             <Tr>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 ラベル
               </Th>
             </Tr>
@@ -528,13 +528,13 @@ export const VerticalAlignedTextInCell: Story = {
           <caption className='p-4 font-bold'>セル内でのテキスト上揃え</caption>
           <Thead>
             <Tr>
-              <Th className='w-36 border-black bg-solid-grey-50 md:w-64' scope='col'>
+              <Th className='w-36 border-black bg-solid-gray-50 md:w-64' scope='col'>
                 項目
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 例
               </Th>
-              <Th className='border-black bg-solid-grey-50' scope='col'>
+              <Th className='border-black bg-solid-gray-50' scope='col'>
                 説明
               </Th>
             </Tr>
