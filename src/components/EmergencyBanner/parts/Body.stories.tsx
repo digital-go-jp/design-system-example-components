@@ -23,8 +23,8 @@ export const Example: Story = {
     return (
       <EmergencyBannerBody>
         <div className='flex flex-col gap-2 desktop:gap-4'>
-          <p className='text-std-16N-7'>年月日</p>
-          <p className='text-std-16N-7 desktop:text-std-20N-5'>バナーデスクリプション</p>
+          <p className='text-std-16N-170'>年月日</p>
+          <p className='text-std-16N-170 desktop:text-std-20N-150'>バナーデスクリプション</p>
         </div>
       </EmergencyBannerBody>
     );

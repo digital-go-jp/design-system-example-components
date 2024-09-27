@@ -10,7 +10,7 @@ export const EmergencyBannerWithLink = (props: Props) => {
     <a
       className={`
         group ${bannerBodyStyle}
-        hover:bg-solid-grey-50 hover:border-warning-orange-2
+        hover:bg-solid-gray-50 hover:border-warning-orange-2
         [&:hover_*]:underline [&:hover_*]:underline-offset-[calc(3/16*1rem)]
         focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
       `}

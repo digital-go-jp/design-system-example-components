@@ -13,8 +13,8 @@ type Story = StoryObj<typeof meta>;
 export const Introduction: Story = {
   render: () => {
     return (
-      <div className='p-4 text-std-17N-7 md:p-8'>
-        <h1 className='text-std-28B-5 mt-0 mb-8 md:text-std-45B-4 md:mb-12'>
+      <div className='p-4 text-std-17N-170 md:p-8'>
+        <h1 className='text-std-28B-150 mt-0 mb-8 md:text-std-45B-140 md:mb-12'>
           React サンプルコンポーネント
         </h1>
         <p className='my-4'>
@@ -23,8 +23,8 @@ export const Introduction: Story = {
           </Link>
           のコンポーネントの一部をReact / Tailwind CSSベースで実装したサンプル集です。
         </p>
-        <h2 className='text-std-24B-5 md:text-std-32B-5 my-8 md:my-10'>コンセプト</h2>
-        <h3 className='text-std-22B-5 md:text-std-24B-5 my-6 md:my-8'>
+        <h2 className='text-std-24B-150 md:text-std-32B-150 my-8 md:my-10'>コンセプト</h2>
+        <h3 className='text-std-22B-150 md:text-std-24B-150 my-6 md:my-8'>
           アクセシビリティファースト
         </h3>
         <p className='my-4'>アクセシビリティを最優先事項として位置付けています。</p>
@@ -38,7 +38,9 @@ export const Introduction: Story = {
         <p className='my-4'>
           これにより、個々のコンポーネントはアクセシビリティが担保されていますが、それらを使うことでアクセシビリティチェックが不要になるわけではありません。コンポーネントを組み合わせたUIや画面全体のアクセシビリティチェックは必ず実施してください。
         </p>
-        <h3 className='text-std-22B-5 md:text-std-24B-5 my-6 md:my-8'>HTML ネイティブ機能の活用</h3>
+        <h3 className='text-std-22B-150 md:text-std-24B-150 my-6 md:my-8'>
+          HTML ネイティブ機能の活用
+        </h3>
         <p className='my-4'>
           保守性の観点から、可能な限りHTMLネイティブの機能を使用することを重視して開発をしています。
         </p>
@@ -85,7 +87,7 @@ export const Introduction: Story = {
           を参考にして実装しています。
         </p>
 
-        <h2 className='text-std-24B-5 md:text-std-32B-5 my-8 md:my-10'>
+        <h2 className='text-std-24B-150 md:text-std-32B-150 my-8 md:my-10'>
           コンポーネントのバージョンについて
         </h2>
         <p className='my-4'>
@@ -96,7 +98,7 @@ export const Introduction: Story = {
           v1のコンポーネントは非推奨となっています。それらのコンポーネントのガイドラインとデザインデータがv2に追加され次第、順次DADS
           v2に置き換えていく予定です。
         </p>
-        <h2 className='text-std-24B-5 md:text-std-32B-5 my-8 md:my-10'>検証済み環境</h2>
+        <h2 className='text-std-24B-150 md:text-std-32B-150 my-8 md:my-10'>検証済み環境</h2>
         <p className='my-4'>以下のブラウザの最新版で動作確認を行なっています。</p>
         <Ul className='my-4 md:my-6 space-y-2'>
           <li>Google Chrome</li>
@@ -111,7 +113,7 @@ export const Introduction: Story = {
           <li>TalkBack</li>
           <li>Mac VoiceOver</li>
         </Ul>
-        <h2 className='text-std-24B-5 md:text-std-32B-5 my-8 md:my-10'>リソース</h2>
+        <h2 className='text-std-24B-150 md:text-std-32B-150 my-8 md:my-10'>リソース</h2>
         <p className='my-4'>
           デジタル庁が提供する、デジタル庁デザインシステムのガイドラインやデザインデータなど、連携可能な各種リソースです。用途の必要性に応じてあわせてご利用ください。
         </p>
@@ -135,7 +137,7 @@ export const Introduction: Story = {
             </Link>
           </li>
         </Ul>
-        <h2 className='text-std-24B-5 md:text-std-32B-5 my-8 md:my-10'>
+        <h2 className='text-std-24B-150 md:text-std-32B-150 my-8 md:my-10'>
           不具合報告・機能要望について
         </h2>
         <p className='my-4'>

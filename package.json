@@ -1,6 +1,6 @@
 {
   "name": "@digital-go-jp/design-system-example-components",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "type": "module",
   "main": "dist/index.cjs.js",
   "typings": "dist/index.d.ts",
@@ -39,7 +39,7 @@
     "storybook:test": "test-storybook"
   },
   "dependencies": {
-    "@digital-go-jp/tailwind-theme-plugin": "^0.1.16",
+    "@digital-go-jp/tailwind-theme-plugin": "^0.1.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.13"

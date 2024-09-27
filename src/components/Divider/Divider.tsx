@@ -1,10 +1,10 @@
 import type { ComponentProps } from 'react';
 
-export type DividerColor = 'grey-420' | 'grey-536' | 'black';
+export type DividerColor = 'gray-420' | 'gray-536' | 'black';
 
 export const DividerColorStyle: { [key in DividerColor]: string } = {
-  'grey-420': 'border-solid-grey-420',
-  'grey-536': 'border-solid-grey-536',
+  'gray-420': 'border-solid-gray-420',
+  'gray-536': 'border-solid-gray-536',
   black: 'border-black',
 };
 
@@ -13,7 +13,7 @@ export type DividerProps = ComponentProps<'hr'> & {
 };
 
 export const Divider = (props: DividerProps) => {
-  const { className, color = 'grey-420', ...rest } = props;
+  const { className, color = 'gray-420', ...rest } = props;
 
   return <hr className={`${DividerColorStyle[color]} ${className ?? ''}`} {...rest}></hr>;
 };

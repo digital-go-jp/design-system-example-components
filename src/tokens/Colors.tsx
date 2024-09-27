@@ -16,7 +16,7 @@ export const Colors = () => {
     <>
       <section className='flex flex-col gap-8'>
         <div>
-          <h2 className='text-std-28B-5'>Color 2.0</h2>
+          <h2 className='text-std-28B-150'>Color 2.0</h2>
           <p className='my-4'>
             例では<code>bg-*</code>を利用していますが、<code>text-*</code>や<code>fill-*</code>、
             <code>border-*</code>等、色関連は全てに適用されます。
@@ -204,20 +204,20 @@ export const Colors = () => {
         />
         <ColorItem
           colorClasses={[
-            'bg-solid-grey-50',
-            'bg-solid-grey-100',
-            'bg-solid-grey-200',
-            'bg-solid-grey-300',
-            'bg-solid-grey-400',
-            'bg-solid-grey-420',
-            'bg-solid-grey-500',
-            'bg-solid-grey-536',
-            'bg-solid-grey-600',
-            'bg-solid-grey-700',
-            'bg-solid-grey-800',
-            'bg-solid-grey-900',
+            'bg-solid-gray-50',
+            'bg-solid-gray-100',
+            'bg-solid-gray-200',
+            'bg-solid-gray-300',
+            'bg-solid-gray-400',
+            'bg-solid-gray-420',
+            'bg-solid-gray-500',
+            'bg-solid-gray-536',
+            'bg-solid-gray-600',
+            'bg-solid-gray-700',
+            'bg-solid-gray-800',
+            'bg-solid-gray-900',
           ]}
-          title='Solid Grey'
+          title='Solid Gray'
         />
         <ColorItem colorClasses={['bg-success-1', 'bg-success-2']} title='Success' />
         <ColorItem colorClasses={['bg-error-1', 'bg-error-2']} title='Error' />
@@ -237,7 +237,7 @@ export const Colors = () => {
 
       <section className='flex flex-col gap-8'>
         <div>
-          <h2 className='text-std-28B-5'>Color</h2>
+          <h2 className='text-std-28B-150'>Color</h2>
           <p className='my-4'>旧カラーです。</p>
         </div>
         <ColorItem

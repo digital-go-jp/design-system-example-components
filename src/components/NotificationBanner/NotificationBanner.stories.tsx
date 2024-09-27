@@ -216,7 +216,7 @@ export const StandardWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-solid-grey-800 hover:text-solid-grey-900 hover:bg-solid-grey-200 active:!text-black active:bg-solid-grey-300'
+                className='text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:!text-black active:bg-solid-gray-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -224,7 +224,7 @@ export const StandardWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-solid-grey-800 hover:bg-solid-grey-900 active:!bg-black'
+                className='bg-solid-gray-800 hover:bg-solid-gray-900 active:!bg-black'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -355,7 +355,7 @@ export const ColorChipWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-solid-grey-800 hover:text-solid-grey-900 hover:bg-solid-grey-200 active:text-black active:bg-solid-grey-300'
+                className='text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -363,7 +363,7 @@ export const ColorChipWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-solid-grey-800 hover:bg-solid-grey-900 active:bg-black'
+                className='bg-solid-gray-800 hover:bg-solid-gray-900 active:bg-black'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -494,7 +494,7 @@ export const StandardWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-solid-grey-800 hover:text-solid-grey-900 hover:bg-solid-grey-200 active:text-black active:bg-solid-grey-300 desktop:!px-4'
+                className='!px-3 text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -502,7 +502,7 @@ export const StandardWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-solid-grey-800 hover:bg-solid-grey-900 active:bg-black desktop:!px-4'
+                className='!px-3 bg-solid-gray-800 hover:bg-solid-gray-900 active:bg-black desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -633,7 +633,7 @@ export const ColorChipWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-solid-grey-800 hover:text-solid-grey-900 hover:bg-solid-grey-200 active:text-black active:bg-solid-grey-300 desktop:!px-4'
+                className='!px-3 text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -641,7 +641,7 @@ export const ColorChipWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-solid-grey-800 hover:bg-solid-grey-900 active:bg-black desktop:!px-4'
+                className='!px-3 bg-solid-gray-800 hover:bg-solid-gray-900 active:bg-black desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'

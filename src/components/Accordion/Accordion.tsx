@@ -6,7 +6,7 @@ export const Accordion = (props: AccordionProps) => {
   const { children, className, ...rest } = props;
 
   return (
-    <details className={`group ${className ?? ''} border-b border-solid-grey-420`} {...rest}>
+    <details className={`group ${className ?? ''} border-b border-solid-gray-420`} {...rest}>
       {children}
     </details>
   );
@@ -69,9 +69,9 @@ export const AccordionSummary = (props: AccordionSummaryProps) => {
   return (
     <summary
       className={`
-        group/summary flex cursor-default list-none items-center justify-between gap-4 p-2 text-std-16M-7
-        desktop:p-3 desktop:text-std-20N-5 desktop:gap-10
-        hover:bg-solid-grey-50
+        group/summary flex cursor-default list-none items-center justify-between gap-4 p-2 text-std-16N-170
+        desktop:p-3 desktop:text-std-20N-150 desktop:gap-10
+        hover:bg-solid-gray-50
         focus-visible:rounded focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
         [&::-webkit-details-marker]:hidden ${className ?? ''}
       `}
