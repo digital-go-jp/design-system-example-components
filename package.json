@@ -61,7 +61,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.20",
     "markuplint": "^4.9.4",
     "postcss": "^8.4.47",
     "storybook": "^8.3.3",
