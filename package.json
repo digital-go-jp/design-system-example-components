@@ -48,7 +48,7 @@
     "@biomejs/biome": "^1.9.2",
     "@markuplint/jsx-parser": "^4.7.7",
     "@markuplint/react-spec": "^4.5.5",
-    "@storybook/addon-a11y": "^8.3.3",
+    "@storybook/addon-a11y": "^8.3.5",
     "@storybook/addon-essentials": "^8.3.3",
     "@storybook/addon-interactions": "^8.3.3",
     "@storybook/addon-links": "^8.3.3",
