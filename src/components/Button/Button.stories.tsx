@@ -56,7 +56,7 @@ export const AllButtons = {
     return (
       <div className='flex flex-col gap-8'>
         <div>
-          <h2 className='mb-6 text-std-32B-150'>塗りボタン（Solid Fill）</h2>
+          <h2 className='mb-6 text-std-32B-5'>塗りボタン（Solid Fill）</h2>
           <div className='flex items-center gap-4'>
             <Button variant='solid-fill' size='lg'>
               ラベル
@@ -73,7 +73,7 @@ export const AllButtons = {
           </div>
         </div>
         <div>
-          <h2 className='mb-6 text-std-32B-150'>アウトラインボタン（Outline）</h2>
+          <h2 className='mb-6 text-std-32B-5'>アウトラインボタン（Outline）</h2>
           <div className='flex items-center gap-4'>
             <Button variant='outline' size='lg'>
               ラベル
@@ -90,7 +90,7 @@ export const AllButtons = {
           </div>
         </div>
         <div>
-          <h2 className='mb-6 text-std-32B-150'>テキストボタン（Text）</h2>
+          <h2 className='mb-6 text-std-32B-5'>テキストボタン（Text）</h2>
           <div className='flex items-center gap-4'>
             <Button variant='text' size='lg'>
               ラベル
@@ -116,7 +116,7 @@ export const DisabledButtons = {
     return (
       <div className='flex flex-col gap-8'>
         <div>
-          <h2 className='mb-4 text-std-32B-150'>Disabledの作例（aria-disabled 属性を使用）</h2>
+          <h2 className='mb-4 text-std-32B-5'>Disabledの作例（aria-disabled 属性を使用）</h2>
           <p className='mb-8'>
             ※ ボタンの無効化に<code>disabled</code>
             コンテンツ属性ではなく、キーボード操作のタブフォーカスでもアクセスできる
@@ -188,30 +188,30 @@ export const LinkButtons = {
     return (
       <div className='flex flex-col gap-8'>
         <div>
-          <h2 className='mb-6 text-std-32B-150'>ボタンの見た目をしたリンク（Solid Fill）</h2>
+          <h2 className='mb-6 text-std-32B-5'>ボタンの見た目をしたリンク（Solid Fill）</h2>
           <div className='flex items-center gap-4'>
             <Button asChild variant='solid-fill' size='lg'>
-              <a className='inline-flex items-center justify-center' href={href}>
+              <a className='text-center' href={href}>
                 ラベル
               </a>
             </Button>
           </div>
         </div>
         <div>
-          <h2 className='mb-6 text-std-32B-150'>ボタンの見た目をしたリンク（Outline）</h2>
+          <h2 className='mb-6 text-std-32B-5'>ボタンの見た目をしたリンク（Outline）</h2>
           <div className='flex items-center gap-4'>
             <Button asChild variant='outline' size='lg'>
-              <a className='inline-flex items-center justify-center' href={href}>
+              <a className='text-center' href={href}>
                 ラベル
               </a>
             </Button>
           </div>
         </div>
         <div>
-          <h2 className='mb-6 text-std-32B-150'>ボタンの見た目をしたリンク（Text）</h2>
+          <h2 className='mb-6 text-std-32B-5'>ボタンの見た目をしたリンク（Text）</h2>
           <div className='flex items-center gap-4'>
             <Button asChild variant='text' size='lg'>
-              <a className='inline-flex items-center justify-center' href={href}>
+              <a className='text-center' href={href}>
                 ラベル
               </a>
             </Button>

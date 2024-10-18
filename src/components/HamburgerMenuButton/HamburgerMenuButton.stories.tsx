@@ -37,7 +37,7 @@ export const Example: Story = {
           )}
         </HamburgerMenuButton>
         {isMenuOpen && (
-          <div className='h-40 w-60 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
+          <div className='h-40 w-60 border border-solid-grey-420 p-4' id={`${sampleId}-menu`}>
             サンプルメニュー
           </div>
         )}
@@ -61,7 +61,7 @@ export const WithoutLabel: Story = {
           {isMenuOpen ? <CloseWithLabelIcon /> : <HamburgerWithLabelIcon />}
         </HamburgerMenuButton>
         {isMenuOpen && (
-          <div className='h-40 w-60 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
+          <div className='h-40 w-60 border border-solid-grey-420 p-4' id={`${sampleId}-menu`}>
             サンプルメニュー
           </div>
         )}
@@ -89,7 +89,7 @@ export const WithoutLabelEN: Story = {
           )}
         </HamburgerMenuButton>
         {isMenuOpen && (
-          <div className='h-40 w-60 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
+          <div className='h-40 w-60 border border-solid-grey-420 p-4' id={`${sampleId}-menu`}>
             サンプルメニュー
           </div>
         )}
@@ -125,7 +125,7 @@ export const Responsive: Story = {
           )}
         </HamburgerMenuButton>
         {isMenuOpen && (
-          <div className='h-40 w-60 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
+          <div className='h-40 w-60 border border-solid-grey-420 p-4' id={`${sampleId}-menu`}>
             サンプルメニュー
           </div>
         )}
@@ -144,8 +144,8 @@ export const WithFocusTrap: Story = {
     const lastItemRef = React.useRef<HTMLAnchorElement>(null);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const sampleMenuLinkClasses = `
-      flex min-h-[calc(44/16*1rem)] items-center px-4 py-3 text-dns-16N-120
-      hover:bg-solid-gray-50 hover:underline hover:underline-offset-[calc(3/16*1rem)]
+      flex min-h-[calc(44/16*1rem)] items-center px-4 py-3 text-dns-16N-2
+      hover:bg-solid-grey-50 hover:underline hover:underline-offset-[calc(3/16*1rem)]
       focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-4 focus-visible:bg-yellow-300 focus-visible:ring-[calc(6/16*1rem)] focus-visible:ring-inset focus-visible:ring-yellow-300
     `;
     const sampleMenu = [
@@ -213,7 +213,7 @@ export const WithFocusTrap: Story = {
         </HamburgerMenuButton>
         {isMenuOpen && (
           <div
-            className='fixed top-0 bottom-0 left-0 pt-14 px-4 w-72 shadow-1 z-10 forced-colors:border-r'
+            className='fixed top-0 bottom-0 left-0 pt-14 px-4 w-72 shadow-1 z-10'
             id={`${sampleId}-menu`}
           >
             <ul className='py-2'>

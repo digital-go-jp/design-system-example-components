@@ -12,18 +12,19 @@ export const LanguageSelectorMenuItem = forwardRef<
   const { children, className, isCurrent, isCondensed, ...rest } = props;
 
   return (
-    <li>
+    // biome-ignore lint/a11y/useSemanticElements: this role is necessary
+    <li role='presentation'>
       <a
-        aria-current={isCurrent}
         className={`
-          flex relative items-center bg-white text-nowrap text-oln-16N-100 text-solid-gray-800
+          flex relative items-center bg-white text-nowrap text-oln-16N-1 text-solid-grey-800
           ${isCondensed ? 'py-1.5 pl-1.5 pr-4 gap-x-1.5' : 'py-3 pl-3 pr-6 gap-x-2'}
-          ${isCurrent ? '!text-blue-1000 !bg-blue-100 font-bold' : ''}
-          hover:underline hover:underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50
+          ${isCurrent && '!text-blue-1000 !bg-blue-100 font-bold'}
+          hover:underline hover:underline-offset-[calc(3/16*1rem)] hover:bg-solid-grey-50
           focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-4 focus-visible:bg-yellow-300 focus-visible:ring-[calc(6/16*1rem)] focus-visible:ring-inset focus-visible:ring-yellow-300
           ${className ?? ''}
         `}
         ref={ref}
+        role='menuitem'
         {...rest}
       >
         <svg

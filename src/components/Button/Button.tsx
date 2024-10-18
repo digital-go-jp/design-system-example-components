@@ -5,18 +5,16 @@ export type ButtonVariant = 'solid-fill' | 'outline' | 'text';
 export type ButtonSize = 'lg' | 'md' | 'sm' | 'xs';
 
 export const buttonBaseStyle = `
-  underline-offset-[calc(3/16*1rem)]
+  border underline-offset-[calc(3/16*1rem)]
   focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
-  aria-disabled:pointer-events-none aria-disabled:forced-colors:border-[GrayText] aria-disabled:forced-colors:text-[GrayText]
+  aria-disabled:pointer-events-none
 `;
 
 export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
   'solid-fill': `
-    border-4
-    border-double
-    border-transparent
     bg-blue-900
     text-white
+    border-transparent
     hover:bg-blue-1000
     hover:underline
     active:bg-blue-1200
@@ -25,10 +23,9 @@ export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
     aria-disabled:text-solid-gray-50
   `,
   outline: `
-    border
-    border-current
     bg-white
     text-blue-900
+    border-current
     hover:bg-blue-200
     hover:text-blue-1000
     hover:underline
@@ -39,11 +36,12 @@ export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
     aria-disabled:text-solid-gray-300
   `,
   text: `
+    bg-transparent
     text-blue-900
+    border-transparent
     underline
     hover:bg-blue-50
     hover:text-blue-1000
-    hover:decoration-[calc(3/16*1rem)]
     active:bg-blue-100
     active:text-blue-1200
     focus-visible:bg-yellow-300
@@ -54,10 +52,10 @@ export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
 };
 
 export const buttonSizeStyle: { [key in ButtonSize]: string } = {
-  lg: 'min-w-[calc(136/16*1rem)] min-h-14 rounded-lg px-4 py-3 text-oln-16B-100',
-  md: 'min-w-24 min-h-12 rounded-lg px-4 py-2 text-oln-16B-100',
-  sm: 'relative min-w-20 min-h-9 rounded-md px-3 py-0.5 text-oln-16B-100 after:absolute after:inset-x-0 after:-inset-y-full after:m-auto after:h-[44px]',
-  xs: 'relative min-w-18 min-h-7 rounded px-2 py-0.5 text-oln-14B-100 after:absolute after:inset-x-0 after:-inset-y-full after:m-auto after:h-[44px]',
+  lg: 'min-w-[calc(136/16*1rem)] rounded-lg p-4 text-oln-16B-100 leading-snug',
+  md: 'min-w-24 rounded-lg px-4 py-3 text-oln-16B-100 leading-snug',
+  sm: 'relative min-w-20 rounded-md px-3 py-1.5 text-oln-16B-100 leading-snug after:absolute after:-inset-x-[calc(1/16*1rem)] after:-inset-y-[calc(5/16*1rem)]',
+  xs: 'relative min-w-18 rounded px-2 py-1.5 text-oln-14B-100 after:absolute after:-inset-x-[calc(1/16*1rem)] after:-inset-y-[calc(9/16*1rem)]',
 };
 
 export type ButtonProps = {

@@ -109,48 +109,126 @@ export const Example: Story = {
     const menuRef = React.useRef<HTMLUListElement>(null);
     const menuItemRefs = React.useRef<(HTMLAnchorElement | null)[]>([]);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [currentFocusIndex, setCurrentFocusIndex] = React.useState<number>(-1);
 
     const setMenuItemRef = React.useCallback((el: HTMLAnchorElement | null, index: number) => {
       menuItemRefs.current[index] = el;
     }, []);
 
     React.useEffect(() => {
-      const handleOutsideClick = (e: MouseEvent) => {
-        if (
-          !buttonRef.current?.contains(e.target as Node) &&
-          !menuRef.current?.contains(e.target as Node)
-        ) {
-          setIsMenuOpen(false);
-        }
-      };
+      if (isMenuOpen && currentFocusIndex >= 0 && currentFocusIndex < menuItemRefs.current.length) {
+        menuItemRefs.current[currentFocusIndex]?.focus();
+      }
+    }, [isMenuOpen, currentFocusIndex]);
 
-      const handleOutsideFocus = (e: FocusEvent) => {
+    React.useEffect(() => {
+      const handleOutsideClick = (event: MouseEvent) => {
         if (
-          !buttonRef.current?.contains(e.relatedTarget as Node) &&
-          !menuRef.current?.contains(e.relatedTarget as Node)
+          !buttonRef.current?.contains(event.target as Node) &&
+          !menuRef.current?.contains(event.target as Node)
         ) {
           setIsMenuOpen(false);
+          setCurrentFocusIndex(-1);
         }
       };
 
       if (isMenuOpen) {
-        menuItemRefs.current[0]?.focus();
         document.addEventListener('mousedown', handleOutsideClick);
-        document.addEventListener('focusout', handleOutsideFocus);
       }
 
       return () => {
         document.removeEventListener('mousedown', handleOutsideClick);
-        document.removeEventListener('focusout', handleOutsideFocus);
       };
     }, [isMenuOpen]);
 
-    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+    const handleButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       switch (e.key) {
+        case ' ':
+        case 'Enter':
+        case 'ArrowDown':
+          e.preventDefault();
+          setIsMenuOpen(true);
+          setCurrentFocusIndex(0);
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          setIsMenuOpen(true);
+          setCurrentFocusIndex(exampleLanguages.length - 1);
+          break;
+      }
+    };
+
+    const setFocusByFirstCharacter = (inputChar: string) => {
+      if (inputChar.length > 1) {
+        return;
+      }
+
+      const char = inputChar.toLowerCase();
+
+      const matchingIndexes = exampleLanguages
+        .map((lang, index) => ({ index, char: lang.name.toLowerCase().charAt(0) }))
+        .filter((item) => item.char === char)
+        .map((item) => item.index);
+
+      if (matchingIndexes.length === 0) return;
+
+      const nextIndex =
+        matchingIndexes.find((index) => index > currentFocusIndex) ?? matchingIndexes[0];
+
+      menuItemRefs.current[nextIndex]?.focus();
+      setCurrentFocusIndex(nextIndex);
+    };
+
+    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>, index: number) => {
+      setCurrentFocusIndex(index);
+      switch (e.key) {
+        case ' ':
+          e.preventDefault();
+          e.currentTarget.click();
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          menuItemRefs.current[index === 0 ? menuItemRefs.current.length - 1 : index - 1]?.focus();
+          setCurrentFocusIndex(index === 0 ? menuItemRefs.current.length - 1 : index - 1);
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          menuItemRefs.current[index === menuItemRefs.current.length - 1 ? 0 : index + 1]?.focus();
+          setCurrentFocusIndex(index === menuItemRefs.current.length - 1 ? 0 : index + 1);
+          break;
+        case 'Home':
+        case 'PageUp':
+          e.preventDefault();
+          menuItemRefs[0].current?.focus();
+          setCurrentFocusIndex(0);
+          break;
+        case 'End':
+        case 'PageDown':
+          e.preventDefault();
+          menuItemRefs.current[menuItemRefs.current.length - 1]?.focus();
+          setCurrentFocusIndex(menuItemRefs.current.length - 1);
+          break;
+        case 'Tab':
+          e.preventDefault();
+          if (e.shiftKey) {
+            setIsMenuOpen(false);
+            setCurrentFocusIndex(-1);
+            buttonRef.current?.focus();
+          } else {
+            setIsMenuOpen(false);
+            setCurrentFocusIndex(-1);
+          }
+          break;
         case 'Escape':
           e.preventDefault();
           setIsMenuOpen(false);
+          setCurrentFocusIndex(-1);
           buttonRef.current?.focus();
+          break;
+        default:
+          if (e.key.length === 1 && e.key.match(/\S/)) {
+            setFocusByFirstCharacter(e.key);
+          }
           break;
       }
     };
@@ -162,6 +240,7 @@ export const Example: Story = {
             aria-controls={`${sampleId}-menu`}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onKeyDown={handleButtonKeyDown}
             ref={buttonRef}
           >
             <LanguageSelectorGlobeIcon />
@@ -175,11 +254,12 @@ export const Example: Story = {
           >
             {exampleLanguages.map((lang, index) => (
               <LanguageSelectorMenuItem
+                aria-current={lang.code === 'ja'}
                 href={lang.url}
                 isCurrent={lang.code === 'ja'}
                 key={lang.code}
                 lang={lang.code}
-                onKeyDown={handleMenuItemKeyDown}
+                onKeyDown={(e) => handleMenuItemKeyDown(e, index)}
                 ref={(el) => setMenuItemRef(el, index)}
               >
                 {lang.name}
@@ -199,48 +279,126 @@ export const WithoutLabel: Story = {
     const menuRef = React.useRef<HTMLUListElement>(null);
     const menuItemRefs = React.useRef<(HTMLAnchorElement | null)[]>([]);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [currentFocusIndex, setCurrentFocusIndex] = React.useState<number>(-1);
 
     const setMenuItemRef = React.useCallback((el: HTMLAnchorElement | null, index: number) => {
       menuItemRefs.current[index] = el;
     }, []);
 
     React.useEffect(() => {
-      const handleOutsideClick = (e: MouseEvent) => {
-        if (
-          !buttonRef.current?.contains(e.target as Node) &&
-          !menuRef.current?.contains(e.target as Node)
-        ) {
-          setIsMenuOpen(false);
-        }
-      };
+      if (isMenuOpen && currentFocusIndex >= 0 && currentFocusIndex < menuItemRefs.current.length) {
+        menuItemRefs.current[currentFocusIndex]?.focus();
+      }
+    }, [isMenuOpen, currentFocusIndex]);
 
-      const handleOutsideFocus = (e: FocusEvent) => {
+    React.useEffect(() => {
+      const handleOutsideClick = (event: MouseEvent) => {
         if (
-          !buttonRef.current?.contains(e.relatedTarget as Node) &&
-          !menuRef.current?.contains(e.relatedTarget as Node)
+          !buttonRef.current?.contains(event.target as Node) &&
+          !menuRef.current?.contains(event.target as Node)
         ) {
           setIsMenuOpen(false);
+          setCurrentFocusIndex(-1);
         }
       };
 
       if (isMenuOpen) {
-        menuItemRefs.current[0]?.focus();
         document.addEventListener('mousedown', handleOutsideClick);
-        document.addEventListener('focusout', handleOutsideFocus);
       }
 
       return () => {
         document.removeEventListener('mousedown', handleOutsideClick);
-        document.removeEventListener('focusout', handleOutsideFocus);
       };
     }, [isMenuOpen]);
 
-    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+    const handleButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       switch (e.key) {
+        case ' ':
+        case 'Enter':
+        case 'ArrowDown':
+          e.preventDefault();
+          setIsMenuOpen(true);
+          setCurrentFocusIndex(0);
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          setIsMenuOpen(true);
+          setCurrentFocusIndex(exampleLanguages2.length - 1);
+          break;
+      }
+    };
+
+    const setFocusByFirstCharacter = (inputChar: string) => {
+      if (inputChar.length > 1) {
+        return;
+      }
+
+      const char = inputChar.toLowerCase();
+
+      const matchingIndexes = exampleLanguages
+        .map((lang, index) => ({ index, char: lang.name.toLowerCase().charAt(0) }))
+        .filter((item) => item.char === char)
+        .map((item) => item.index);
+
+      if (matchingIndexes.length === 0) return;
+
+      const nextIndex =
+        matchingIndexes.find((index) => index > currentFocusIndex) ?? matchingIndexes[0];
+
+      menuItemRefs.current[nextIndex]?.focus();
+      setCurrentFocusIndex(nextIndex);
+    };
+
+    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>, index: number) => {
+      setCurrentFocusIndex(index);
+      switch (e.key) {
+        case ' ':
+          e.preventDefault();
+          e.currentTarget.click();
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          menuItemRefs.current[index === 0 ? menuItemRefs.current.length - 1 : index - 1]?.focus();
+          setCurrentFocusIndex(index === 0 ? menuItemRefs.current.length - 1 : index - 1);
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          menuItemRefs.current[index === menuItemRefs.current.length - 1 ? 0 : index + 1]?.focus();
+          setCurrentFocusIndex(index === menuItemRefs.current.length - 1 ? 0 : index + 1);
+          break;
+        case 'Home':
+        case 'PageUp':
+          e.preventDefault();
+          menuItemRefs[0].current?.focus();
+          setCurrentFocusIndex(0);
+          break;
+        case 'End':
+        case 'PageDown':
+          e.preventDefault();
+          menuItemRefs.current[menuItemRefs.current.length - 1]?.focus();
+          setCurrentFocusIndex(menuItemRefs.current.length - 1);
+          break;
+        case 'Tab':
+          e.preventDefault();
+          if (e.shiftKey) {
+            setIsMenuOpen(false);
+            setCurrentFocusIndex(-1);
+            buttonRef.current?.focus();
+          } else {
+            setIsMenuOpen(false);
+            setCurrentFocusIndex(-1);
+          }
+          break;
         case 'Escape':
           e.preventDefault();
           setIsMenuOpen(false);
+          setCurrentFocusIndex(-1);
           buttonRef.current?.focus();
+          break;
+        default:
+          if (e.key.length === 1 && e.key.match(/\S/)) {
+            setFocusByFirstCharacter(e.key);
+          }
           break;
       }
     };
@@ -253,6 +411,7 @@ export const WithoutLabel: Story = {
             aria-expanded={isMenuOpen}
             className='!px-0 !gap-0 !rounded hover:border-black focus-visible:border-transparent'
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onKeyDown={handleButtonKeyDown}
             ref={buttonRef}
           >
             <LanguageSelectorGlobeWithLabelIcon />
@@ -265,11 +424,12 @@ export const WithoutLabel: Story = {
           >
             {exampleLanguages2.map((lang, index) => (
               <LanguageSelectorMenuItem
+                aria-current={lang.code === 'ja'}
                 href={lang.url}
                 isCurrent={lang.code === 'ja'}
                 key={lang.code}
                 lang={lang.code}
-                onKeyDown={handleMenuItemKeyDown}
+                onKeyDown={(e) => handleMenuItemKeyDown(e, index)}
                 ref={(el) => setMenuItemRef(el, index)}
               >
                 {lang.name}
@@ -288,37 +448,91 @@ export const WithPopoverAPI: Story = {
     const buttonRef = React.useRef<HTMLButtonElement>(null);
     const menuRef = React.useRef<HTMLUListElement>(null);
     const menuItemRefs = React.useRef<(HTMLAnchorElement | null)[]>([]);
+    const [currentFocusIndex, setCurrentFocusIndex] = React.useState<number>(-1);
 
     const setMenuItemRef = React.useCallback((el: HTMLAnchorElement | null, index: number) => {
       menuItemRefs.current[index] = el;
     }, []);
 
-    const handleOpenerKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    const handleButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       switch (e.key) {
         case ' ':
         case 'Enter':
+        case 'ArrowDown':
           e.preventDefault();
-          menuRef.current?.togglePopover();
-          if (menuItemRefs.current[0]) {
-            menuItemRefs.current[0].focus();
-          }
+          menuRef.current?.showPopover();
+          menuItemRefs.current[0]?.focus();
           break;
-        case 'Tab':
-          if (e.shiftKey && menuRef.current?.togglePopover()) {
-            menuRef.current?.hidePopover();
-          }
+        case 'ArrowUp':
+          e.preventDefault();
+          menuRef.current?.showPopover();
+          menuItemRefs.current[menuItemRefs.current.length - 1]?.focus();
           break;
       }
     };
 
-    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+    const setFocusByFirstCharacter = (inputChar: string) => {
+      if (inputChar.length > 1) {
+        return;
+      }
+
+      const char = inputChar.toLowerCase();
+
+      const matchingIndexes = exampleLanguages
+        .map((lang, index) => ({ index, char: lang.name.toLowerCase().charAt(0) }))
+        .filter((item) => item.char === char)
+        .map((item) => item.index);
+
+      if (matchingIndexes.length === 0) return;
+
+      const nextIndex =
+        matchingIndexes.find((index) => index > currentFocusIndex) ?? matchingIndexes[0];
+
+      menuItemRefs.current[nextIndex]?.focus();
+      setCurrentFocusIndex(nextIndex);
+    };
+
+    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>, index: number) => {
+      setCurrentFocusIndex(index);
       switch (e.key) {
+        case ' ':
+          e.preventDefault();
+          e.currentTarget.click();
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          menuItemRefs.current[index === 0 ? menuItemRefs.current.length - 1 : index - 1]?.focus();
+          setCurrentFocusIndex(index === 0 ? menuItemRefs.current.length - 1 : index - 1);
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          menuItemRefs.current[index === menuItemRefs.current.length - 1 ? 0 : index + 1]?.focus();
+          setCurrentFocusIndex(index === menuItemRefs.current.length - 1 ? 0 : index + 1);
+          break;
+        case 'Home':
+        case 'PageUp':
+          e.preventDefault();
+          menuItemRefs[0].current?.focus();
+          setCurrentFocusIndex(0);
+          break;
+        case 'End':
+        case 'PageDown':
+          e.preventDefault();
+          menuItemRefs.current[menuItemRefs.current.length - 1]?.focus();
+          setCurrentFocusIndex(menuItemRefs.current.length - 1);
+          break;
         case 'Tab':
-          if (
-            !e.shiftKey &&
-            menuItemRefs.current[menuItemRefs.current.length - 1] === e.currentTarget
-          ) {
+          e.preventDefault();
+          if (e.shiftKey) {
             menuRef.current?.hidePopover();
+            buttonRef.current?.focus();
+          } else {
+            menuRef.current?.hidePopover();
+          }
+          break;
+        default:
+          if (e.key.length === 1 && e.key.match(/\S/)) {
+            setFocusByFirstCharacter(e.key);
           }
           break;
       }
@@ -326,7 +540,7 @@ export const WithPopoverAPI: Story = {
 
     return (
       <div className='h-64'>
-        <h2 className='mb-4 text-std-32B-150'>
+        <h2 className='mb-4 text-std-32B-5'>
           Popover API と CSS Anchor Positioning を使った実装サンプル
         </h2>
         <p className='mb-8'>
@@ -336,7 +550,7 @@ export const WithPopoverAPI: Story = {
         <LanguageSelector>
           <LanguageSelectorButton
             className='[anchor-name:--trigger]'
-            onKeyDown={handleOpenerKeyDown}
+            onKeyDown={handleButtonKeyDown}
             popovertarget={`${sampleId}-menu`}
             ref={buttonRef}
           >
@@ -352,11 +566,12 @@ export const WithPopoverAPI: Story = {
           >
             {exampleLanguages.map((lang, index) => (
               <LanguageSelectorMenuItem
+                aria-current={lang.code === 'ja'}
                 href={lang.url}
                 isCurrent={lang.code === 'ja'}
                 key={lang.code}
                 lang={lang.code}
-                onKeyDown={handleMenuItemKeyDown}
+                onKeyDown={(e) => handleMenuItemKeyDown(e, index)}
                 ref={(el) => setMenuItemRef(el, index)}
               >
                 {lang.name}
@@ -376,52 +591,129 @@ export const CondensedMenu: Story = {
     const menuRef = React.useRef<HTMLUListElement>(null);
     const menuItemRefs = React.useRef<(HTMLAnchorElement | null)[]>([]);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [currentFocusIndex, setCurrentFocusIndex] = React.useState<number>(-1);
 
     const setMenuItemRef = React.useCallback((el: HTMLAnchorElement | null, index: number) => {
       menuItemRefs.current[index] = el;
     }, []);
 
     React.useEffect(() => {
-      const handleOutsideClick = (e: MouseEvent) => {
-        if (
-          !buttonRef.current?.contains(e.target as Node) &&
-          !menuRef.current?.contains(e.target as Node)
-        ) {
-          setIsMenuOpen(false);
-        }
-      };
+      if (isMenuOpen && currentFocusIndex >= 0 && currentFocusIndex < menuItemRefs.current.length) {
+        menuItemRefs.current[currentFocusIndex]?.focus();
+      }
+    }, [isMenuOpen, currentFocusIndex]);
 
-      const handleOutsideFocus = (e: FocusEvent) => {
+    React.useEffect(() => {
+      const handleOutsideClick = (event: MouseEvent) => {
         if (
-          !buttonRef.current?.contains(e.relatedTarget as Node) &&
-          !menuRef.current?.contains(e.relatedTarget as Node)
+          !buttonRef.current?.contains(event.target as Node) &&
+          !menuRef.current?.contains(event.target as Node)
         ) {
           setIsMenuOpen(false);
+          setCurrentFocusIndex(-1);
         }
       };
 
       if (isMenuOpen) {
-        menuItemRefs.current[0]?.focus();
         document.addEventListener('mousedown', handleOutsideClick);
-        document.addEventListener('focusout', handleOutsideFocus);
       }
 
       return () => {
         document.removeEventListener('mousedown', handleOutsideClick);
-        document.removeEventListener('focusout', handleOutsideFocus);
       };
     }, [isMenuOpen]);
 
-    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+    const handleButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       switch (e.key) {
-        case 'Escape':
+        case ' ':
+        case 'Enter':
+        case 'ArrowDown':
           e.preventDefault();
-          setIsMenuOpen(false);
-          buttonRef.current?.focus();
+          setIsMenuOpen(true);
+          setCurrentFocusIndex(0);
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          setIsMenuOpen(true);
+          setCurrentFocusIndex(exampleLanguages.length - 1);
           break;
       }
     };
 
+    const setFocusByFirstCharacter = (inputChar: string) => {
+      if (inputChar.length > 1) {
+        return;
+      }
+
+      const char = inputChar.toLowerCase();
+
+      const matchingIndexes = exampleLanguages
+        .map((lang, index) => ({ index, char: lang.name.toLowerCase().charAt(0) }))
+        .filter((item) => item.char === char)
+        .map((item) => item.index);
+
+      if (matchingIndexes.length === 0) return;
+
+      const nextIndex =
+        matchingIndexes.find((index) => index > currentFocusIndex) ?? matchingIndexes[0];
+
+      menuItemRefs.current[nextIndex]?.focus();
+      setCurrentFocusIndex(nextIndex);
+    };
+
+    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>, index: number) => {
+      setCurrentFocusIndex(index);
+      switch (e.key) {
+        case ' ':
+          e.preventDefault();
+          e.currentTarget.click();
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          menuItemRefs.current[index === 0 ? menuItemRefs.current.length - 1 : index - 1]?.focus();
+          setCurrentFocusIndex(index === 0 ? menuItemRefs.current.length - 1 : index - 1);
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          menuItemRefs.current[index === menuItemRefs.current.length - 1 ? 0 : index + 1]?.focus();
+          setCurrentFocusIndex(index === menuItemRefs.current.length - 1 ? 0 : index + 1);
+          break;
+        case 'Home':
+        case 'PageUp':
+          e.preventDefault();
+          menuItemRefs[0].current?.focus();
+          setCurrentFocusIndex(0);
+          break;
+        case 'End':
+        case 'PageDown':
+          e.preventDefault();
+          menuItemRefs.current[menuItemRefs.current.length - 1]?.focus();
+          setCurrentFocusIndex(menuItemRefs.current.length - 1);
+          break;
+        case 'Tab':
+          e.preventDefault();
+          if (e.shiftKey) {
+            setIsMenuOpen(false);
+            setCurrentFocusIndex(-1);
+            buttonRef.current?.focus();
+          } else {
+            setIsMenuOpen(false);
+            setCurrentFocusIndex(-1);
+          }
+          break;
+        case 'Escape':
+          e.preventDefault();
+          setIsMenuOpen(false);
+          setCurrentFocusIndex(-1);
+          buttonRef.current?.focus();
+          break;
+        default:
+          if (e.key.length === 1 && e.key.match(/\S/)) {
+            setFocusByFirstCharacter(e.key);
+          }
+          break;
+      }
+    };
     return (
       <div className='h-64'>
         <LanguageSelector>
@@ -429,6 +721,7 @@ export const CondensedMenu: Story = {
             aria-controls={`${sampleId}-menu`}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onKeyDown={handleButtonKeyDown}
             ref={buttonRef}
           >
             <LanguageSelectorGlobeIcon />
@@ -443,12 +736,13 @@ export const CondensedMenu: Story = {
           >
             {exampleLanguages.map((lang, index) => (
               <LanguageSelectorMenuItem
+                aria-current={lang.code === 'ja'}
                 href={lang.url}
                 isCondensed={true}
                 isCurrent={lang.code === 'ja'}
                 key={lang.code}
                 lang={lang.code}
-                onKeyDown={handleMenuItemKeyDown}
+                onKeyDown={(e) => handleMenuItemKeyDown(e, index)}
                 ref={(el) => setMenuItemRef(el, index)}
               >
                 {lang.name}
@@ -468,52 +762,129 @@ export const Responsive: Story = {
     const menuRef = React.useRef<HTMLUListElement>(null);
     const menuItemRefs = React.useRef<(HTMLAnchorElement | null)[]>([]);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [currentFocusIndex, setCurrentFocusIndex] = React.useState<number>(-1);
 
     const setMenuItemRef = React.useCallback((el: HTMLAnchorElement | null, index: number) => {
       menuItemRefs.current[index] = el;
     }, []);
 
     React.useEffect(() => {
-      const handleOutsideClick = (e: MouseEvent) => {
-        if (
-          !buttonRef.current?.contains(e.target as Node) &&
-          !menuRef.current?.contains(e.target as Node)
-        ) {
-          setIsMenuOpen(false);
-        }
-      };
+      if (isMenuOpen && currentFocusIndex >= 0 && currentFocusIndex < menuItemRefs.current.length) {
+        menuItemRefs.current[currentFocusIndex]?.focus();
+      }
+    }, [isMenuOpen, currentFocusIndex]);
 
-      const handleOutsideFocus = (e: FocusEvent) => {
+    React.useEffect(() => {
+      const handleOutsideClick = (event: MouseEvent) => {
         if (
-          !buttonRef.current?.contains(e.relatedTarget as Node) &&
-          !menuRef.current?.contains(e.relatedTarget as Node)
+          !buttonRef.current?.contains(event.target as Node) &&
+          !menuRef.current?.contains(event.target as Node)
         ) {
           setIsMenuOpen(false);
+          setCurrentFocusIndex(-1);
         }
       };
 
       if (isMenuOpen) {
-        menuItemRefs.current[0]?.focus();
         document.addEventListener('mousedown', handleOutsideClick);
-        document.addEventListener('focusout', handleOutsideFocus);
       }
 
       return () => {
         document.removeEventListener('mousedown', handleOutsideClick);
-        document.removeEventListener('focusout', handleOutsideFocus);
       };
     }, [isMenuOpen]);
 
-    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+    const handleButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       switch (e.key) {
-        case 'Escape':
+        case ' ':
+        case 'Enter':
+        case 'ArrowDown':
           e.preventDefault();
-          setIsMenuOpen(false);
-          buttonRef.current?.focus();
+          setIsMenuOpen(true);
+          setCurrentFocusIndex(0);
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          setIsMenuOpen(true);
+          setCurrentFocusIndex(exampleLanguages2.length - 1);
           break;
       }
     };
 
+    const setFocusByFirstCharacter = (inputChar: string) => {
+      if (inputChar.length > 1) {
+        return;
+      }
+
+      const char = inputChar.toLowerCase();
+
+      const matchingIndexes = exampleLanguages
+        .map((lang, index) => ({ index, char: lang.name.toLowerCase().charAt(0) }))
+        .filter((item) => item.char === char)
+        .map((item) => item.index);
+
+      if (matchingIndexes.length === 0) return;
+
+      const nextIndex =
+        matchingIndexes.find((index) => index > currentFocusIndex) ?? matchingIndexes[0];
+
+      menuItemRefs.current[nextIndex]?.focus();
+      setCurrentFocusIndex(nextIndex);
+    };
+
+    const handleMenuItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>, index: number) => {
+      setCurrentFocusIndex(index);
+      switch (e.key) {
+        case ' ':
+          e.preventDefault();
+          e.currentTarget.click();
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          menuItemRefs.current[index === 0 ? menuItemRefs.current.length - 1 : index - 1]?.focus();
+          setCurrentFocusIndex(index === 0 ? menuItemRefs.current.length - 1 : index - 1);
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          menuItemRefs.current[index === menuItemRefs.current.length - 1 ? 0 : index + 1]?.focus();
+          setCurrentFocusIndex(index === menuItemRefs.current.length - 1 ? 0 : index + 1);
+          break;
+        case 'Home':
+        case 'PageUp':
+          e.preventDefault();
+          menuItemRefs[0].current?.focus();
+          setCurrentFocusIndex(0);
+          break;
+        case 'End':
+        case 'PageDown':
+          e.preventDefault();
+          menuItemRefs.current[menuItemRefs.current.length - 1]?.focus();
+          setCurrentFocusIndex(menuItemRefs.current.length - 1);
+          break;
+        case 'Tab':
+          e.preventDefault();
+          if (e.shiftKey) {
+            setIsMenuOpen(false);
+            setCurrentFocusIndex(-1);
+            buttonRef.current?.focus();
+          } else {
+            setIsMenuOpen(false);
+            setCurrentFocusIndex(-1);
+          }
+          break;
+        case 'Escape':
+          e.preventDefault();
+          setIsMenuOpen(false);
+          setCurrentFocusIndex(-1);
+          buttonRef.current?.focus();
+          break;
+        default:
+          if (e.key.length === 1 && e.key.match(/\S/)) {
+            setFocusByFirstCharacter(e.key);
+          }
+          break;
+      }
+    };
     return (
       <div className='flex justify-center items-start h-64'>
         <LanguageSelector>
@@ -522,6 +893,7 @@ export const Responsive: Story = {
             aria-expanded={isMenuOpen}
             className='!px-0 !gap-0 !rounded hover:border-black desktop:!px-2 desktop:!gap-1 desktop:!rounded-lg desktop:hover:border-transparent'
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onKeyDown={handleButtonKeyDown}
             ref={buttonRef}
           >
             <LanguageSelectorGlobeIcon className='hidden desktop:block' />
@@ -537,12 +909,13 @@ export const Responsive: Story = {
           >
             {exampleLanguages2.map((lang, index) => (
               <LanguageSelectorMenuItem
+                aria-current={lang.code === 'ja'}
                 href={lang.url}
                 isCondensed={true}
                 isCurrent={lang.code === 'ja'}
                 key={lang.code}
                 lang={lang.code}
-                onKeyDown={handleMenuItemKeyDown}
+                onKeyDown={(e) => handleMenuItemKeyDown(e, index)}
                 ref={(el) => setMenuItemRef(el, index)}
               >
                 {lang.name}
@@ -573,6 +946,7 @@ export const OnlyUI = {
           >
             {exampleLanguages2.map((lang) => (
               <LanguageSelectorMenuItem
+                aria-current={lang.code === 'ja'}
                 href={lang.url}
                 isCondensed={true}
                 isCurrent={lang.code === 'ja'}
@@ -593,6 +967,7 @@ export const OnlyUI = {
           <LanguageSelectorMenu className='absolute overflow-auto' id={`${sampleId}-menu`}>
             {exampleLanguages.map((lang) => (
               <LanguageSelectorMenuItem
+                aria-current={lang.code === 'ja'}
                 href={lang.url}
                 isCurrent={lang.code === 'ja'}
                 key={lang.code}
