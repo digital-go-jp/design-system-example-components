@@ -24,7 +24,7 @@ export const AccordionDefaultIconWrapper = (props: AccordionDefaultIconWrapperPr
       className={`
         inline-flex border border-current bg-white text-blue-1000
         ${shapeStyle === 'square' ? 'rounded-lg' : 'rounded-full'}
-        group-hover/summary:ring-[calc(2/16*1rem)] group-hover/summary:ring-blue-1000
+        group-hover/summary:outline group-hover/summary:outline-2 group-hover/summary:outline-current
         ${className ?? ''}
       `}
       {...rest}
