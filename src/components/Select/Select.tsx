@@ -36,7 +36,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
           size-full appearance-none border rounded-lg bg-white px-4 py-[calc(11/16*1rem)] text-oln-16N-100 text-solid-gray-800
           ${isError ? 'border-error-1' : 'border-solid-gray-900'}
           focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
-          aria-disabled:border-solid-gray-300 aria-disabled:bg-solid-gray-50 aria-disabled:text-solid-gray-420 aria-disabled:pointer-events-none
+          aria-disabled:border-solid-gray-300 aria-disabled:bg-solid-gray-50 aria-disabled:text-solid-gray-420 aria-disabled:pointer-events-none aria-disabled:forced-colors:text-[GrayText] aria-disabled:forced-colors:border-[GrayText]
           ${className ?? ''}
         `}
         onMouseDown={props['aria-disabled'] ? handleDisabledMouseDown : onMouseDown}
