@@ -21,9 +21,9 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
           appearance-none relative shrink-0 mt-[calc(1/16*1rem)] w-[calc(19/16*1rem)] h-[calc(19/16*1rem)] border-[calc(1.5/16*1rem)] border-solid-gray-900 bg-white rounded-full
           before:w-[calc(9/16*1rem)] before:h-[calc(9/16*1rem)] before:hidden before:rounded-full before:absolute before:top-[calc(3.5/16*1rem)] before:left-[calc(3.5/16*1rem)]
           focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
-          checked:border-blue-900 checked:before:block checked:before:bg-blue-900
-          ${isError && '!border-error-1 checked:border-error-1 checked:before:bg-error-1'}
-          aria-disabled:bg-solid-gray-50 aria-disabled:border-solid-gray-300 aria-disabled:before:bg-solid-gray-420
+          checked:border-blue-900 checked:before:block checked:before:bg-blue-900 checked:before:forced-colors:bg-[CanvasText]
+          ${isError ? '!border-error-1 checked:border-error-1 checked:before:bg-error-1' : ''}
+          aria-disabled:bg-solid-gray-50 aria-disabled:border-solid-gray-300 aria-disabled:before:bg-solid-gray-420 aria-disabled:forced-colors:border-[GrayText] aria-disabled:before:forced-colors:bg-[GrayText]
         `}
         id={id}
         ref={ref}

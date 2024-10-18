@@ -108,10 +108,10 @@ export const WithVisibleLabel: Story = {
     return (
       <Breadcrumbs className='flex gap-1 items-baseline' aria-labelledby={`${breadcrumbsId}-label`}>
         <div className='flex-none'>
-          <BreadcrumbsLabel className='text-dns-16N-2' id={`${breadcrumbsId}-label`}>
+          <BreadcrumbsLabel className='text-dns-16N-120' id={`${breadcrumbsId}-label`}>
             現在位置
           </BreadcrumbsLabel>
-          <span className='text-dns-16N-2'>：</span>
+          <span className='text-dns-16N-120'>：</span>
         </div>
 
         <BreadcrumbList>
