@@ -2,6 +2,8 @@
 
 [デジタル庁デザインシステム](https://design.digital.go.jp/) のコンポーネントの一部をReact / Tailwind CSSベースで実装したサンプル集です。
 
+[Storybook](https://digital-go-jp.github.io/design-system-example-components/)で最新版を公開しています。
+
 ## 未実装コンポーネント
 
 このリポジトリでは全てのコンポーネントは実装していません。  
