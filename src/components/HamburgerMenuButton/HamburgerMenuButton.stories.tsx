@@ -53,7 +53,7 @@ export const WithoutLabel: Story = {
     return (
       <div className='m-4 flex flex-col gap-2'>
         <HamburgerMenuButton
-          className='hover:border-black'
+          className='hover:outline hover:outline-black'
           aria-controls={`${sampleId}-menu`}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -77,7 +77,7 @@ export const WithoutLabelEN: Story = {
     return (
       <div className='m-4 flex flex-col gap-2'>
         <HamburgerMenuButton
-          className='hover:border-black'
+          className='hover:outline hover:outline-black'
           aria-controls={`${sampleId}-menu`}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -105,7 +105,7 @@ export const Responsive: Story = {
     return (
       <div className='m-4 flex flex-col gap-2'>
         <HamburgerMenuButton
-          className='hover:border-black desktop:p-0.5 desktop:hover:border-transparent'
+          className='hover:outline hover:outline-black desktop:p-0.5 desktop:hover:[&:not(:focus-visible)]:outline-0'
           aria-controls={`${sampleId}-menu`}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
