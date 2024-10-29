@@ -8,6 +8,16 @@ const meta = {
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {
+    size: {
+      type: 'string',
+      description: 'チェックボックスのサイズを以下から選択します。',
+      control: { type: 'radio' },
+      options: ['sm', 'md', 'lg'],
+      table: {
+        defaultValue: { summary: 'sm' },
+        type: { summary: "'sm' | 'md' | 'lg'" },
+      },
+    },
     isError: {
       description: 'エラー状態であるかどうかを指定します。',
       control: { type: 'boolean' },
@@ -31,105 +41,254 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
+export const Playground: Story = {
+  args: {
+    size: 'sm',
+    'aria-disabled': false,
+    isError: false,
+    children: '選択肢',
+  },
+};
+
+export const Stacked: Story = {
+  render: () => (
+    <div className='flex gap-8'>
+      <fieldset>
+        <Legend>
+          ラベル<RequirementBadge>※必須</RequirementBadge>
+        </Legend>
+        <SupportText className='mt-2' id='stacked-1-support-text'>
+          サポートテキスト
+        </SupportText>
+        <div className='mt-1 flex flex-col'>
+          <Checkbox aria-describedby='stacked-1-support-text' name='a'>
+            選択肢1
+          </Checkbox>
+          <Checkbox aria-describedby='stacked-1-support-text' name='a'>
+            選択肢2
+          </Checkbox>
+          <Checkbox aria-describedby='stacked-1-support-text' name='a'>
+            選択肢3
+          </Checkbox>
+        </div>
+      </fieldset>
+      <fieldset>
+        <Legend>
+          ラベル<RequirementBadge>※必須</RequirementBadge>
+        </Legend>
+        <SupportText className='mt-2' id='stacked-2-support-text'>
+          サポートテキスト
+        </SupportText>
+        <div className='mt-2 flex flex-col gap-2'>
+          <Checkbox size='md' aria-describedby='stacked-2-support-text' name='b'>
+            選択肢1
+          </Checkbox>
+          <Checkbox size='md' aria-describedby='stacked-2-support-text' name='b'>
+            選択肢2
+          </Checkbox>
+          <Checkbox size='md' aria-describedby='stacked-2-support-text' name='b'>
+            選択肢3
+          </Checkbox>
+        </div>
+      </fieldset>
+      <fieldset>
+        <Legend>
+          ラベル<RequirementBadge>※必須</RequirementBadge>
+        </Legend>
+        <SupportText className='mt-2' id='stacked-3-support-text'>
+          サポートテキスト
+        </SupportText>
+        <div className='mt-3 flex flex-col gap-2'>
+          <Checkbox size='lg' aria-describedby='stacked-3-support-text' name='c'>
+            選択肢1
+          </Checkbox>
+          <Checkbox size='lg' aria-describedby='stacked-3-support-text' name='c'>
+            選択肢2
+          </Checkbox>
+          <Checkbox size='lg' aria-describedby='stacked-3-support-text' name='c'>
+            選択肢3
+          </Checkbox>
+        </div>
+      </fieldset>
+    </div>
+  ),
+};
+
+export const Inline: Story = {
+  render: () => (
+    <div className='flex flex-col gap-16'>
+      <fieldset>
+        <Legend>
+          ラベル<RequirementBadge>※必須</RequirementBadge>
+        </Legend>
+        <SupportText className='mt-2' id='inline-1-support-text'>
+          サポートテキスト
+        </SupportText>
+        <div className='mt-1 flex flex-wrap gap-x-4'>
+          <Checkbox aria-describedby='inline-1-support-text' name='d'>
+            選択肢1
+          </Checkbox>
+          <Checkbox aria-describedby='inline-1-support-text' name='d'>
+            選択肢2
+          </Checkbox>
+          <Checkbox aria-describedby='inline-1-support-text' name='d'>
+            選択肢3
+          </Checkbox>
+        </div>
+      </fieldset>
+      <fieldset>
+        <Legend>
+          ラベル<RequirementBadge>※必須</RequirementBadge>
+        </Legend>
+        <SupportText className='mt-2' id='inline-2-support-text'>
+          サポートテキスト
+        </SupportText>
+        <div className='mt-2 flex flex-wrap gap-x-8 gap-y-2'>
+          <Checkbox size='md' aria-describedby='inline-2-support-text' name='e'>
+            選択肢1
+          </Checkbox>
+          <Checkbox size='md' aria-describedby='inline-2-support-text' name='e'>
+            選択肢2
+          </Checkbox>
+          <Checkbox size='md' aria-describedby='inline-2-support-text' name='e'>
+            選択肢3
+          </Checkbox>
+        </div>
+      </fieldset>
+      <fieldset>
+        <Legend>
+          ラベル<RequirementBadge>※必須</RequirementBadge>
+        </Legend>
+        <SupportText className='mt-2' id='inline-3-support-text'>
+          サポートテキスト
+        </SupportText>
+        <div className='mt-3 flex flex-wrap gap-10 gap-y-2'>
+          <Checkbox size='lg' aria-describedby='inline-3-support-text' name='f'>
+            選択肢1
+          </Checkbox>
+          <Checkbox size='lg' aria-describedby='inline-3-support-text' name='f'>
+            選択肢2
+          </Checkbox>
+          <Checkbox size='lg' aria-describedby='inline-3-support-text' name='f'>
+            選択肢3
+          </Checkbox>
+        </div>
+      </fieldset>
+    </div>
+  ),
+};
+
+export const Errored: Story = {
   render: () => {
     return (
-      <div className='flex flex-col gap-8'>
-        <fieldset className='flex flex-col'>
-          <Legend className='mt-2'>
-            ラベル<RequirementBadge isOptional={true}>※任意</RequirementBadge>
-          </Legend>
-          <SupportText className='mt-2' id='test-support-text'>
-            サポートテキスト
-          </SupportText>
-          <div className='flex flex-col'>
-            <Checkbox aria-describedby='test-support-text' name='w'>
-              選択肢1
-            </Checkbox>
-            <Checkbox aria-describedby='test-support-text' name='w'>
-              選択肢2
-            </Checkbox>
-            <Checkbox aria-describedby='test-support-text' name='w'>
-              選択肢3
-            </Checkbox>
-          </div>
-        </fieldset>
-
-        <fieldset className='flex flex-col'>
-          <Legend className='mt-2'>
+      <div className='flex flex-col gap-16'>
+        <fieldset>
+          <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='test-inline-support-text'>
+          <SupportText className='mt-2' id='error-1-support-text'>
             サポートテキスト
           </SupportText>
-          <div className='flex gap-8'>
-            <Checkbox aria-describedby='test-inline-support-text' name='x'>
-              選択肢1
-            </Checkbox>
-            <Checkbox aria-describedby='test-inline-support-text' name='x'>
-              選択肢2
-            </Checkbox>
-            <Checkbox aria-describedby='test-inline-support-text' name='x'>
-              選択肢3
-            </Checkbox>
-          </div>
-        </fieldset>
-
-        <fieldset className='flex flex-col'>
-          <Legend className='mt-2'>
-            ラベル<RequirementBadge>※必須</RequirementBadge>
-          </Legend>
-          <SupportText className='mt-2' id='test-error-support-text'>
-            サポートテキスト
-          </SupportText>
-          <div className='flex flex-col'>
-            <Checkbox
-              aria-describedby='test-error-support-text test-error-text'
-              isError={true}
-              name='y'
-            >
+          <div className='mt-1 flex flex-col'>
+            <Checkbox aria-describedby='error-1-support-text error-1-text' isError={true} name='g'>
               選択肢1
             </Checkbox>
             <Checkbox
-              aria-describedby='test-error-support-text test-error-text'
+              aria-describedby='error-1-support-text error-1-text'
               isError={true}
-              name='y'
+              name='g'
+              defaultChecked
             >
               選択肢2
             </Checkbox>
-            <Checkbox
-              aria-describedby='test-error-support-text test-error-text'
-              isError={true}
-              name='y'
-            >
+            <Checkbox aria-describedby='error-1-support-text error-1-text' isError={true} name='g'>
               選択肢3
             </Checkbox>
           </div>
-          <ErrorText className='mt-2' id='test-error-text'>
-            ＊エラーテキスト
+          <ErrorText className='mt-2' id='error-1-text'>
+            ＊エラーテキストが入ります。
           </ErrorText>
         </fieldset>
-
-        <fieldset className='flex flex-col gap-2'>
-          <Legend className='mt-2'>
+        <fieldset>
+          <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='test-disabled-support-text'>
-            〜の理由により、この項目は無効化されています。
+          <SupportText className='mt-2' id='error-2-support-text'>
+            サポートテキスト
           </SupportText>
-          <div className='flex flex-col'>
-            <Checkbox aria-describedby='test-disabled-support-text' aria-disabled={true} name='z'>
+          <div className='mt-1 flex flex-wrap gap-x-4'>
+            <Checkbox aria-describedby='error-2-support-text error-2-text' isError={true} name='h'>
               選択肢1
             </Checkbox>
             <Checkbox
-              aria-describedby='test-disabled-support-text'
-              checked
-              aria-disabled={true}
-              name='z'
+              aria-describedby='error-2-support-text error-2-text'
+              isError={true}
+              name='h'
+              defaultChecked
             >
               選択肢2
             </Checkbox>
-            <Checkbox aria-describedby='test-disabled-support-text' aria-disabled={true} name='z'>
+            <Checkbox aria-describedby='error-2-support-text error-2-text' isError={true} name='h'>
+              選択肢3
+            </Checkbox>
+          </div>
+          <ErrorText className='mt-2' id='error-2-text'>
+            ＊エラーテキストが入ります。
+          </ErrorText>
+        </fieldset>
+      </div>
+    );
+  },
+};
+
+export const Disabled: Story = {
+  render: () => {
+    return (
+      <div className='flex flex-col gap-16'>
+        <fieldset>
+          <Legend>
+            ラベル<RequirementBadge>※必須</RequirementBadge>
+          </Legend>
+          <SupportText className='mt-2' id='disabled-1-support-text'>
+            〜の理由により、この項目は無効化されています。
+          </SupportText>
+          <div className='mt-1 flex flex-col'>
+            <Checkbox aria-describedby='disabled-1-support-text' aria-disabled={true} name='i'>
+              選択肢1
+            </Checkbox>
+            <Checkbox
+              aria-describedby='disabled-1-support-text'
+              aria-disabled={true}
+              name='i'
+              defaultChecked
+            >
+              選択肢2
+            </Checkbox>
+            <Checkbox aria-describedby='disabled-1-support-text' aria-disabled={true} name='i'>
+              選択肢3
+            </Checkbox>
+          </div>
+        </fieldset>
+        <fieldset>
+          <Legend>
+            ラベル<RequirementBadge>※必須</RequirementBadge>
+          </Legend>
+          <SupportText className='mt-2' id='disabled-2-support-text'>
+            〜の理由により、この項目は無効化されています。
+          </SupportText>
+          <div className='mt-1 flex flex-wrap gap-x-4'>
+            <Checkbox aria-describedby='disabled-2-support-text' aria-disabled={true} name='j'>
+              選択肢1
+            </Checkbox>
+            <Checkbox
+              aria-describedby='disabled-2-support-text'
+              aria-disabled={true}
+              name='j'
+              defaultChecked
+            >
+              選択肢2
+            </Checkbox>
+            <Checkbox aria-describedby='disabled-2-support-text' aria-disabled={true} name='j'>
               選択肢3
             </Checkbox>
           </div>
