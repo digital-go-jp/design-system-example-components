@@ -122,7 +122,6 @@ export const PaginationNext = (props: PaginationItemProps) => {
 export const PaginationEllipsis = (props: PaginationEllipsisProps) => {
   const { className, ...rest } = props;
   return (
-    // biome-ignore lint/a11y/noAriaHiddenOnFocusable: this is not a focusable element
     <svg
       aria-hidden={true}
       className={className}
