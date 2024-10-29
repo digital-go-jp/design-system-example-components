@@ -4,6 +4,6 @@ export default create({
   base: 'light',
 
   brandTitle: 'デジタル庁デザインシステム',
-  brandImage: '/logo.svg',
+  brandImage: 'logo.svg',
   brandTarget: '_self',
 });
