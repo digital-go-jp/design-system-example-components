@@ -126,8 +126,8 @@ export const Example: Story = {
 
       const handleOutsideFocus = (e: FocusEvent) => {
         if (
-          !buttonRef.current?.contains(e.relatedTarget as Node) &&
-          !menuRef.current?.contains(e.relatedTarget as Node)
+          !menuRef.current?.contains(e.target as Node) &&
+          !buttonRef.current?.contains(e.target as Node)
         ) {
           setIsMenuOpen(false);
         }
@@ -135,13 +135,13 @@ export const Example: Story = {
 
       if (isMenuOpen) {
         menuItemRefs.current[0]?.focus();
-        document.addEventListener('mousedown', handleOutsideClick);
-        document.addEventListener('focusout', handleOutsideFocus);
+        document.addEventListener('click', handleOutsideClick);
+        document.addEventListener('focusin', handleOutsideFocus);
       }
 
       return () => {
-        document.removeEventListener('mousedown', handleOutsideClick);
-        document.removeEventListener('focusout', handleOutsideFocus);
+        document.removeEventListener('click', handleOutsideClick);
+        document.removeEventListener('focusin', handleOutsideFocus);
       };
     }, [isMenuOpen]);
 
@@ -216,8 +216,8 @@ export const WithoutLabel: Story = {
 
       const handleOutsideFocus = (e: FocusEvent) => {
         if (
-          !buttonRef.current?.contains(e.relatedTarget as Node) &&
-          !menuRef.current?.contains(e.relatedTarget as Node)
+          !menuRef.current?.contains(e.target as Node) &&
+          !buttonRef.current?.contains(e.target as Node)
         ) {
           setIsMenuOpen(false);
         }
@@ -225,13 +225,13 @@ export const WithoutLabel: Story = {
 
       if (isMenuOpen) {
         menuItemRefs.current[0]?.focus();
-        document.addEventListener('mousedown', handleOutsideClick);
-        document.addEventListener('focusout', handleOutsideFocus);
+        document.addEventListener('click', handleOutsideClick);
+        document.addEventListener('focusin', handleOutsideFocus);
       }
 
       return () => {
-        document.removeEventListener('mousedown', handleOutsideClick);
-        document.removeEventListener('focusout', handleOutsideFocus);
+        document.removeEventListener('click', handleOutsideClick);
+        document.removeEventListener('focusin', handleOutsideFocus);
       };
     }, [isMenuOpen]);
 
@@ -251,7 +251,7 @@ export const WithoutLabel: Story = {
           <LanguageSelectorButton
             aria-controls={`${sampleId}-menu`}
             aria-expanded={isMenuOpen}
-            className='!px-0 !gap-0 !rounded hover:border-black focus-visible:border-transparent'
+            className='!px-0 !gap-0 !rounded hover:outline hover:outline-black'
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             ref={buttonRef}
           >
@@ -393,8 +393,8 @@ export const CondensedMenu: Story = {
 
       const handleOutsideFocus = (e: FocusEvent) => {
         if (
-          !buttonRef.current?.contains(e.relatedTarget as Node) &&
-          !menuRef.current?.contains(e.relatedTarget as Node)
+          !menuRef.current?.contains(e.target as Node) &&
+          !buttonRef.current?.contains(e.target as Node)
         ) {
           setIsMenuOpen(false);
         }
@@ -402,13 +402,13 @@ export const CondensedMenu: Story = {
 
       if (isMenuOpen) {
         menuItemRefs.current[0]?.focus();
-        document.addEventListener('mousedown', handleOutsideClick);
-        document.addEventListener('focusout', handleOutsideFocus);
+        document.addEventListener('click', handleOutsideClick);
+        document.addEventListener('focusin', handleOutsideFocus);
       }
 
       return () => {
-        document.removeEventListener('mousedown', handleOutsideClick);
-        document.removeEventListener('focusout', handleOutsideFocus);
+        document.removeEventListener('click', handleOutsideClick);
+        document.removeEventListener('focusin', handleOutsideFocus);
       };
     }, [isMenuOpen]);
 
@@ -485,8 +485,8 @@ export const Responsive: Story = {
 
       const handleOutsideFocus = (e: FocusEvent) => {
         if (
-          !buttonRef.current?.contains(e.relatedTarget as Node) &&
-          !menuRef.current?.contains(e.relatedTarget as Node)
+          !menuRef.current?.contains(e.target as Node) &&
+          !buttonRef.current?.contains(e.target as Node)
         ) {
           setIsMenuOpen(false);
         }
@@ -494,13 +494,13 @@ export const Responsive: Story = {
 
       if (isMenuOpen) {
         menuItemRefs.current[0]?.focus();
-        document.addEventListener('mousedown', handleOutsideClick);
-        document.addEventListener('focusout', handleOutsideFocus);
+        document.addEventListener('click', handleOutsideClick);
+        document.addEventListener('focusin', handleOutsideFocus);
       }
 
       return () => {
-        document.removeEventListener('mousedown', handleOutsideClick);
-        document.removeEventListener('focusout', handleOutsideFocus);
+        document.removeEventListener('click', handleOutsideClick);
+        document.removeEventListener('focusin', handleOutsideFocus);
       };
     }, [isMenuOpen]);
 
@@ -520,7 +520,7 @@ export const Responsive: Story = {
           <LanguageSelectorButton
             aria-controls={`${sampleId}-menu`}
             aria-expanded={isMenuOpen}
-            className='!px-0 !gap-0 !rounded hover:border-black desktop:!px-2 desktop:!gap-1 desktop:!rounded-lg desktop:hover:border-transparent'
+            className='!px-0 !gap-0 !rounded hover:outline hover:outline-black desktop:!px-2 desktop:!gap-1 desktop:!rounded-lg desktop:hover:[&:not(:focus-visible)]:outline-0'
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             ref={buttonRef}
           >
@@ -586,7 +586,7 @@ export const OnlyUI = {
         </LanguageSelector>
 
         <LanguageSelector>
-          <LanguageSelectorButton className='!px-0 !py-0 !gap-0 !rounded hover:border-black focus-visible:border-transparent'>
+          <LanguageSelectorButton className='!px-0 !py-0 !gap-0 !rounded hover:outline hover:outline-black'>
             <LanguageSelectorGlobeWithLabelIcon />
             <LanguageSelectorArrowIcon className='mt-0.5 rotate-180' />
           </LanguageSelectorButton>

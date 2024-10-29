@@ -1,38 +1,74 @@
 import { type ComponentProps, forwardRef } from 'react';
 
-export type RadioProps = ComponentProps<'input'> & {
+export type RadioSize = 'sm' | 'md' | 'lg';
+
+export type RadioProps = Omit<ComponentProps<'input'>, 'size'> & {
+  size?: RadioSize;
   isError?: boolean;
 };
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
-  const { children, id, isError, onClick, ...rest } = props;
+  const { children, id, isError, onClick, size = 'sm', ...rest } = props;
 
   const handleDisabled = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
     e.preventDefault();
   };
 
+  const containerSizeStyle: Record<RadioSize, string> = {
+    sm: 'gap-1',
+    md: 'gap-2',
+    lg: 'gap-3',
+  };
+
+  const radioWrapperSizeStyle: Record<RadioSize, string> = {
+    sm: 'size-6',
+    md: 'size-8',
+    lg: 'size-11',
+  };
+
+  const radioSizeStyle: Record<RadioSize, string> = {
+    sm: 'border-[calc(1.5/16*1rem)]',
+    md: 'border-[calc(2/16*1rem)]',
+    lg: 'border-[calc(2.75/16*1rem)]',
+  };
+
+  const radioLabelSizeStyle: Record<RadioSize, string> = {
+    sm: 'pt-px text-dns-16N-130',
+    md: 'pt-1 text-dns-16N-130',
+    lg: 'pt-2.5 text-dns-17N-130',
+  };
+
   return (
     <label
-      className='flex w-fit items-start gap-3 py-2 text-dns-16N-130 text-solid-gray-800'
+      className={`flex w-fit items-start ${containerSizeStyle[size]} ${children ? 'py-2' : ''}`}
       htmlFor={id}
     >
-      <input
-        className={`
-          appearance-none relative shrink-0 mt-[calc(1/16*1rem)] w-[calc(19/16*1rem)] h-[calc(19/16*1rem)] border-[calc(1.5/16*1rem)] border-solid-gray-900 bg-white rounded-full
-          before:w-[calc(9/16*1rem)] before:h-[calc(9/16*1rem)] before:hidden before:rounded-full before:absolute before:top-[calc(3.5/16*1rem)] before:left-[calc(3.5/16*1rem)]
-          focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
-          checked:border-blue-900 checked:before:block checked:before:bg-blue-900 checked:before:forced-colors:bg-[CanvasText]
-          ${isError ? '!border-error-1 checked:border-error-1 checked:before:bg-error-1' : ''}
-          aria-disabled:bg-solid-gray-50 aria-disabled:border-solid-gray-300 aria-disabled:before:bg-solid-gray-420 aria-disabled:forced-colors:border-[GrayText] aria-disabled:before:forced-colors:bg-[GrayText]
-        `}
-        id={id}
-        ref={ref}
-        type='radio'
-        onClick={props['aria-disabled'] ? handleDisabled : onClick}
-        {...rest}
-      />
-
-      {children}
+      <span className={`flex items-center justify-center shrink-0 ${radioWrapperSizeStyle[size]}`}>
+        <input
+          className={`
+            appearance-none relative size-4/5 rounded-full bg-white
+            before:absolute before:inset-0 before:hidden before:m-auto before:w-[calc(9/16*100%)] before:h-[calc(9/16*100%)] before:rounded-full
+            focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
+            checked:before:block
+            ${radioSizeStyle[size]}
+            ${
+              !isError
+                ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:before:bg-blue-900 checked:hover:border-blue-1100 checked:hover:before:bg-blue-1100'
+                : 'border-error-1 hover:border-red-1000 checked:before:bg-error-1 checked:hover:before:bg-red-1000'
+            }
+            aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:before:!bg-solid-gray-300
+            forced-colors:checked:before:!bg-[CanvasText] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText]
+          `}
+          id={id}
+          ref={ref}
+          type='radio'
+          onClick={props['aria-disabled'] ? handleDisabled : onClick}
+          {...rest}
+        />
+      </span>
+      {children && (
+        <span className={`text-solid-gray-800 ${radioLabelSizeStyle[size]}`}>{children}</span>
+      )}
     </label>
   );
 });
