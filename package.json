@@ -47,7 +47,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@markuplint/jsx-parser": "^4.7.7",
-    "@markuplint/react-spec": "^4.5.9",
+    "@markuplint/react-spec": "^4.5.13",
     "@storybook/addon-a11y": "^8.3.6",
     "@storybook/addon-essentials": "^8.3.6",
     "@storybook/addon-interactions": "^8.3.6",
