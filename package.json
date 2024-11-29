@@ -1,6 +1,6 @@
 {
   "name": "@digital-go-jp/design-system-example-components",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "type": "module",
   "main": "dist/index.cjs.js",
   "typings": "dist/index.d.ts",
