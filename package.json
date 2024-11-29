@@ -1,6 +1,6 @@
 {
   "name": "@digital-go-jp/design-system-example-components",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "type": "module",
   "main": "dist/index.cjs.js",
   "typings": "dist/index.d.ts",
@@ -39,34 +39,34 @@
     "storybook:test": "test-storybook"
   },
   "dependencies": {
-    "@digital-go-jp/tailwind-theme-plugin": "^0.1.17",
+    "@digital-go-jp/tailwind-theme-plugin": "^0.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.13"
+    "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@markuplint/jsx-parser": "^4.7.7",
-    "@markuplint/react-spec": "^4.5.9",
-    "@storybook/addon-a11y": "^8.3.6",
-    "@storybook/addon-essentials": "^8.3.6",
-    "@storybook/addon-interactions": "^8.3.6",
-    "@storybook/addon-links": "^8.3.6",
-    "@storybook/blocks": "^8.3.6",
-    "@storybook/react": "^8.3.6",
-    "@storybook/react-vite": "^8.3.6",
-    "@storybook/test": "^8.3.6",
+    "@markuplint/jsx-parser": "^4.7.13",
+    "@markuplint/react-spec": "^4.5.11",
+    "@storybook/addon-a11y": "^8.4.5",
+    "@storybook/addon-essentials": "^8.4.5",
+    "@storybook/addon-interactions": "^8.4.5",
+    "@storybook/addon-links": "^8.4.5",
+    "@storybook/blocks": "^8.4.5",
+    "@storybook/react": "^8.4.5",
+    "@storybook/react-vite": "^8.4.5",
+    "@storybook/test": "^8.4.5",
     "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^22.7.6",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.7.0",
+    "@types/node": "^22.9.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.7.1",
     "autoprefixer": "^10.4.20",
-    "markuplint": "^4.9.4",
-    "postcss": "^8.4.47",
-    "storybook": "^8.3.6",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.9"
+    "markuplint": "^4.11.3",
+    "postcss": "^8.4.49",
+    "storybook": "^8.4.5",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   },
   "engines": {
     "node": ">=18"

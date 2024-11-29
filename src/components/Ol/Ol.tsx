@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 
-export const olStyle = 'pl-8 list-decimal [&_&]:list-lower-latin';
+export const olStyle = 'pl-8 list-[revert]';
 
 export type OlProps = ComponentProps<'ol'>;
 
