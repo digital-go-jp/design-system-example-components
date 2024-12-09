@@ -30,10 +30,11 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
   };
 
   return (
-    <div className={`relative min-w-80 max-w-full ${SelectBlockSizeStyle[blockSize]}`}>
+    <span className='relative'>
       <select
         className={`
-          size-full appearance-none border rounded-lg bg-white px-4 py-[calc(11/16*1rem)] text-oln-16N-100 text-solid-gray-800
+          w-full appearance-none border rounded-lg bg-white pl-4 pr-10 py-[calc(11/16*1rem)] text-oln-16N-100 text-solid-gray-800
+           ${SelectBlockSizeStyle[blockSize]}
           ${isError ? 'border-error-1' : 'border-solid-gray-900'}
           focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
           aria-disabled:border-solid-gray-300 aria-disabled:bg-solid-gray-50 aria-disabled:text-solid-gray-420 aria-disabled:pointer-events-none aria-disabled:forced-colors:text-[GrayText] aria-disabled:forced-colors:border-[GrayText]
@@ -50,7 +51,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
         aria-hidden={true}
         className={`
           pointer-events-none absolute right-4 top-1/2 -translate-y-1/2
-          ${props['aria-disabled'] ? 'text-solid-gray-420' : 'text-solid-gray-900'}
+          ${props['aria-disabled'] ? 'text-solid-gray-420 forced-colors:text-[GrayText]' : 'text-solid-gray-900 forced-colors:text-[CanvasText]'}
         `}
         fill='none'
         height='16'
@@ -62,6 +63,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
           fill='currentColor'
         />
       </svg>
-    </div>
+    </span>
   );
 });

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ErrorText, Label, RequirementBadge, SupportText } from '../';
+import { ErrorText, Label, Legend, RequirementBadge, SupportText } from '../';
 import { Select } from './Select';
 
 const meta = {
@@ -43,7 +43,7 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {
   decorators: [
     (Story, context) => (
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col items-start gap-2'>
         <Label htmlFor={context.args.id}>
           ラベル{context.args.required && <RequirementBadge>※必須</RequirementBadge>}
         </Label>
@@ -61,9 +61,7 @@ export const Playground: Story = {
     required: true,
     children: (
       <>
-        <option hidden value=''>
-          選択してください
-        </option>
+        <option value=''>選択してください</option>
         <option value='1'>選択肢1</option>
         <option value='2'>選択肢2</option>
         <option value='3'>選択肢3</option>
@@ -72,58 +70,136 @@ export const Playground: Story = {
   },
 };
 
-export const Example: Story = {
+export const InlineWithGrouping: Story = {
+  render: () => {
+    const formId = React.useId();
+
+    return (
+      <div className='flex flex-col gap-8'>
+        <fieldset className='flex flex-col gap-2'>
+          <Legend size='lg'>フォームコントロールグループ</Legend>
+          <SupportText id='inline-group-support-text'>サポートテキスト</SupportText>
+          <div className='flex gap-4'>
+            <div className='flex flex-col gap-2'>
+              <Label htmlFor={`${formId}-inline-group-1`}>ラベル1</Label>
+              <Select
+                aria-describedby='inline-group-support-text'
+                id={`${formId}-inline-group-1`}
+                name='inline-group-1'
+              >
+                <option value=''>選択してください</option>
+                <option value='1'>選択肢1</option>
+                <option value='2'>選択肢2</option>
+                <option value='3'>選択肢3</option>
+              </Select>
+            </div>
+
+            <div className='flex flex-col gap-2'>
+              <Label htmlFor={`${formId}-inline-group-2`}>ラベル2</Label>
+              <Select
+                aria-describedby='inline-group-support-text'
+                id={`${formId}-inline-group-2`}
+                name='inline-group-2'
+              >
+                <option value=''>選択してください</option>
+                <option value='1'>選択肢1</option>
+                <option value='2'>選択肢2</option>
+                <option value='3'>選択肢3</option>
+              </Select>
+            </div>
+
+            <div className='flex flex-col gap-2'>
+              <Label htmlFor={`${formId}-inline-group-3`}>ラベル3</Label>
+              <Select
+                aria-describedby='inline-group-support-text'
+                id={`${formId}-inline-group-3`}
+                name='inline-group-3'
+              >
+                <option value=''>選択してください</option>
+                <option value='1'>選択肢1</option>
+                <option value='2'>選択肢2</option>
+                <option value='3'>選択肢3</option>
+              </Select>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    );
+  },
+};
+
+export const Errored: Story = {
   render: () => {
     const formId = React.useId();
 
     return (
       <div className='flex flex-col gap-8'>
         <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-test`}>ラベル</Label>
-          <SupportText id='test-support-text'>サポートテキスト</SupportText>
-          <Select aria-describedby='test-support-text' id={`${formId}-test`} name='test'>
-            <option hidden value=''>
-              選択してください
-            </option>
-            <option value='1'>選択肢1</option>
-            <option value='2'>選択肢2</option>
-            <option value='3'>選択肢3</option>
-          </Select>
-        </div>
-
-        <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-test-error`}>
+          <Label htmlFor={`${formId}-error`}>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Label>
-          <SupportText id='test-error-support-text'>サポートテキスト</SupportText>
+          <SupportText id='error-support-text'>サポートテキスト</SupportText>
           <Select
-            aria-describedby='test-error-support-text test-error-text'
+            aria-describedby='error-support-text error-text'
             aria-invalid={true}
-            id={`${formId}-test-error`}
+            id={`${formId}-error`}
             isError={true}
-            name='test-error'
+            name='error'
             required
           >
-            <option hidden value=''>
-              選択してください
-            </option>
+            <option value=''>選択してください</option>
             <option value='1'>選択肢1</option>
             <option value='2'>選択肢2</option>
             <option value='3'>選択肢3</option>
           </Select>
-          <ErrorText id='test-error-text'>＊エラーテキスト</ErrorText>
+          <ErrorText id='error-text'>＊エラーテキスト</ErrorText>
         </div>
+      </div>
+    );
+  },
+};
 
+export const Disabled: Story = {
+  render: () => {
+    const formId = React.useId();
+
+    return (
+      <div className='flex flex-col gap-8'>
         <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-test-disabled`}>ラベル</Label>
-          <SupportText id='test-disabled-support-text'>
+          <Label htmlFor={`${formId}-disabled`}>ラベル</Label>
+          <SupportText id='disabled-support-text'>
             〜の理由により、この項目は無効化されています。
           </SupportText>
           <Select
-            aria-describedby='test-disabled-support-text'
+            aria-describedby='disabled-support-text'
             aria-disabled={true}
-            id={`${formId}-test-disabled`}
-            name='test-disabled'
+            id={`${formId}-disabled`}
+            name='disabled'
+          >
+            <option value=''>選択してください</option>
+            <option value='1'>選択肢1</option>
+            <option value='2'>選択肢2</option>
+            <option value='3'>選択肢3</option>
+          </Select>
+        </div>
+      </div>
+    );
+  },
+};
+
+export const WidthExamples: Story = {
+  render: () => {
+    const formId = React.useId();
+
+    return (
+      <div className='flex flex-col gap-8'>
+        <div className='flex flex-col gap-2'>
+          <Label htmlFor={`${formId}-full-width`}>100%幅のセレクトボックス</Label>
+          <SupportText id='full-width-support-text'>サポートテキスト</SupportText>
+          <Select
+            aria-describedby='full-width-support-text'
+            id={`${formId}-full-width`}
+            name='full-width'
           >
             <option hidden value=''>
               選択してください
@@ -132,6 +208,44 @@ export const Example: Story = {
             <option value='2'>選択肢2</option>
             <option value='3'>選択肢3</option>
           </Select>
+        </div>
+        <div className='flex flex-col gap-2'>
+          <Label htmlFor={`${formId}-specific-width`}>
+            特定の幅（256 CSS px）を指定したセレクトボックス
+          </Label>
+          <SupportText id='specific-width-support-text'>サポートテキスト</SupportText>
+          <div className='w-64'>
+            <Select
+              aria-describedby='specific-width-support-text'
+              id={`${formId}-specific-width`}
+              name='specific-width'
+            >
+              <option hidden value=''>
+                選択してください
+              </option>
+              <option value='1'>選択肢1</option>
+              <option value='2'>選択肢2</option>
+              <option value='3'>選択肢3</option>
+            </Select>
+          </div>
+        </div>
+        <div className='flex flex-col gap-2'>
+          <Label htmlFor={`${formId}-fit-width`}>内容にフィットしたセレクトボックス</Label>
+          <SupportText id='fit-width-support-text'>サポートテキスト</SupportText>
+          <div className='w-fit'>
+            <Select
+              aria-describedby='fit-width-support-text'
+              id={`${formId}-fit-width`}
+              name='fit-width'
+            >
+              <option hidden value=''>
+                選択してください
+              </option>
+              <option value='1'>選択肢1</option>
+              <option value='2'>選択肢2</option>
+              <option value='3'>選択肢3</option>
+            </Select>
+          </div>
         </div>
       </div>
     );
