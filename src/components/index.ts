@@ -58,7 +58,6 @@ export { RequirementBadge } from './RequirementBadge';
 export { Select } from './Select';
 export { Slot } from './Slot';
 export { SupportText } from './SupportText';
-export { Table, Thead, Tbody, Tr, Th, Td, thStyle, tdStyle } from './Table';
 export { Textarea } from './Textarea';
 export { Ul, ulStyle } from './Ul';
 export { UtilityLink, UtilityLinkExternalLinkIcon, utilityLinkStyle } from './UtilityLink';

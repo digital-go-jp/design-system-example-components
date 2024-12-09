@@ -43,7 +43,7 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {
   decorators: [
     (Story, context) => (
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col items-start gap-2'>
         <Label htmlFor={context.args.id}>
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
@@ -61,77 +61,67 @@ export const Playground: Story = {
   },
 };
 
-export const Example: Story = {
+export const Errored: Story = {
   render: () => {
     const formId = React.useId();
 
     return (
       <div className='flex flex-col gap-8'>
         <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-test`}>ラベル</Label>
-          <SupportText id='test-support-text'>サポートテキスト</SupportText>
-          <Input aria-describedby='test-support-text' id={`${formId}-test`} name='test' />
-        </div>
-
-        <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-test-filled`}>
+          <Label htmlFor={`${formId}-error`}>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Label>
-          <SupportText id='test-filled-support-text'>サポートテキスト</SupportText>
+          <SupportText id='error-support-text'>サポートテキスト</SupportText>
           <Input
-            aria-describedby='test-filled-support-text'
-            defaultValue='入力済の内容'
-            id={`${formId}-test-filled`}
-            name='test-filled'
-            required
-          />
-        </div>
-
-        <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-test-error`}>
-            ラベル<RequirementBadge>※必須</RequirementBadge>
-          </Label>
-          <SupportText id='test-error-support-text'>サポートテキスト</SupportText>
-          <Input
-            aria-describedby='test-error-support-text test-error-text'
+            aria-describedby='error-support-text error-text'
             aria-invalid={true}
-            id={`${formId}-test-error`}
+            id={`${formId}-error`}
             isError={true}
-            name='test-error'
+            name='error'
             required
             defaultValue=''
           />
-          <ErrorText id='test-error-text'>＊エラーテキスト</ErrorText>
+          <ErrorText id='error-text'>＊エラーテキスト</ErrorText>
         </div>
 
         <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-test-filled-error`}>
+          <Label htmlFor={`${formId}-filled-error`}>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Label>
-          <SupportText id='test-filled-error-support-text'>サポートテキスト</SupportText>
+          <SupportText id='filled-error-support-text'>サポートテキスト</SupportText>
           <Input
-            aria-describedby='test-filled-error-support-text test-filled-error-text'
+            aria-describedby='filled-error-support-text filled-error-text'
             aria-invalid={true}
             defaultValue='誤った入力内容'
-            id={`${formId}-test-filled-error`}
+            id={`${formId}-filled-error`}
             isError={true}
-            name='test-filled-error'
+            name='filled-error'
             required
           />
-          <ErrorText id='test-filled-error-text'>＊エラーテキスト</ErrorText>
+          <ErrorText id='filled-error-text'>＊エラーテキスト</ErrorText>
         </div>
+      </div>
+    );
+  },
+};
 
+export const Disabled: Story = {
+  render: () => {
+    const formId = React.useId();
+
+    return (
+      <div className='flex flex-col gap-8'>
         <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-test-disabled`}>ラベル</Label>
-          <SupportText id='test-disabled-support-text'>
+          <Label htmlFor={`${formId}-disabled`}>ラベル</Label>
+          <SupportText id='disabled-support-text'>
             〜の理由により、この項目は無効化されています。
           </SupportText>
           <Input
-            aria-describedby='test-disabled-support-text'
+            aria-describedby='disabled-support-text'
             aria-disabled={true}
             defaultValue='入力テキスト'
-            id={`${formId}-test-disabled`}
-            name='test-disabled'
+            id={`${formId}-disabled`}
+            name='disabled'
           />
         </div>
       </div>

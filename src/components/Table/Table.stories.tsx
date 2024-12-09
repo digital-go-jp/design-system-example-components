@@ -1,564 +1,746 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { Description, Stories, Subtitle, Title } from '@storybook/blocks';
 import React from 'react';
 import { Ol } from '../';
-import { Table, Tbody, Td, Th, Thead, Tr } from './Table';
 
 const meta = {
   title: 'Component/DADS v2/Table',
-  component: Table,
   tags: ['autodocs'],
-} satisfies Meta<typeof Table>;
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Stories />
+        </>
+      ),
+      description: {
+        component:
+          'テーブル用のコンポーネントは用意していません。`table`, `caption`, `thead`, `tbody` `tr`, `th`, `td` などの HTML 要素を用いて実装してください。\n\n実装例は以下のサンプルを参照してください。',
+      },
+    },
+  },
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const FirstRowAsHeaderCell: Story = {
+export const FirstRowAsHeaderCell = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max'>
-          <caption className='p-4 font-bold'>1行目が見出しセル</caption>
-          <Thead>
-            <Tr>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-max'>
+          <caption className='text-left py-4 font-bold'>1行目が見出しセル</caption>
+          <thead>
+            <tr>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },
 };
 
-export const FirstColumnAsHeaderCell: Story = {
+export const FirstColumnAsHeaderCell = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max [&_:is(th,td)]:border-b-0 [&_:is(th,td)]:border-r'>
-          <caption className='p-4 font-bold'>1列目が見出しセル</caption>
-          <Tbody>
-            <Tr>
-              <Th className='border-black bg-solid-gray-50' scope='row'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-max'>
+          <caption className='text-left py-4 font-bold'>1列目が見出しセル</caption>
+          <tbody>
+            <tr>
+              <th
+                className='px-4 py-6 border-r border-black bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Th className='border-black bg-solid-gray-50' scope='row'>
+              </th>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-r border-black bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Th className='border-black bg-solid-gray-50' scope='row'>
+              </th>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-r border-black bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Th className='border-black bg-solid-gray-50' scope='row'>
+              </th>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-r border-black bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </th>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-r border-solid-gray-420'>データ</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },
 };
 
-export const FirstRowAndColumnAsHeaderCell: Story = {
+export const FirstRowAndColumnAsHeaderCell = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max'>
-          <caption className='p-4 font-bold'>1行目と1列目の両方が見出しセル</caption>
-          <Thead>
-            <Tr>
-              <Td className='border-r bg-solid-gray-50'></Td>
-              <Th className='bg-solid-gray-50' scope='col'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-max'>
+          <caption className='text-left py-4 font-bold'>1行目と1列目の両方が見出しセル</caption>
+          <thead>
+            <tr>
+              <td className='px-4 py-6 border-r border-b border-solid-gray-420 bg-solid-gray-50'></td>
+              <th
+                className='px-4 py-6 border-b border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody className=' [&_th]:border-r'>
-            <Tr>
-              <Th className='bg-solid-gray-50' scope='row'>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th
+                className='px-4 py-6 border-r border-b border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Th className='bg-solid-gray-50' scope='row'>
+              </th>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-r border-b border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Th className='bg-solid-gray-50' scope='row'>
+              </th>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-r border-b border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </th>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },
 };
 
-export const CondensedTable: Story = {
+export const CondensedTable = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max [&_:is(th,td)]:!py-2'>
-          <caption className='p-4 font-bold'>セルの高さが狭いテーブル</caption>
-          <Thead>
-            <Tr>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-max'>
+          <caption className='text-left py-4 font-bold'>セルの高さが狭いテーブル</caption>
+          <thead>
+            <tr>
+              <th
+                className='px-4 py-2 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-2 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-2 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-2 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-2 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-2 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-2 border-b border-solid-gray-420'>データ</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },
 };
 
-export const BorderOnRowAndColumn: Story = {
+export const BorderOnRowAndColumn = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max [&_:is(th,td)]:border'>
-          <caption className='p-4 font-bold'>行と列に罫線</caption>
-          <Thead>
-            <Tr>
-              <Th className='bg-solid-gray-50' scope='col'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-max'>
+          <caption className='text-left py-4 font-bold'>行と列に罫線</caption>
+          <thead>
+            <tr>
+              <th
+                className='px-4 py-6 border border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border border-solid-gray-420'>データ</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },
 };
 
-export const TableHeaderWithColspan: Story = {
+export const TableHeaderWithColspan = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max border border-solid-gray-420'>
-          <caption className='p-4 font-bold'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-max border border-solid-gray-420'>
+          <caption className='text-left py-4 font-bold'>
             テーブルヘッダーがcolspanで列結合され、階層化されたパターン
           </caption>
-          <Thead className='[&_th]:border-r'>
-            <Tr>
-              <Th className='bg-solid-gray-50' colSpan={3} scope='col'>
+          <thead>
+            <tr>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                colSpan={3}
+                scope='col'
+              >
                 親ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' colSpan={3} scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                colSpan={3}
+                scope='col'
+              >
                 親ラベル
-              </Th>
-            </Tr>
-            <Tr>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 子ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 子ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 子ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 子ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 子ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 子ラベル
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },
 };
 
-export const TableHeaderWithRowspan: Story = {
+export const TableHeaderWithRowspan = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max border border-solid-gray-420 [&_th]:border-r'>
-          <caption className='p-4 font-bold'>1列目が見出しセル</caption>
-          <Tbody>
-            <Tr>
-              <Th className='bg-solid-gray-50' rowSpan={2} scope='row'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-max border border-solid-gray-420'>
+          <caption className='text-left py-4 font-bold'>
+            テーブルヘッダーがrowspanで行結合され、階層化されたパターン
+          </caption>
+          <tbody>
+            <tr>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                rowSpan={2}
+                scope='row'
+              >
                 親ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='row'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 子ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Th className='bg-solid-gray-50' scope='row'>
+              </th>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 子ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Th className='bg-solid-gray-50' rowSpan={2} scope='row'>
+              </th>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                rowSpan={2}
+                scope='row'
+              >
                 親ラベル
-              </Th>
-              <Th className='bg-solid-gray-50' scope='row'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 子ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr>
-              <Th className='bg-solid-gray-50' scope='row'>
+              </th>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr>
+              <th
+                className='px-4 py-6 border-b border-r border-solid-gray-420 bg-solid-gray-50 text-left'
+                scope='row'
+              >
                 子ラベル
-              </Th>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </th>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },
 };
 
-export const StripeTable: Story = {
+export const StripeTable = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-max'>
-          <caption className='p-4 font-bold'>背景色ストライプ</caption>
-          <Thead>
-            <Tr>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-max'>
+          <caption className='text-left py-4 font-bold'>背景色ストライプ</caption>
+          <thead>
+            <tr>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 ラベル
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr className='even:bg-[#f8f8fb]'>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr className='even:bg-[#f8f8fb]'>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr className='even:bg-[#f8f8fb]'>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr className='even:bg-[#f8f8fb]'>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr className='even:bg-[#f8f8fb]'>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-            <Tr className='even:bg-[#f8f8fb]'>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-              <Td>データ</Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className='even:bg-[#f8f8fb]'>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr className='even:bg-[#f8f8fb]'>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr className='even:bg-[#f8f8fb]'>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr className='even:bg-[#f8f8fb]'>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr className='even:bg-[#f8f8fb]'>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+            <tr className='even:bg-[#f8f8fb]'>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420'>データ</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },
 };
 
-export const VerticalAlignedTextInCell: Story = {
+export const VerticalAlignedTextInCell = {
   render: () => {
     return (
-      <div className='flex flex-col px-4'>
-        <Table className='w-full min-w-[calc(640/16*1rem)]'>
-          <caption className='p-4 font-bold'>セル内でのテキスト上揃え</caption>
-          <Thead>
-            <Tr>
-              <Th className='w-36 border-black bg-solid-gray-50 md:w-64' scope='col'>
+      <div className='overflow-x-auto'>
+        <table className='w-full min-w-[calc(640/16*1rem)]'>
+          <caption className='text-left py-4 font-bold'>セル内でのテキスト上揃え</caption>
+          <thead>
+            <tr>
+              <th
+                className='w-36 px-4 py-6 border-b border-black bg-solid-gray-50 text-left md:w-64'
+                scope='col'
+              >
                 項目
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 例
-              </Th>
-              <Th className='border-black bg-solid-gray-50' scope='col'>
+              </th>
+              <th
+                className='px-4 py-6 border-b border-black bg-solid-gray-50 text-left'
+                scope='col'
+              >
                 説明
-              </Th>
-            </Tr>
-          </Thead>
-          <Tbody className='[&_td]:align-top'>
-            <Tr>
-              <Td>チャネルの種類</Td>
-              <Td>
+              </th>
+            </tr>
+          </thead>
+          <tbody className='[&_:where(td)]:align-top'>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>チャネルの種類</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
                 オンラインポータル、電話サポート、メール窓口、情報パンフ、動画案内、SNSアカウント、イベント告知、FAQページ
-              </Td>
-              <Td>
+              </td>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
                 市民は自分に適した手段で情報取得やサービス利用が可能で、行政も効果的なコミュニケーションとサポートを提供できます
-              </Td>
-            </Tr>
-            <Tr>
-              <Td>プロバイダー</Td>
-              <Td>光ファイバー、DSL、ケーブル、ワイヤレスなど</Td>
-              <Td>
+              </td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>プロバイダー</td>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
+                光ファイバー、DSL、ケーブル、ワイヤレスなど
+              </td>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
                 ユーザーは異なるプロバイダータイプから、自分のニーズに合った高速インターネット接続を選択できます
-              </Td>
-            </Tr>
-            <Tr>
-              <Td>サービスを提供する地域</Td>
-              <Td>
+              </td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
+                サービスを提供する地域
+              </td>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
                 <Ol>
                   <li>りんご区</li>
                   <li>みかん区</li>
@@ -566,22 +748,24 @@ export const VerticalAlignedTextInCell: Story = {
                   <li>いちご区</li>
                   <li>なし区</li>
                 </Ol>
-              </Td>
-              <Td>
+              </td>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
                 特有のニーズに応えながら、高品質かつ効率的なサポートを目指しています。地元のコミュニティと密接に連携し、信頼性とアクセシビリティを大切にしています。
-              </Td>
-            </Tr>
-            <Tr>
-              <Td>チャネルアイコン</Td>
-              <Td>
+              </td>
+            </tr>
+            <tr>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
+                チャネルアイコン
+              </td>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
                 テレビ、ラジオ、スマートフォン、パソコン、ニュース、ゲーム、料理、アート、音楽、カメラ
-              </Td>
-              <Td>
+              </td>
+              <td className='px-4 py-6 border-b border-solid-gray-420 align-top'>
                 これらのアイコンは利用者が興味を持ちそうなチャンネルを素早く特定し、アクセスしやすくするのに役立ちます。
-              </Td>
-            </Tr>
-          </Tbody>
-        </Table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   },

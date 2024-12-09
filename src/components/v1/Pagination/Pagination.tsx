@@ -143,7 +143,7 @@ export const PaginationCurrent = (props: PaginationCurrentProps) => {
   const { current, max } = props;
 
   return (
-    <span className='text-[calc(12/16*1rem)] leading-1-7'>
+    <span className='text-[calc(12/16*1rem)] leading-170'>
       <span aria-current='page'>{current}</span> / {max}
     </span>
   );
