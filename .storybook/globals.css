@@ -7,13 +7,6 @@
 
 @layer base {
   body {
-    font-family:
-      "Noto Sans JP",
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      sans-serif;
-
-    @apply text-std-17N-170 text-solid-gray-900;
+    @apply font-sans text-std-17N-170 text-solid-gray-900;
   }
 }
