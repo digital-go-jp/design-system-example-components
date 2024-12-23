@@ -10,7 +10,7 @@ export const NotificationBannerClose = (props: Props) => {
   return (
     <button
       className={`
-        inline-flex items-center gap-0.5 -mt-2 -mr-3 text-solid-gray-900 border border-transparent rounded-lg
+        inline-flex items-center gap-0.5 -mt-2 -mr-3 text-solid-gray-900 border border-transparent rounded-8
         desktop:px-2 desktop:py-0.5 desktop:mt-0 desktop:mr-0
         hover:border-solid-gray-900
         focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 focus-visible:bg-yellow-300 focus-visible:border-transparent

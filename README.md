@@ -8,13 +8,9 @@
 
 このリポジトリでは全てのコンポーネントは実装していません。  
 （定期的にサンプルは追加予定です。）  
-未実装のコンポーネントについてはスクラッチで書かずに、以下のようなヘッドレスUIライブラリの利用を推奨します。
+未実装のコンポーネントについてはスクラッチで書かずに、ヘッドレスUIライブラリの利用を推奨します。
 
-- [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
-- [Radix UI](https://www.radix-ui.com/)
-- [Headless UI](https://headlessui.com/)
-
-スクラッチで書く場合は、[ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/)の[Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/)を参考にして実装を進める事を推奨します。
+スクラッチで書く必要がある場合は、[ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/)の[Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/)を参考にして実装を進める事を推奨します。
 
 ## サンプルコード
 
