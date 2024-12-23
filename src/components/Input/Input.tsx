@@ -22,7 +22,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   return (
     <input
       className={`
-        max-w-full rounded-lg border bg-white px-4 py-3 text-oln-16N-100 text-solid-gray-800
+        max-w-full rounded-8 border bg-white px-4 py-3 text-oln-16N-100 text-solid-gray-800
         ${InputBlockSizeStyle[blockSize]}
         ${isError ? 'border-error-1' : 'border-solid-gray-900'}
         focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300

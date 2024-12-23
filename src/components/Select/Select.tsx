@@ -33,7 +33,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
     <span className='relative'>
       <select
         className={`
-          w-full appearance-none border rounded-lg bg-white pl-4 pr-10 py-[calc(11/16*1rem)] text-oln-16N-100 text-solid-gray-800
+          w-full appearance-none border rounded-8 bg-white pl-4 pr-10 py-[calc(11/16*1rem)] text-oln-16N-100 text-solid-gray-800
            ${SelectBlockSizeStyle[blockSize]}
           ${isError ? 'border-error-1' : 'border-solid-gray-900'}
           focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
