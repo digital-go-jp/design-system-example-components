@@ -251,7 +251,7 @@ export const WithoutLabel: Story = {
           <LanguageSelectorButton
             aria-controls={`${sampleId}-menu`}
             aria-expanded={isMenuOpen}
-            className='!px-0 !gap-0 !rounded hover:outline hover:outline-black'
+            className='!px-0 !gap-0 !rounded-4 hover:outline hover:outline-black'
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             ref={buttonRef}
           >
@@ -520,7 +520,7 @@ export const Responsive: Story = {
           <LanguageSelectorButton
             aria-controls={`${sampleId}-menu`}
             aria-expanded={isMenuOpen}
-            className='!px-0 !gap-0 !rounded hover:outline hover:outline-black desktop:!px-2 desktop:!gap-1 desktop:!rounded-lg desktop:hover:[&:not(:focus-visible)]:outline-0'
+            className='!px-0 !gap-0 !rounded-4 hover:outline hover:outline-black desktop:!px-2 desktop:!gap-1 desktop:!rounded-8 desktop:hover:[&:not(:focus-visible)]:outline-0'
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             ref={buttonRef}
           >
@@ -586,7 +586,7 @@ export const OnlyUI = {
         </LanguageSelector>
 
         <LanguageSelector>
-          <LanguageSelectorButton className='!px-0 !py-0 !gap-0 !rounded hover:outline hover:outline-black'>
+          <LanguageSelectorButton className='!px-0 !py-0 !gap-0 !rounded-4 hover:outline hover:outline-black'>
             <LanguageSelectorGlobeWithLabelIcon />
             <LanguageSelectorArrowIcon className='mt-0.5 rotate-180' />
           </LanguageSelectorButton>

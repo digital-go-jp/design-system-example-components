@@ -56,27 +56,10 @@ export const Introduction: Story = {
           HTMLネイティブの機能が利用可能になった際には、既存の実装を最新の標準に置き換えていきます。この取り組みにより、一部のブラウザではまだ実装されていない最新機能を試験的に導入することもあります。
         </p>
         <p className='my-4'>
-          HTMLネイティブ機能だけでは実現できないコンポーネントに関しては、以下のようなヘッドレスUIライブラリの使用を推奨します。
+          HTMLネイティブ機能だけでは実現できないコンポーネントに関しては、ヘッドレスUIライブラリの使用を推奨します。
         </p>
-        <Ul className='my-4 md:my-6 space-y-2'>
-          <li>
-            <Link href='https://react-spectrum.adobe.com/react-aria/index.html' target='_blank'>
-              React Aria
-            </Link>
-          </li>
-          <li>
-            <Link href='https://www.radix-ui.com/' target='_blank'>
-              Radix UI
-            </Link>
-          </li>
-          <li>
-            <Link href='https://headlessui.com/' target='_blank'>
-              Headless UI
-            </Link>
-          </li>
-        </Ul>
         <p className='my-4'>
-          一部のサンプルコードでは、Reactの機能を使った実装も提供していますので、実装の参考にしてください。キーボード操作などの挙動については
+          一部のサンプルコードでは、Reactの機能を使った実装も提供していますので、実装の参考にしてください。WAI-ARIAやキーボード操作などの挙動については
           <Link href='ARIA Authoring Practices Guide (APG)' target='_blank'>
             ARIA Authoring Practices Guide (APG)
           </Link>

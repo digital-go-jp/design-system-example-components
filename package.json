@@ -39,34 +39,34 @@
     "storybook:test": "test-storybook"
   },
   "dependencies": {
-    "@digital-go-jp/tailwind-theme-plugin": "^0.2.1",
+    "@digital-go-jp/tailwind-theme-plugin": "^0.2.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@markuplint/jsx-parser": "^4.7.13",
     "@markuplint/react-spec": "^4.5.11",
-    "@storybook/addon-a11y": "^8.4.5",
-    "@storybook/addon-essentials": "^8.4.5",
-    "@storybook/addon-interactions": "^8.4.5",
-    "@storybook/addon-links": "^8.4.5",
-    "@storybook/blocks": "^8.4.5",
-    "@storybook/react": "^8.4.5",
-    "@storybook/react-vite": "^8.4.5",
-    "@storybook/test": "^8.4.5",
+    "@storybook/addon-a11y": "^8.4.7",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-links": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
     "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^22.9.1",
+    "@types/node": "^22.10.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react-swc": "^3.7.1",
     "autoprefixer": "^10.4.20",
     "markuplint": "^4.11.3",
     "postcss": "^8.4.49",
-    "storybook": "^8.4.5",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.11"
+    "storybook": "^8.4.7",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
   },
   "engines": {
     "node": ">=18"
