@@ -1,12 +1,13 @@
 export {
   Accordion,
   AccordionSummary,
-  AccordionDefaultIconWrapper,
-  AccordionDefaultIcon,
+  AccordionContent,
+  AccordionBackLink,
 } from './Accordion';
 export { Breadcrumbs, BreadcrumbsLabel, BreadcrumbItem, BreadcrumbList } from './Breadcrumbs';
 export { Button, buttonBaseStyle, buttonVariantStyle, buttonSizeStyle } from './Button';
 export { Checkbox } from './Checkbox';
+export { Disclosure, DisclosureSummary, DisclosureBackLink } from './Disclosure';
 export { Divider } from './Divider';
 export {
   EmergencyBanner,

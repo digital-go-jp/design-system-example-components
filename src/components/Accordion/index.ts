@@ -1,6 +1,6 @@
 export {
   Accordion,
   AccordionSummary,
-  AccordionDefaultIconWrapper,
-  AccordionDefaultIcon,
+  AccordionContent,
+  AccordionBackLink,
 } from './Accordion';
