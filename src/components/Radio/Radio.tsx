@@ -27,9 +27,9 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
   };
 
   const radioSizeStyle: Record<RadioSize, string> = {
-    sm: 'border-[calc(1.5/16*1rem)]',
+    sm: 'border-[calc(2/16*1rem)]',
     md: 'border-[calc(2/16*1rem)]',
-    lg: 'border-[calc(2.75/16*1rem)]',
+    lg: 'border-[calc(3/16*1rem)]',
   };
 
   const radioLabelSizeStyle: Record<RadioSize, string> = {
@@ -46,15 +46,14 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
       <span className={`flex items-center justify-center shrink-0 ${radioWrapperSizeStyle[size]}`}>
         <input
           className={`
-            appearance-none relative size-4/5 rounded-full bg-white
-            before:absolute before:inset-0 before:hidden before:m-auto before:w-[calc(9/16*100%)] before:h-[calc(9/16*100%)] before:rounded-full
+            appearance-none size-[calc(5/6*100%)] rounded-full bg-white
             focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
+            before:hidden before:size-full before:bg-white before:[clip-path:circle(calc(5/16*100%))]
             checked:before:block
             ${radioSizeStyle[size]}
-            ${
-              !isError
-                ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:before:bg-blue-900 checked:hover:border-blue-1100 checked:hover:before:bg-blue-1100'
-                : 'border-error-1 hover:border-red-1000 checked:before:bg-error-1 checked:hover:before:bg-red-1000'
+            ${!isError
+              ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:before:bg-blue-900 checked:hover:border-blue-1100 checked:hover:before:bg-blue-1100'
+              : 'border-error-1 hover:border-red-1000 checked:before:bg-error-1 checked:hover:before:bg-red-1000'
             }
             aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:before:!bg-solid-gray-300
             forced-colors:checked:before:!bg-[CanvasText] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText]
