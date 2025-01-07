@@ -27,9 +27,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
   };
 
   const checkboxSizeStyle: Record<CheckboxSize, string> = {
-    sm: 'border-[calc(1.5/16*1rem)] before:border-b-[calc(1.5/16*1rem)] before:border-l-[calc(1.5/16*1rem)]',
-    md: 'border-[calc(2/16*1rem)] before:border-b-[calc(2/16*1rem)] before:border-l-[calc(2/16*1rem)]',
-    lg: 'border-[calc(2.75/16*1rem)] before:border-b-[calc(2.75/16*1rem)] before:border-l-[calc(2.75/16*1rem)]',
+    sm: 'border-[calc(2/16*1rem)]',
+    md: 'border-[calc(2/16*1rem)] before:origin-top-left before:scale-[calc(20/14)]',
+    lg: 'border-[calc(3/16*1rem)] before:origin-top-left before:scale-[calc(27/14)]',
   };
 
   const checkboxLabelSizeStyle: Record<CheckboxSize, string> = {
@@ -48,18 +48,17 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
       >
         <input
           className={`
-            appearance-none relative size-3/4 rounded-[8.33%] bg-white
+            appearance-none size-3/4 rounded-[calc(2/18*100%)] bg-white
             focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
-            before:hidden before:absolute before:top-[22%] before:left-[18%] before:w-[calc(9.5/15*100%)] before:h-[calc(5.5/15*100%)] before:border-white before:-rotate-45
+            before:hidden before:size-3.5 before:bg-white before:[clip-path:path('M5.6,11.2L12.65,4.15L11.25,2.75L5.6,8.4L2.75,5.55L1.35,6.95L5.6,11.2Z')]
             checked:before:block
             ${checkboxSizeStyle[size]}
-            ${
-              !isError
-                ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:bg-blue-900 checked:hover:border-blue-1100 checked:hover:bg-blue-1100'
-                : 'border-error-1 hover:border-red-1000 checked:bg-error-1 checked:hover:bg-red-1000'
+            ${!isError
+              ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:bg-blue-900 checked:hover:border-blue-1100 checked:hover:bg-blue-1100'
+              : 'border-error-1 hover:border-red-1000 checked:bg-error-1 checked:hover:bg-red-1000'
             }
             aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:!bg-solid-gray-300 aria-disabled:before:border-solid-gray-50
-            forced-colors:checked:!bg-[CanvasText] forced-colors:before:!border-[Canvas] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:!bg-[GrayText]
+            forced-colors:checked:!bg-[CanvasText] forced-colors:before:!bg-[Canvas] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:!bg-[GrayText]
           `}
           id={id}
           onClick={props['aria-disabled'] ? handleDisabled : onClick}
