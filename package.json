@@ -65,7 +65,7 @@
     "markuplint": "^4.11.3",
     "postcss": "^8.4.49",
     "storybook": "^8.4.7",
-    "typescript": "^5.7.2",
+    "typescript": "^5.7.3",
     "vite": "^6.0.5"
   },
   "engines": {
