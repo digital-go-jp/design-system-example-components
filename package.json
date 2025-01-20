@@ -53,7 +53,7 @@
     "@storybook/addon-interactions": "^8.4.7",
     "@storybook/addon-links": "^8.4.7",
     "@storybook/blocks": "^8.4.7",
-    "@storybook/react": "^8.4.7",
+    "@storybook/react": "^8.5.0",
     "@storybook/react-vite": "^8.4.7",
     "@storybook/test": "^8.4.7",
     "@tsconfig/node20": "^20.1.4",
