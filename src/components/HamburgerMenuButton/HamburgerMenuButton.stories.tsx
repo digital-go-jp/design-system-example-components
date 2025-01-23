@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
+import React, { useId, useRef, useState } from 'react';
 import { CloseIcon, CloseWithLabelIcon, HamburgerIcon, HamburgerWithLabelIcon } from './';
 import { HamburgerMenuButton } from './HamburgerMenuButton';
 
@@ -12,10 +12,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
+export const DesktopAndMobileCommon: Story = {
   render: () => {
-    const sampleId = React.useId();
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const sampleId = useId();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
       <div className='m-4 flex flex-col gap-2'>
         <HamburgerMenuButton
@@ -37,7 +37,7 @@ export const Example: Story = {
           )}
         </HamburgerMenuButton>
         {isMenuOpen && (
-          <div className='h-40 w-60 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
+          <div className='h-40 w-44 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
             サンプルメニュー
           </div>
         )}
@@ -46,108 +46,104 @@ export const Example: Story = {
   },
 };
 
-export const WithoutLabel: Story = {
+export const MobileOnly: Story = {
+  decorators: [
+    (Story) => (
+      <>
+        <div className='p-4'>
+          <h2 className='mb-8 text-std-32B-150'>モバイル条件付きコンポーネント</h2>
+          <Story />
+          <p className='mt-8 mb-4'>
+            モバイルデバイスでの表示時にヘッダーの領域が限定され、十分な領域が確保できない場合に限り、アイコンにラベルが内包された
+            <code>HamburgerWithLabelIcon</code>
+            によるモバイル条件付きコンポーネントを使用します。
+          </p>
+          <p className='my-4'>
+            それ以外の場合は、原則として、<code>HamburgerIcon</code>
+            とテキストラベルの組み合わせから成るデスクトップ・モバイル共通コンポーネントを使用してください。
+          </p>
+        </div>
+      </>
+    ),
+  ],
   render: () => {
-    const sampleId = React.useId();
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const sampleJaId = useId();
+    const sampleEnId = useId();
+    const [isMenuJaOpen, setIsMenuJaOpen] = useState(false);
+    const [isMenuEnOpen, setIsMenuEnOpen] = useState(false);
     return (
-      <div className='m-4 flex flex-col gap-2'>
-        <HamburgerMenuButton
-          className='hover:outline hover:outline-black'
-          aria-controls={`${sampleId}-menu`}
-          aria-expanded={isMenuOpen}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <CloseWithLabelIcon /> : <HamburgerWithLabelIcon />}
-        </HamburgerMenuButton>
-        {isMenuOpen && (
-          <div className='h-40 w-60 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
-            サンプルメニュー
+      <>
+        <div className='m-4 flex gap-36'>
+          <div className='relative'>
+            <HamburgerMenuButton
+              className='hover:outline hover:outline-black'
+              aria-controls={`${sampleJaId}-menu`}
+              aria-expanded={isMenuJaOpen}
+              onClick={() => setIsMenuJaOpen(!isMenuJaOpen)}
+            >
+              {isMenuJaOpen ? <CloseWithLabelIcon /> : <HamburgerWithLabelIcon />}
+            </HamburgerMenuButton>
+            {isMenuJaOpen && (
+              <div
+                className='absolute h-40 w-44 border border-solid-gray-420 p-4 bg-white'
+                id={`${sampleJaId}-menu`}
+              >
+                サンプルメニュー
+              </div>
+            )}
           </div>
-        )}
-      </div>
+          <div className='relative'>
+            <HamburgerMenuButton
+              className='hover:outline hover:outline-black'
+              aria-controls={`${sampleEnId}-menu`}
+              aria-expanded={isMenuEnOpen}
+              onClick={() => setIsMenuEnOpen(!isMenuEnOpen)}
+            >
+              {isMenuEnOpen ? (
+                <CloseWithLabelIcon isEnglish={true} />
+              ) : (
+                <HamburgerWithLabelIcon isEnglish={true} />
+              )}
+            </HamburgerMenuButton>
+            {isMenuEnOpen && (
+              <div
+                className='absolute h-40 w-52 border border-solid-gray-420 p-4 bg-white'
+                id={`${sampleEnId}-menu`}
+              >
+                Sample menu
+              </div>
+            )}
+          </div>
+        </div>
+      </>
     );
   },
 };
 
-export const WithoutLabelEN: Story = {
-  render: () => {
-    const sampleId = React.useId();
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    return (
-      <div className='m-4 flex flex-col gap-2'>
-        <HamburgerMenuButton
-          className='hover:outline hover:outline-black'
-          aria-controls={`${sampleId}-menu`}
-          aria-expanded={isMenuOpen}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? (
-            <CloseWithLabelIcon isEnglish={true} />
-          ) : (
-            <HamburgerWithLabelIcon isEnglish={true} />
-          )}
-        </HamburgerMenuButton>
-        {isMenuOpen && (
-          <div className='h-40 w-60 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
-            サンプルメニュー
-          </div>
-        )}
-      </div>
-    );
-  },
-};
-
-export const Responsive: Story = {
-  render: () => {
-    const sampleId = React.useId();
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    return (
-      <div className='m-4 flex flex-col gap-2'>
-        <HamburgerMenuButton
-          className='hover:outline hover:outline-black desktop:p-0.5 desktop:hover:[&:not(:focus-visible)]:outline-0'
-          aria-controls={`${sampleId}-menu`}
-          aria-expanded={isMenuOpen}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? (
-            <>
-              <CloseWithLabelIcon className='desktop:hidden' />
-              <CloseIcon className='hidden desktop:inline flex-none' />
-              <span className='hidden desktop:inline'>閉じる</span>
-            </>
-          ) : (
-            <>
-              <HamburgerWithLabelIcon className='desktop:hidden' />
-              <HamburgerIcon className='hidden desktop:inline flex-none' />
-              <span className='hidden desktop:inline'>メニュー</span>
-            </>
-          )}
-        </HamburgerMenuButton>
-        {isMenuOpen && (
-          <div className='h-40 w-60 border border-solid-gray-420 p-4' id={`${sampleId}-menu`}>
-            サンプルメニュー
-          </div>
-        )}
-      </div>
-    );
-  },
-};
-
-export const WithFocusTrap: Story = {
+export const WithDrawer: Story = {
   parameters: {
     layout: 'fullscreen',
   },
+  decorators: [
+    (Story) => (
+      <>
+        {/* NOTE: See "Drawer" story about Drawer */}
+        <div className='has-[dialog[open]]:overflow-auto has-[dialog[open]]:[scrollbar-gutter:stable]'>
+          <Story />
+        </div>
+      </>
+    ),
+  ],
   render: () => {
-    const sampleId = React.useId();
-    const triggerRef = React.useRef<HTMLButtonElement>(null);
-    const lastItemRef = React.useRef<HTMLAnchorElement>(null);
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const drawerId = useId();
+    const drawerRef = useRef<HTMLDialogElement>(null);
+
     const sampleMenuLinkClasses = `
-      flex min-h-[calc(44/16*1rem)] items-center px-4 py-3 text-dns-16N-120
-      hover:bg-solid-gray-50 hover:underline hover:underline-offset-[calc(3/16*1rem)]
-      focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-4 focus-visible:bg-yellow-300 focus-visible:ring-[calc(6/16*1rem)] focus-visible:ring-inset focus-visible:ring-yellow-300
-    `;
+        flex min-h-[calc(44/16*1rem)] items-center px-4 py-3 text-dns-16N-120 rounded-4
+        hover:bg-solid-gray-50 hover:underline hover:underline-offset-[calc(3/16*1rem)]
+        focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-4 focus-visible:bg-yellow-300 focus-visible:ring-[calc(6/16*1rem)] focus-visible:ring-inset focus-visible:ring-yellow-300
+      `;
+
     const sampleMenu = [
       {
         id: 'sample1',
@@ -170,70 +166,40 @@ export const WithFocusTrap: Story = {
         url: '#',
       },
     ];
-    React.useEffect(() => {
-      const onKeyUp = (e: KeyboardEvent) => {
-        if (e.code === 'Escape') {
-          setIsMenuOpen(false);
-          triggerRef.current?.focus();
-        }
-      };
 
-      if (isMenuOpen) {
-        document.addEventListener('keyup', onKeyUp);
-      }
-
-      return () => {
-        document.removeEventListener('keyup', onKeyUp);
-      };
-    }, [isMenuOpen]);
     return (
-      <div className='p-4 h-80'>
-        {isMenuOpen && (
-          /* biome-ignore lint/a11y/noNoninteractiveTabindex: For focus trap */
-          <div onFocus={() => lastItemRef.current?.focus()} tabIndex={0}></div>
-        )}
-        <HamburgerMenuButton
-          aria-controls={`${sampleId}-menu`}
-          aria-expanded={isMenuOpen}
-          className='relative p-0.5 z-20'
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          ref={triggerRef}
+      <>
+        <div className='flex p-4'>
+          <HamburgerMenuButton className='p-1' onClick={() => drawerRef.current?.showModal()}>
+            <HamburgerIcon className='flex-none' />
+            メニュー
+          </HamburgerMenuButton>
+        </div>
+        <dialog
+          aria-labelledby={`${drawerId}-heading`}
+          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh end-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100'
+          ref={drawerRef}
         >
-          {isMenuOpen ? (
-            <>
+          <h2 id={`${drawerId}-heading`} className='sr-only'>
+            サンプルメニュー
+          </h2>
+          <div className='flex p-4'>
+            <HamburgerMenuButton className='p-1' onClick={() => drawerRef.current?.close()}>
               <CloseIcon className='flex-none' />
               閉じる
-            </>
-          ) : (
-            <>
-              <HamburgerIcon className='flex-none' />
-              メニュー
-            </>
-          )}
-        </HamburgerMenuButton>
-        {isMenuOpen && (
-          <div
-            className='fixed top-0 bottom-0 left-0 pt-14 px-4 w-72 shadow-1 z-10 forced-colors:border-r'
-            id={`${sampleId}-menu`}
-          >
-            <ul className='py-2'>
-              {sampleMenu.map((menu, index) => (
-                <li key={menu.id}>
-                  <a
-                    className={sampleMenuLinkClasses}
-                    href={menu.url}
-                    ref={index === sampleMenu.length - 1 ? lastItemRef : undefined}
-                  >
-                    {menu.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            {/* biome-ignore lint/a11y/noNoninteractiveTabindex: For focus trap */}
-            <div onFocus={() => triggerRef.current?.focus()} tabIndex={0}></div>
+            </HamburgerMenuButton>
           </div>
-        )}
-      </div>
+          <ul className='px-6 py-4'>
+            {sampleMenu.map((item) => (
+              <li key={item.id}>
+                <a className={sampleMenuLinkClasses} href={item.url}>
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </dialog>
+      </>
     );
   },
 };

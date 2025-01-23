@@ -6,6 +6,15 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    scrollbar-gutter: stable;
+  }
+
+  :root:has(dialog[open]) {
+    overflow: clip;
+    scrollbar-gutter: auto;
+  }
+
   body {
     @apply font-sans text-std-17N-170 text-solid-gray-900;
   }
