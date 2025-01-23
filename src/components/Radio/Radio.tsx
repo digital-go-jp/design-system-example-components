@@ -43,7 +43,12 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
       className={`flex w-fit items-start ${containerSizeStyle[size]} ${children ? 'py-2' : ''}`}
       htmlFor={id}
     >
-      <span className={`flex items-center justify-center shrink-0 ${radioWrapperSizeStyle[size]}`}>
+      <span
+        className={`
+          flex items-center justify-center shrink-0 rounded-full ${radioWrapperSizeStyle[size]}
+          has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-solid-gray-420 forced-colors:has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-[CanvasText]
+        `}
+      >
         <input
           className={`
             appearance-none size-[calc(5/6*100%)] rounded-full bg-white
@@ -51,9 +56,10 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
             before:hidden before:size-full before:bg-white before:[clip-path:circle(calc(5/16*100%))]
             checked:before:block
             ${radioSizeStyle[size]}
-            ${!isError
-              ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:before:bg-blue-900 checked:hover:border-blue-1100 checked:hover:before:bg-blue-1100'
-              : 'border-error-1 hover:border-red-1000 checked:before:bg-error-1 checked:hover:before:bg-red-1000'
+            ${
+              !isError
+                ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:before:bg-blue-900 checked:hover:border-blue-1100 checked:hover:before:bg-blue-1100'
+                : 'border-error-1 hover:border-red-1000 checked:before:bg-error-1 checked:hover:before:bg-red-1000'
             }
             aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:before:!bg-solid-gray-300
             forced-colors:checked:before:!bg-[CanvasText] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText]
