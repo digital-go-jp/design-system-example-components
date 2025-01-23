@@ -12,9 +12,13 @@ export const EmergencyBannerHeading = (props: EmergencyBannerHeadingProps) => {
 
   return (
     <Tag
-      className={`text-std-20B-150 text-black desktop:text-std-24B-150 ${className ?? ''}`}
+      className={`
+        text-std-20B-150 text-black desktop:text-std-24B-150
+        ${className ?? ''}
+      `}
       {...rest}
     >
+      【緊急】
       {children}
     </Tag>
   );

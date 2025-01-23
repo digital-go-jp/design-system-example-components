@@ -44,7 +44,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
       htmlFor={id}
     >
       <span
-        className={`flex items-center justify-center shrink-0 ${checkboxWrapperSizeStyle[size]}`}
+        className={`
+          flex items-center justify-center shrink-0 rounded-[calc(1/8*100%)] ${checkboxWrapperSizeStyle[size]}
+        has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-solid-gray-420 forced-colors:has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-[CanvasText]
+        `}
       >
         <input
           className={`
@@ -53,9 +56,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
             before:hidden before:size-3.5 before:bg-white before:[clip-path:path('M5.6,11.2L12.65,4.15L11.25,2.75L5.6,8.4L2.75,5.55L1.35,6.95L5.6,11.2Z')]
             checked:before:block
             ${checkboxSizeStyle[size]}
-            ${!isError
-              ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:bg-blue-900 checked:hover:border-blue-1100 checked:hover:bg-blue-1100'
-              : 'border-error-1 hover:border-red-1000 checked:bg-error-1 checked:hover:bg-red-1000'
+            ${
+              !isError
+                ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:bg-blue-900 checked:hover:border-blue-1100 checked:hover:bg-blue-1100'
+                : 'border-error-1 hover:border-red-1000 checked:bg-error-1 checked:hover:bg-red-1000'
             }
             aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:!bg-solid-gray-300 aria-disabled:before:border-solid-gray-50
             forced-colors:checked:!bg-[CanvasText] forced-colors:before:!bg-[Canvas] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:!bg-[GrayText]
