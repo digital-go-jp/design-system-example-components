@@ -15,7 +15,6 @@ export {
   DisclosureBackLink,
   Divider,
   EmergencyBanner,
-  EmergencyBannerWithLink,
   EmergencyBannerHeading,
   EmergencyBannerBody,
   EmergencyBannerButton,

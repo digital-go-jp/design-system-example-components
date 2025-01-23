@@ -11,7 +11,6 @@ export { Disclosure, DisclosureSummary, DisclosureBackLink } from './Disclosure'
 export { Divider } from './Divider';
 export {
   EmergencyBanner,
-  EmergencyBannerWithLink,
   EmergencyBannerHeading,
   EmergencyBannerBody,
   EmergencyBannerButton,

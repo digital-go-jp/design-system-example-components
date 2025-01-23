@@ -19,7 +19,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'EmergencyBannerHeading コンポーネントは緊急時バナーのタイトルに使用します。',
+        component:
+          'EmergencyBannerHeading コンポーネントは緊急時バナーのタイトルに使用します。\n\nバナータイトルの表示文字列は必ず「【緊急】」から始まるように設定されています。',
       },
     },
   },

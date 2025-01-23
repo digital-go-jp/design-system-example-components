@@ -5,11 +5,16 @@ const meta = {
   title: 'Component/DADS v2/EmergencyBanner/Parts/Button',
   component: EmergencyBannerButton,
   tags: ['autodocs'],
+  argTypes: {
+    target: {
+      options: ['_blank', '_parent', '_self', '_top'],
+      control: { type: 'radio' },
+    },
+  },
   parameters: {
     docs: {
       description: {
-        component:
-          'EmergencyBannerButton は緊急時バナーがリンクとして使用される場合（`EmergencyBannerWithLink`）に使用します。\n\nこのコンポーネントは、緊急時バナー全体がリンクであることを認識できるようにする視覚的なボタンのため、`div` 要素を使用しています。',
+        component: 'EmergencyBannerButton は緊急時バナーにリンク先がある場合に使用します。',
       },
     },
   },
@@ -21,5 +26,7 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {
   args: {
     children: 'ラベル',
+    target: '_self',
+    href: '#',
   },
 };
