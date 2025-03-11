@@ -50,4 +50,4 @@ npm run storybook
 
 デジタル庁デザインシステムのチームメンバーを募集しています。行政のデジタル環境を支える基盤づくりに、あなたのスキルや経験を活かしてみませんか？　求人ページからご応募ください。
 
-- [プロダクトデザイナ ー（デザインシステム） - デジタル庁](https://herp.careers/v1/digitalsaiyo/IjQ4ovK9BFPl)
+- [プロダクトデザイナー（デザインシステム） - デジタル庁](https://herp.careers/v1/digitalsaiyo/IjQ4ovK9BFPl)
