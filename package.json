@@ -51,7 +51,7 @@
     "@markuplint/jsx-parser": "^4.7.16",
     "@markuplint/react-spec": "^4.5.16",
     "@storybook/addon-a11y": "^8.6.0",
-    "@storybook/addon-essentials": "^8.6.0",
+    "@storybook/addon-essentials": "^8.6.6",
     "@storybook/addon-interactions": "^8.6.0",
     "@storybook/addon-links": "^8.6.0",
     "@storybook/addon-storysource": "^8.6.0",
