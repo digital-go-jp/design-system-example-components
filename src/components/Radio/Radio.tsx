@@ -8,72 +8,60 @@ export type RadioProps = Omit<ComponentProps<'input'>, 'size'> & {
 };
 
 export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
-  const { children, id, isError, onClick, size = 'sm', ...rest } = props;
+  const { children, isError, onClick, size = 'sm', ...rest } = props;
 
   const handleDisabled = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
     e.preventDefault();
   };
 
-  const containerSizeStyle: Record<RadioSize, string> = {
-    sm: 'gap-1',
-    md: 'gap-2',
-    lg: 'gap-3',
-  };
-
-  const radioWrapperSizeStyle: Record<RadioSize, string> = {
-    sm: 'size-6',
-    md: 'size-8',
-    lg: 'size-11',
-  };
-
-  const radioSizeStyle: Record<RadioSize, string> = {
-    sm: 'border-[calc(2/16*1rem)]',
-    md: 'border-[calc(2/16*1rem)]',
-    lg: 'border-[calc(3/16*1rem)]',
-  };
-
-  const radioLabelSizeStyle: Record<RadioSize, string> = {
-    sm: 'pt-px text-dns-16N-130',
-    md: 'pt-1 text-dns-16N-130',
-    lg: 'pt-2.5 text-dns-17N-130',
-  };
-
-  return (
-    <label
-      className={`flex w-fit items-start ${containerSizeStyle[size]} ${children ? 'py-2' : ''}`}
-      htmlFor={id}
+  const Radio = () => (
+    <span
+      className={`
+        flex items-center justify-center shrink-0 rounded-full
+        data-[size=sm]:size-6 data-[size=md]:size-8 data-[size=lg]:size-11
+        has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-solid-gray-420 forced-colors:has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-[CanvasText]
+      `}
+      data-size={size}
     >
-      <span
+      <input
         className={`
-          flex items-center justify-center shrink-0 rounded-full ${radioWrapperSizeStyle[size]}
-          has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-solid-gray-420 forced-colors:has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-[CanvasText]
+          appearance-none size-[calc(5/6*100%)] rounded-full border-solid-gray-600 bg-white
+          hover:border-black
+          focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
+          checked:border-blue-900 checked:before:bg-blue-900 checked:hover:border-blue-1100 checked:hover:before:bg-blue-1100
+          before:hidden before:size-full before:bg-white before:[clip-path:circle(calc(5/16*100%))]
+          checked:before:block
+          data-[size=sm]:border-[calc(2/16*1rem)]
+          data-[size=md]:border-[calc(2/16*1rem)]
+          data-[size=lg]:border-[calc(3/16*1rem)]
+          data-[error]:border-error-1 data-[error]:hover:border-red-1000 data-[error]:checked:before:bg-error-1 data-[error]:checked:hover:before:bg-red-1000
+          aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:before:!bg-solid-gray-300
+          forced-colors:checked:before:!bg-[CanvasText] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText]
         `}
+        ref={ref}
+        type='radio'
+        onClick={props['aria-disabled'] ? handleDisabled : onClick}
+        data-size={size}
+        data-error={isError || null}
+        {...rest}
+      />
+    </span>
+  );
+
+  return children ? (
+    <label
+      className='flex w-fit items-start py-2 data-[size=sm]:gap-1 data-[size=md]:gap-2 data-[size=lg]:gap-3'
+      data-size={size}
+    >
+      <Radio />
+      <span
+        className='text-solid-gray-800 data-[size=sm]:pt-px data-[size=sm]:text-dns-16N-130 data-[size=md]:pt-1 data-[size=md]:text-dns-16N-130 data-[size=lg]:pt-2.5 data-[size=lg]:text-dns-17N-130'
+        data-size={size}
       >
-        <input
-          className={`
-            appearance-none size-[calc(5/6*100%)] rounded-full bg-white
-            focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
-            before:hidden before:size-full before:bg-white before:[clip-path:circle(calc(5/16*100%))]
-            checked:before:block
-            ${radioSizeStyle[size]}
-            ${
-              !isError
-                ? 'border-solid-gray-600 hover:border-black checked:border-blue-900 checked:before:bg-blue-900 checked:hover:border-blue-1100 checked:hover:before:bg-blue-1100'
-                : 'border-error-1 hover:border-red-1000 checked:before:bg-error-1 checked:hover:before:bg-red-1000'
-            }
-            aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:before:!bg-solid-gray-300
-            forced-colors:checked:before:!bg-[CanvasText] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText]
-          `}
-          id={id}
-          ref={ref}
-          type='radio'
-          onClick={props['aria-disabled'] ? handleDisabled : onClick}
-          {...rest}
-        />
+        {children}
       </span>
-      {children && (
-        <span className={`text-solid-gray-800 ${radioLabelSizeStyle[size]}`}>{children}</span>
-      )}
     </label>
+  ) : (
+    <Radio />
   );
 });
