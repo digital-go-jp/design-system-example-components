@@ -119,7 +119,7 @@ export const RightDrawer: Story = {
         </div>
         <dialog
           aria-labelledby={`${drawerId}-heading`}
-          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh start-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100'
+          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh start-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100 forced-colors:backdrop:bg-[#000b]'
           ref={drawerRef}
         >
           <h2 id={`${drawerId}-heading`} className='sr-only'>
@@ -171,7 +171,7 @@ export const LeftDrawer: Story = {
         </div>
         <dialog
           aria-labelledby={`${drawerId}-heading`}
-          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh end-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100'
+          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh end-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100 forced-colors:backdrop:bg-[#000b]'
           ref={drawerRef}
         >
           <h2 id={`${drawerId}-heading`} className='sr-only'>
@@ -223,7 +223,7 @@ export const ScrollOnlyMenuArea: Story = {
         </div>
         <dialog
           aria-labelledby={`${drawerId}-heading`}
-          className='m-[unset] max-w-full max-h-[unset] overflow-visible w-72 start-auto bg-white shadow-2 border-l border-l-transparent backdrop:bg-opacity-gray-100'
+          className='m-[unset] max-w-full max-h-[unset] overflow-visible w-72 start-auto bg-white shadow-2 border-l border-l-transparent backdrop:bg-opacity-gray-100 forced-colors:backdrop:bg-[#000b]'
           ref={drawerRef}
         >
           <h2 id={`${drawerId}-heading`} className='sr-only'>
@@ -307,7 +307,7 @@ export const PreventLayoutChangeCausedByScrollbarVisibility: Story = {
         </div>
         <dialog
           aria-labelledby={`${drawerId}-heading`}
-          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh start-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100'
+          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh start-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100 forced-colors:backdrop:bg-[#000b]'
           ref={drawerRef}
         >
           <h2 id={`${drawerId}-heading`} className='sr-only'>

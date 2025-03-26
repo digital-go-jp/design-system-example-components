@@ -50,136 +50,75 @@ export const Playground: Story = {
   },
 };
 
+export const Standalone: Story = {
+  args: {
+    size: 'sm',
+    'aria-disabled': false,
+    isError: false,
+    'aria-label': '名前を指定してください',
+  },
+};
+
 export const Stacked: Story = {
-  render: () => (
-    <div className='flex gap-8'>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='stacked-1-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-1 flex flex-col'>
-          <Radio aria-describedby='stacked-1-support-text' name='a'>
-            選択肢1
-          </Radio>
-          <Radio aria-describedby='stacked-1-support-text' name='a'>
-            選択肢2
-          </Radio>
-          <Radio aria-describedby='stacked-1-support-text' name='a'>
-            選択肢3
-          </Radio>
-        </div>
-      </fieldset>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='stacked-2-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-2 flex flex-col gap-2'>
-          <Radio size='md' aria-describedby='stacked-2-support-text' name='b'>
-            選択肢1
-          </Radio>
-          <Radio size='md' aria-describedby='stacked-2-support-text' name='b'>
-            選択肢2
-          </Radio>
-          <Radio size='md' aria-describedby='stacked-2-support-text' name='b'>
-            選択肢3
-          </Radio>
-        </div>
-      </fieldset>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='stacked-3-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-3 flex flex-col gap-2'>
-          <Radio size='lg' aria-describedby='stacked-3-support-text' name='c'>
-            選択肢1
-          </Radio>
-          <Radio size='lg' aria-describedby='stacked-3-support-text' name='c'>
-            選択肢2
-          </Radio>
-          <Radio size='lg' aria-describedby='stacked-3-support-text' name='c'>
-            選択肢3
-          </Radio>
-        </div>
-      </fieldset>
-    </div>
+  render: ({ ...args }) => (
+    <fieldset>
+      <Legend>
+        ラベル<RequirementBadge>※必須</RequirementBadge>
+      </Legend>
+      <SupportText className='mt-2' id='stacked-support-text'>
+        サポートテキスト
+      </SupportText>
+      <div className='mt-1 flex flex-col'>
+        <Radio aria-describedby='stacked-support-text' name='a' {...args}>
+          選択肢1
+        </Radio>
+        <Radio aria-describedby='stacked-support-text' name='a' defaultChecked {...args}>
+          選択肢2
+        </Radio>
+        <Radio aria-describedby='stacked-support-text' name='a' {...args}>
+          選択肢3
+        </Radio>
+      </div>
+    </fieldset>
   ),
+  args: {
+    size: 'sm',
+    isError: false,
+    'aria-disabled': false,
+  },
 };
 
 export const Inline: Story = {
-  render: () => (
-    <div className='flex flex-col gap-16'>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='inline-1-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-1 flex flex-wrap gap-x-4'>
-          <Radio aria-describedby='inline-1-support-text' name='d'>
-            選択肢1
-          </Radio>
-          <Radio aria-describedby='inline-1-support-text' name='d'>
-            選択肢2
-          </Radio>
-          <Radio aria-describedby='inline-1-support-text' name='d'>
-            選択肢3
-          </Radio>
-        </div>
-      </fieldset>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='inline-2-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-2 flex flex-wrap gap-x-8 gap-y-2'>
-          <Radio size='md' aria-describedby='inline-2-support-text' name='e'>
-            選択肢1
-          </Radio>
-          <Radio size='md' aria-describedby='inline-2-support-text' name='e'>
-            選択肢2
-          </Radio>
-          <Radio size='md' aria-describedby='inline-2-support-text' name='e'>
-            選択肢3
-          </Radio>
-        </div>
-      </fieldset>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='inline-3-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-3 flex flex-wrap gap-10 gap-y-2'>
-          <Radio size='lg' aria-describedby='inline-3-support-text' name='f'>
-            選択肢1
-          </Radio>
-          <Radio size='lg' aria-describedby='inline-3-support-text' name='f'>
-            選択肢2
-          </Radio>
-          <Radio size='lg' aria-describedby='inline-3-support-text' name='f'>
-            選択肢3
-          </Radio>
-        </div>
-      </fieldset>
-    </div>
+  render: ({ ...args }) => (
+    <fieldset>
+      <Legend>
+        ラベル<RequirementBadge>※必須</RequirementBadge>
+      </Legend>
+      <SupportText className='mt-2' id='inline-support-text'>
+        サポートテキスト
+      </SupportText>
+      <div className='mt-1 flex flex-wrap gap-x-4'>
+        <Radio aria-describedby='inline-support-text' name='d' {...args}>
+          選択肢1
+        </Radio>
+        <Radio aria-describedby='inline-support-text' name='d' defaultChecked {...args}>
+          選択肢2
+        </Radio>
+        <Radio aria-describedby='inline-support-text' name='d' {...args}>
+          選択肢3
+        </Radio>
+      </div>
+    </fieldset>
   ),
+  args: {
+    size: 'sm',
+    isError: false,
+    'aria-disabled': false,
+  },
 };
 
 export const Errored: Story = {
-  render: () => {
+  render: ({ ...args }) => {
     return (
       <div className='flex flex-col gap-16'>
         <fieldset>
@@ -190,18 +129,18 @@ export const Errored: Story = {
             サポートテキスト
           </SupportText>
           <div className='mt-1 flex flex-col'>
-            <Radio aria-describedby='error-1-support-text error-1-text' isError={true} name='g'>
+            <Radio aria-describedby='error-1-support-text error-1-text' name='g' {...args}>
               選択肢1
             </Radio>
             <Radio
               aria-describedby='error-1-support-text error-1-text'
-              isError={true}
               name='g'
               defaultChecked
+              {...args}
             >
               選択肢2
             </Radio>
-            <Radio aria-describedby='error-1-support-text error-1-text' isError={true} name='g'>
+            <Radio aria-describedby='error-1-support-text error-1-text' name='g' {...args}>
               選択肢3
             </Radio>
           </div>
@@ -217,18 +156,18 @@ export const Errored: Story = {
             サポートテキスト
           </SupportText>
           <div className='mt-1 flex flex-wrap gap-x-4'>
-            <Radio aria-describedby='error-2-support-text error-2-text' isError={true} name='h'>
+            <Radio aria-describedby='error-2-support-text error-2-text' name='h' {...args}>
               選択肢1
             </Radio>
             <Radio
               aria-describedby='error-2-support-text error-2-text'
-              isError={true}
               name='h'
               defaultChecked
+              {...args}
             >
               選択肢2
             </Radio>
-            <Radio aria-describedby='error-2-support-text error-2-text' isError={true} name='h'>
+            <Radio aria-describedby='error-2-support-text error-2-text' name='h' {...args}>
               選択肢3
             </Radio>
           </div>
@@ -239,10 +178,22 @@ export const Errored: Story = {
       </div>
     );
   },
+  args: {
+    size: 'sm',
+    isError: true,
+    'aria-disabled': false,
+  },
+  argTypes: {
+    isError: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export const Disabled: Story = {
-  render: () => {
+  render: ({ ...args }) => {
     return (
       <div className='flex flex-col gap-16'>
         <fieldset>
@@ -253,18 +204,13 @@ export const Disabled: Story = {
             〜の理由により、この項目は無効化されています。
           </SupportText>
           <div className='mt-1 flex flex-col'>
-            <Radio aria-describedby='disabled-1-support-text' aria-disabled={true} name='i'>
+            <Radio aria-describedby='disabled-1-support-text' name='i' {...args}>
               選択肢1
             </Radio>
-            <Radio
-              aria-describedby='disabled-1-support-text'
-              aria-disabled={true}
-              name='i'
-              defaultChecked
-            >
+            <Radio aria-describedby='disabled-1-support-text' name='i' defaultChecked {...args}>
               選択肢2
             </Radio>
-            <Radio aria-describedby='disabled-1-support-text' aria-disabled={true} name='i'>
+            <Radio aria-describedby='disabled-1-support-text' name='i' {...args}>
               選択肢3
             </Radio>
           </div>
@@ -277,23 +223,30 @@ export const Disabled: Story = {
             〜の理由により、この項目は無効化されています。
           </SupportText>
           <div className='mt-1 flex flex-wrap gap-x-4'>
-            <Radio aria-describedby='disabled-2-support-text' aria-disabled={true} name='j'>
+            <Radio aria-describedby='disabled-2-support-text' name='j' {...args}>
               選択肢1
             </Radio>
-            <Radio
-              aria-describedby='disabled-2-support-text'
-              aria-disabled={true}
-              name='j'
-              defaultChecked
-            >
+            <Radio aria-describedby='disabled-2-support-text' name='j' defaultChecked {...args}>
               選択肢2
             </Radio>
-            <Radio aria-describedby='disabled-2-support-text' aria-disabled={true} name='j'>
+            <Radio aria-describedby='disabled-2-support-text' name='j' {...args}>
               選択肢3
             </Radio>
           </div>
         </fieldset>
       </div>
     );
+  },
+  args: {
+    size: 'sm',
+    isError: false,
+    'aria-disabled': 'true',
+  },
+  argTypes: {
+    'aria-disabled': {
+      table: {
+        disable: true,
+      },
+    },
   },
 };
