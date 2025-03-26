@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
+import React, { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import { ErrorText, Legend, RequirementBadge, SupportText } from '../';
 import { Checkbox } from './Checkbox';
 
@@ -50,136 +50,75 @@ export const Playground: Story = {
   },
 };
 
+export const Standalone: Story = {
+  args: {
+    size: 'sm',
+    'aria-disabled': false,
+    isError: false,
+    'aria-label': '名前を指定してください',
+  },
+};
+
 export const Stacked: Story = {
-  render: () => (
-    <div className='flex gap-8'>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='stacked-1-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-1 flex flex-col'>
-          <Checkbox aria-describedby='stacked-1-support-text' name='a'>
-            選択肢1
-          </Checkbox>
-          <Checkbox aria-describedby='stacked-1-support-text' name='a'>
-            選択肢2
-          </Checkbox>
-          <Checkbox aria-describedby='stacked-1-support-text' name='a'>
-            選択肢3
-          </Checkbox>
-        </div>
-      </fieldset>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='stacked-2-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-2 flex flex-col gap-2'>
-          <Checkbox size='md' aria-describedby='stacked-2-support-text' name='b'>
-            選択肢1
-          </Checkbox>
-          <Checkbox size='md' aria-describedby='stacked-2-support-text' name='b'>
-            選択肢2
-          </Checkbox>
-          <Checkbox size='md' aria-describedby='stacked-2-support-text' name='b'>
-            選択肢3
-          </Checkbox>
-        </div>
-      </fieldset>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='stacked-3-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-3 flex flex-col gap-2'>
-          <Checkbox size='lg' aria-describedby='stacked-3-support-text' name='c'>
-            選択肢1
-          </Checkbox>
-          <Checkbox size='lg' aria-describedby='stacked-3-support-text' name='c'>
-            選択肢2
-          </Checkbox>
-          <Checkbox size='lg' aria-describedby='stacked-3-support-text' name='c'>
-            選択肢3
-          </Checkbox>
-        </div>
-      </fieldset>
-    </div>
+  render: ({ ...args }) => (
+    <fieldset>
+      <Legend>
+        ラベル<RequirementBadge>※必須</RequirementBadge>
+      </Legend>
+      <SupportText className='mt-2' id='stacked-support-text'>
+        サポートテキスト
+      </SupportText>
+      <div className='mt-2 flex flex-col gap-2'>
+        <Checkbox aria-describedby='stacked-support-text' {...args}>
+          選択肢1
+        </Checkbox>
+        <Checkbox aria-describedby='stacked-support-text' defaultChecked {...args}>
+          選択肢2
+        </Checkbox>
+        <Checkbox aria-describedby='stacked-support-text' {...args}>
+          選択肢3
+        </Checkbox>
+      </div>
+    </fieldset>
   ),
+  args: {
+    size: 'sm',
+    isError: false,
+    'aria-disabled': false,
+  },
 };
 
 export const Inline: Story = {
-  render: () => (
-    <div className='flex flex-col gap-16'>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='inline-1-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-1 flex flex-wrap gap-x-4'>
-          <Checkbox aria-describedby='inline-1-support-text' name='d'>
-            選択肢1
-          </Checkbox>
-          <Checkbox aria-describedby='inline-1-support-text' name='d'>
-            選択肢2
-          </Checkbox>
-          <Checkbox aria-describedby='inline-1-support-text' name='d'>
-            選択肢3
-          </Checkbox>
-        </div>
-      </fieldset>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='inline-2-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-2 flex flex-wrap gap-x-8 gap-y-2'>
-          <Checkbox size='md' aria-describedby='inline-2-support-text' name='e'>
-            選択肢1
-          </Checkbox>
-          <Checkbox size='md' aria-describedby='inline-2-support-text' name='e'>
-            選択肢2
-          </Checkbox>
-          <Checkbox size='md' aria-describedby='inline-2-support-text' name='e'>
-            選択肢3
-          </Checkbox>
-        </div>
-      </fieldset>
-      <fieldset>
-        <Legend>
-          ラベル<RequirementBadge>※必須</RequirementBadge>
-        </Legend>
-        <SupportText className='mt-2' id='inline-3-support-text'>
-          サポートテキスト
-        </SupportText>
-        <div className='mt-3 flex flex-wrap gap-10 gap-y-2'>
-          <Checkbox size='lg' aria-describedby='inline-3-support-text' name='f'>
-            選択肢1
-          </Checkbox>
-          <Checkbox size='lg' aria-describedby='inline-3-support-text' name='f'>
-            選択肢2
-          </Checkbox>
-          <Checkbox size='lg' aria-describedby='inline-3-support-text' name='f'>
-            選択肢3
-          </Checkbox>
-        </div>
-      </fieldset>
-    </div>
+  render: ({ ...args }) => (
+    <fieldset>
+      <Legend>
+        ラベル<RequirementBadge>※必須</RequirementBadge>
+      </Legend>
+      <SupportText className='mt-2' id='inline-support-text'>
+        サポートテキスト
+      </SupportText>
+      <div className='mt-1 flex flex-wrap gap-x-4'>
+        <Checkbox aria-describedby='inline-support-text' {...args}>
+          選択肢1
+        </Checkbox>
+        <Checkbox aria-describedby='inline-support-text' defaultChecked {...args}>
+          選択肢2
+        </Checkbox>
+        <Checkbox aria-describedby='inline-support-text' {...args}>
+          選択肢3
+        </Checkbox>
+      </div>
+    </fieldset>
   ),
+  args: {
+    size: 'sm',
+    isError: false,
+    'aria-disabled': false,
+  },
 };
 
 export const Errored: Story = {
-  render: () => {
+  render: ({ ...args }) => {
     return (
       <div className='flex flex-col gap-16'>
         <fieldset>
@@ -190,18 +129,13 @@ export const Errored: Story = {
             サポートテキスト
           </SupportText>
           <div className='mt-1 flex flex-col'>
-            <Checkbox aria-describedby='error-1-support-text error-1-text' isError={true} name='g'>
+            <Checkbox aria-describedby='error-1-support-text error-1-text' {...args}>
               選択肢1
             </Checkbox>
-            <Checkbox
-              aria-describedby='error-1-support-text error-1-text'
-              isError={true}
-              name='g'
-              defaultChecked
-            >
+            <Checkbox aria-describedby='error-1-support-text error-1-text' defaultChecked {...args}>
               選択肢2
             </Checkbox>
-            <Checkbox aria-describedby='error-1-support-text error-1-text' isError={true} name='g'>
+            <Checkbox aria-describedby='error-1-support-text error-1-text' {...args}>
               選択肢3
             </Checkbox>
           </div>
@@ -217,18 +151,13 @@ export const Errored: Story = {
             サポートテキスト
           </SupportText>
           <div className='mt-1 flex flex-wrap gap-x-4'>
-            <Checkbox aria-describedby='error-2-support-text error-2-text' isError={true} name='h'>
+            <Checkbox aria-describedby='error-2-support-text error-2-text' {...args}>
               選択肢1
             </Checkbox>
-            <Checkbox
-              aria-describedby='error-2-support-text error-2-text'
-              isError={true}
-              name='h'
-              defaultChecked
-            >
+            <Checkbox aria-describedby='error-2-support-text error-2-text' defaultChecked {...args}>
               選択肢2
             </Checkbox>
-            <Checkbox aria-describedby='error-2-support-text error-2-text' isError={true} name='h'>
+            <Checkbox aria-describedby='error-2-support-text error-2-text' {...args}>
               選択肢3
             </Checkbox>
           </div>
@@ -239,10 +168,22 @@ export const Errored: Story = {
       </div>
     );
   },
+  args: {
+    size: 'sm',
+    isError: true,
+    'aria-disabled': false,
+  },
+  argTypes: {
+    isError: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export const Disabled: Story = {
-  render: () => {
+  render: ({ ...args }) => {
     return (
       <div className='flex flex-col gap-16'>
         <fieldset>
@@ -253,18 +194,13 @@ export const Disabled: Story = {
             〜の理由により、この項目は無効化されています。
           </SupportText>
           <div className='mt-1 flex flex-col'>
-            <Checkbox aria-describedby='disabled-1-support-text' aria-disabled={true} name='i'>
+            <Checkbox aria-describedby='disabled-1-support-text' {...args}>
               選択肢1
             </Checkbox>
-            <Checkbox
-              aria-describedby='disabled-1-support-text'
-              aria-disabled={true}
-              name='i'
-              defaultChecked
-            >
+            <Checkbox aria-describedby='disabled-1-support-text' defaultChecked {...args}>
               選択肢2
             </Checkbox>
-            <Checkbox aria-describedby='disabled-1-support-text' aria-disabled={true} name='i'>
+            <Checkbox aria-describedby='disabled-1-support-text' {...args}>
               選択肢3
             </Checkbox>
           </div>
@@ -277,23 +213,84 @@ export const Disabled: Story = {
             〜の理由により、この項目は無効化されています。
           </SupportText>
           <div className='mt-1 flex flex-wrap gap-x-4'>
-            <Checkbox aria-describedby='disabled-2-support-text' aria-disabled={true} name='j'>
+            <Checkbox aria-describedby='disabled-2-support-text' {...args}>
               選択肢1
             </Checkbox>
-            <Checkbox
-              aria-describedby='disabled-2-support-text'
-              aria-disabled={true}
-              name='j'
-              defaultChecked
-            >
+            <Checkbox aria-describedby='disabled-2-support-text' defaultChecked {...args}>
               選択肢2
             </Checkbox>
-            <Checkbox aria-describedby='disabled-2-support-text' aria-disabled={true} name='j'>
+            <Checkbox aria-describedby='disabled-2-support-text' {...args}>
               選択肢3
             </Checkbox>
           </div>
         </fieldset>
       </div>
     );
+  },
+  args: {
+    size: 'sm',
+    isError: false,
+    'aria-disabled': 'true',
+  },
+  argTypes: {
+    'aria-disabled': {
+      table: {
+        disable: true,
+      },
+    },
+  },
+};
+
+export const Indeterminate: Story = {
+  render: ({ ...args }) => {
+    const checkAll = useRef<HTMLInputElement>(null);
+    const [checks, setChecks] = useState([false, true, false, false, true]);
+    const options = ['サッカー', 'バスケットボール', 'テニス', 'スイミング', 'ヨガ'];
+
+    useEffect(() => {
+      if (!checkAll.current) return;
+      const allChecked = checks.every(Boolean);
+      const noneChecked = checks.every((v) => !v);
+      checkAll.current.checked = allChecked;
+      checkAll.current.indeterminate = !allChecked && !noneChecked;
+    });
+
+    const handleCheckAllChange = (e) => {
+      if (!checkAll.current) return;
+      const checked = checkAll.current.indeterminate || e.target.checked;
+      checkAll.current.checked = checked;
+      setChecks(checks.map(() => checked));
+    };
+
+    const handleIndividualChange = (index: number) => (e: ChangeEvent<HTMLInputElement>) => {
+      const newChecks = [...checks];
+      newChecks[index] = e.target.checked;
+      setChecks(newChecks);
+    };
+
+    return (
+      <>
+        <Checkbox ref={checkAll} onChange={handleCheckAllChange} {...args}>
+          すべてのスポーツ
+        </Checkbox>
+        <div className='mt-6 flex flex-col gap-2'>
+          {options.map((option, index) => (
+            <Checkbox
+              key={option}
+              checked={checks[index]}
+              onChange={handleIndividualChange(index)}
+              {...args}
+            >
+              {option}
+            </Checkbox>
+          ))}
+        </div>
+      </>
+    );
+  },
+  args: {
+    size: 'sm',
+    isError: false,
+    'aria-disabled': false,
   },
 };

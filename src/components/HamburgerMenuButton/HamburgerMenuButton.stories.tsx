@@ -177,7 +177,7 @@ export const WithDrawer: Story = {
         </div>
         <dialog
           aria-labelledby={`${drawerId}-heading`}
-          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh end-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100'
+          className='m-[unset] max-w-full max-h-[unset] w-72 h-dvh end-auto bg-white shadow-2 border-l border-l-transparent [scrollbar-gutter:stable] backdrop:bg-opacity-gray-100 forced-colors:backdrop:bg-[#000b]'
           ref={drawerRef}
         >
           <h2 id={`${drawerId}-heading`} className='sr-only'>
