@@ -58,7 +58,7 @@
     "@storybook/blocks": "^8.6.8",
     "@storybook/react": "^8.6.8",
     "@storybook/react-vite": "^8.6.8",
-    "@storybook/test": "^8.6.8",
+    "@storybook/test": "^8.6.12",
     "@tsconfig/node20": "^20.1.5",
     "@types/node": "^22.13.12",
     "@types/react": "^18.3.20",
