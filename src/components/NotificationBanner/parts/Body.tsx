@@ -11,6 +11,7 @@ export const NotificationBannerBody = (props: Props) => {
         col-start-1 -col-end-1 desktop:col-start-2 text-std-16N-170 text-solid-gray-800
         ${className ?? ''}
       `}
+      {...rest}
     >
       {children}
     </div>
