@@ -7,6 +7,7 @@ export {
 export { BreadcrumbItem, BreadcrumbList, Breadcrumbs, BreadcrumbsLabel } from './Breadcrumbs';
 export { Button, buttonBaseStyle, buttonSizeStyle, buttonVariantStyle } from './Button';
 export { Checkbox } from './Checkbox';
+export * from './DatePicker';
 export { Disclosure, DisclosureBackLink, DisclosureSummary } from './Disclosure';
 export { Divider } from './Divider';
 export {
@@ -56,6 +57,7 @@ export { Ol, olStyle } from './Ol';
 export { Radio } from './Radio';
 export { RequirementBadge } from './RequirementBadge';
 export { Select } from './Select';
+export * from './SeparatedDatePicker';
 export { Slot } from './Slot';
 export { SupportText } from './SupportText';
 export { Textarea } from './Textarea';
