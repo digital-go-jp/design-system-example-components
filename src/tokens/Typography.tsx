@@ -8,6 +8,14 @@ export const Typography = () => {
       <div className='flex flex-col gap-4'>
         <h3 className='text-std-24B-150'>Display (Dsp)</h3>
         <div className='flex flex-col gap-2'>
+          <h4 className='text-std-20B-160 my-4'>Bold</h4>
+          <p className='text-dsp-64B-140'>dsp-64B-140 デザインシステム</p>
+          <p className='text-dsp-57B-140'>dsp-57B-140 デザインシステム</p>
+          <p className='text-dsp-48B-140'>dsp-48B-140 デザインシステム</p>
+        </div>
+
+        <div className='flex flex-col gap-2'>
+          <h4 className='text-std-20B-160 my-4'>Normal</h4>
           <p className='text-dsp-64N-140'>dsp-64N-140 デザインシステム</p>
           <p className='text-dsp-57N-140'>dsp-57N-140 デザインシステム</p>
           <p className='text-dsp-48N-140'>dsp-48N-140 デザインシステム</p>
