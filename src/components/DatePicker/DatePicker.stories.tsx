@@ -8,10 +8,10 @@ import {
   CalendarGridBody,
   CalendarGridHeader,
   CalendarHeaderCell,
-  DatePicker as ReactAriaDatePicker,
+  type DateValue,
   Dialog,
   Popover,
-  type DateValue,
+  DatePicker as ReactAriaDatePicker,
 } from 'react-aria-components';
 import {
   Button,
