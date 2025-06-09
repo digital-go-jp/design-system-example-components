@@ -1,5 +1,5 @@
-import { Controls, Description, Stories, Subtitle, Title } from '@storybook/blocks';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Controls, Description, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { LanguageSelector } from './LanguageSelector';
 import { LanguageSelectorArrowIcon } from './parts/ArrowIcon';

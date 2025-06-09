@@ -1,4 +1,4 @@
-import { Description, Stories, Subtitle, Title } from '@storybook/blocks';
+import { Description, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
 import React, { type ComponentProps, useEffect, useRef, useState } from 'react';
 import {
   Checkbox,

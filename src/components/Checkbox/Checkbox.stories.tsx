@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import { ErrorText, Legend, RequirementBadge, SupportText } from '../';
 import { Checkbox } from './Checkbox';
