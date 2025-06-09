@@ -14,7 +14,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
     e.preventDefault();
   };
 
-  const Radio = () => (
+  const radio = (
     <span
       className={`
         flex items-center justify-center shrink-0 rounded-full
@@ -53,7 +53,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
       className='flex w-fit items-start py-2 data-[size=sm]:gap-1 data-[size=md]:gap-2 data-[size=lg]:gap-3'
       data-size={size}
     >
-      <Radio />
+      {radio}
       <span
         className='text-solid-gray-800 data-[size=sm]:pt-px data-[size=sm]:text-dns-16N-130 data-[size=md]:pt-1 data-[size=md]:text-dns-16N-130 data-[size=lg]:pt-2.5 data-[size=lg]:text-dns-17N-130'
         data-size={size}
@@ -62,6 +62,6 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
       </span>
     </label>
   ) : (
-    <Radio />
+    radio
   );
 });
