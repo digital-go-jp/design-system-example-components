@@ -109,13 +109,15 @@ export const Errored: Story = {
           <SeparatedDatePickerMonth
             defaultValue={10}
             aria-describedby='date-picker-4-support-text'
+            aria-invalid={true}
           />
           <SeparatedDatePickerDate
             defaultValue={28}
             aria-describedby='date-picker-4-support-text'
+            aria-invalid={true}
           />
         </SeparatedDatePicker>
-        <ErrorText id='date-picker-4-error-text'>＊年を入力してください。</ErrorText>
+        <ErrorText id='date-picker-4-error-text'>＊正しい日付を入力してください。</ErrorText>
       </fieldset>
     );
   },

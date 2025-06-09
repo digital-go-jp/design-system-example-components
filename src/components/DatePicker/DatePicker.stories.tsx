@@ -129,21 +129,24 @@ export const Errored: Story = {
               <DatePickerYear
                 ref={yearRef}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                aria-invalid={true}
               />
               <DatePickerMonth
                 ref={monthRef}
                 defaultValue={10}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                aria-invalid={true}
               />
               <DatePickerDate
                 ref={dateRef}
                 defaultValue={28}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                aria-invalid={true}
               />
             </>
           )}
         </DatePicker>
-        <ErrorText id='date-picker-3-error-text'>＊年を入力してください。</ErrorText>
+        <ErrorText id='date-picker-3-error-text'>＊正しい日付を入力してください。</ErrorText>
       </fieldset>
     );
   },
