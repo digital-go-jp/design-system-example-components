@@ -4,7 +4,8 @@ import { Ul } from '../';
 import { Disclosure, DisclosureBackLink, DisclosureSummary } from './Disclosure';
 
 const meta = {
-  title: 'Component/DADS v2/Disclosure',
+  id: 'Component/DADS v2/Disclosure',
+  title: 'Component/ディスクロージャー',
   component: Disclosure,
   tags: ['autodocs'],
   argTypes: {},

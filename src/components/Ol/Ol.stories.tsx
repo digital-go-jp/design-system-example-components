@@ -4,7 +4,8 @@ import { Ul } from '../';
 import { Ol } from './Ol';
 
 const meta = {
-  title: 'Component/DADS v2/Ol',
+  id: 'Component/DADS v2/Ol',
+  title: 'Component/リスト/Ol',
   component: Ol,
   tags: ['autodocs'],
 } satisfies Meta<typeof Ol>;

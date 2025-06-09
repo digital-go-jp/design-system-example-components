@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SupportText } from './SupportText';
 
 const meta = {
-  title: 'Component/DADS v2/SupportText',
+  id: 'Component/DADS v2/SupportText',
+  title: 'Component/フォームコントロールラベル/SupportText',
   component: SupportText,
   tags: ['autodocs'],
 } satisfies Meta<typeof SupportText>;

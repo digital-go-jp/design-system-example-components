@@ -12,7 +12,8 @@ import {
 } from '../';
 
 const meta = {
-  title: 'Component/DADS v2/Table',
+  id: 'Component/DADS v2/Table',
+  title: 'Component/テーブル',
   tags: ['autodocs'],
   parameters: {
     docs: {

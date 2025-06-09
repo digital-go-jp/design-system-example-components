@@ -3,7 +3,8 @@ import React, { useId, useRef } from 'react';
 import { CloseIcon, Divider, HamburgerIcon, HamburgerMenuButton } from '../';
 
 const meta = {
-  title: 'Component/DADS v2/Drawer',
+  id: 'Component/DADS v2/Drawer',
+  title: 'Component/ドロワー',
   argTypes: {},
   parameters: {
     layout: 'fullscreen',

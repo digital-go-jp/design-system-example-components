@@ -4,7 +4,8 @@ import { CloseIcon, CloseWithLabelIcon, HamburgerIcon, HamburgerWithLabelIcon } 
 import { HamburgerMenuButton } from './HamburgerMenuButton';
 
 const meta = {
-  title: 'Component/DADS v2/HamburgerMenuButton',
+  id: 'Component/DADS v2/HamburgerMenuButton',
+  title: 'Component/ハンバーガーメニューボタン',
   component: HamburgerMenuButton,
   tags: ['autodocs'],
 } satisfies Meta<typeof HamburgerMenuButton>;

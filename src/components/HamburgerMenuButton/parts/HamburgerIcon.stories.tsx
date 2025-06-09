@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { HamburgerIcon } from './HamburgerIcon';
 
 const meta = {
-  title: 'Component/DADS v2/HamburgerMenuButton/Parts/HamburgerIcon',
+  id: 'Component/DADS v2/HamburgerMenuButton/Parts/HamburgerIcon',
+  title: 'Component/ハンバーガーメニューボタン/Parts/HamburgerIcon',
   component: HamburgerIcon,
   tags: ['autodocs'],
   argTypes: {},

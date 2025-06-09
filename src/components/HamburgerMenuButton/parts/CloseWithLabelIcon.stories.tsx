@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CloseWithLabelIcon } from './CloseWithLabelIcon';
 
 const meta = {
-  title: 'Component/DADS v2/HamburgerMenuButton/Parts/CloseWithLabelIcon',
+  id: 'Component/DADS v2/HamburgerMenuButton/Parts/CloseWithLabelIcon',
+  title: 'Component/ハンバーガーメニューボタン/Parts/CloseWithLabelIcon',
   component: CloseWithLabelIcon,
   tags: ['autodocs'],
   argTypes: {

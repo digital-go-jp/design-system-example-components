@@ -4,7 +4,8 @@ import { LanguageSelectorMenuItem } from './../';
 import { LanguageSelectorMenu } from './Menu';
 
 const meta = {
-  title: 'Component/DADS v2/LanguageSelector/Parts/Menu',
+  id: 'Component/DADS v2/LanguageSelector/Parts/Menu',
+  title: 'Component/ランゲージセレクター/Parts/Menu',
   component: LanguageSelectorMenu,
   tags: ['autodocs'],
   argTypes: {

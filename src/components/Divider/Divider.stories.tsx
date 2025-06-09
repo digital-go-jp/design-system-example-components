@@ -3,7 +3,8 @@ import React from 'react';
 import { Divider } from './Divider';
 
 const meta = {
-  title: 'Component/DADS v2/Divider',
+  id: 'Component/DADS v2/Divider',
+  title: 'Component/ディバイダー',
   component: Divider,
   tags: ['autodocs'],
   argTypes: {

@@ -4,7 +4,8 @@ import { ErrorText, Legend, RequirementBadge, SupportText } from '../';
 import { Checkbox } from './Checkbox';
 
 const meta = {
-  title: 'Component/DADS v2/Checkbox',
+  id: 'Component/DADS v2/Checkbox',
+  title: 'Component/チェックボックス',
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {

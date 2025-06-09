@@ -10,7 +10,8 @@ import {
 } from './Breadcrumbs';
 
 const meta = {
-  title: 'Component/DADS v2/Breadcrumbs',
+  id: 'Component/DADS v2/Breadcrumbs',
+  title: 'Component/パンくずリスト',
   component: Breadcrumbs,
   tags: ['autodocs'],
 } satisfies Meta<typeof Breadcrumbs>;

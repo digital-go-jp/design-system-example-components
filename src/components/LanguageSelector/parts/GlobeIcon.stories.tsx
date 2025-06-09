@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { LanguageSelectorGlobeIcon } from './GlobeIcon';
 
 const meta = {
-  title: 'Component/DADS v2/LanguageSelector/Parts/GlobeIcon',
+  id: 'Component/DADS v2/LanguageSelector/Parts/GlobeIcon',
+  title: 'Component/ランゲージセレクター/Parts/GlobeIcon',
   component: LanguageSelectorGlobeIcon,
   tags: ['autodocs'],
 } satisfies Meta<typeof LanguageSelectorGlobeIcon>;

@@ -5,7 +5,8 @@ import { Link } from '../';
 import { Button } from './Button';
 
 const meta = {
-  title: 'Component/DADS v2/Button',
+  id: 'Component/DADS v2/Button',
+  title: 'Component/ボタン',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

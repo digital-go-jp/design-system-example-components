@@ -4,7 +4,8 @@ import { ErrorText, Legend, RequirementBadge, SupportText } from '../';
 import { Radio } from './Radio';
 
 const meta = {
-  title: 'Component/DADS v2/Radio',
+  id: 'Component/DADS v2/Radio',
+  title: 'Component/ラジオボタン',
   component: Radio,
   tags: ['autodocs'],
   argTypes: {

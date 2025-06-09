@@ -3,7 +3,8 @@ import React from 'react';
 import { RequirementBadge } from './RequirementBadge';
 
 const meta = {
-  title: 'Component/DADS v2/RequirementBadge',
+  id: 'Component/DADS v2/RequirementBadge',
+  title: 'Component/フォームコントロールラベル/RequirementBadge',
   component: RequirementBadge,
   tags: ['autodocs'],
   argTypes: {

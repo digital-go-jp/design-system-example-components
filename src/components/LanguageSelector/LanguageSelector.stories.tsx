@@ -10,7 +10,8 @@ import { LanguageSelectorMenu } from './parts/Menu';
 import { LanguageSelectorMenuItem } from './parts/MenuItem';
 
 const meta = {
-  title: 'Component/DADS v2/LanguageSelector',
+  id: 'Component/DADS v2/LanguageSelector',
+  title: 'Component/ランゲージセレクター',
   component: LanguageSelector,
   tags: ['autodocs'],
   parameters: {

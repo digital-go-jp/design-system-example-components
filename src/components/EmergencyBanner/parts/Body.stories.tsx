@@ -3,7 +3,8 @@ import React from 'react';
 import { EmergencyBannerBody } from './Body';
 
 const meta = {
-  title: 'Component/DADS v2/EmergencyBanner/Parts/Body',
+  id: 'Component/DADS v2/EmergencyBanner/Parts/Body',
+  title: 'Component/緊急時バナー/Parts/Body',
   component: EmergencyBannerBody,
   tags: ['autodocs'],
   parameters: {

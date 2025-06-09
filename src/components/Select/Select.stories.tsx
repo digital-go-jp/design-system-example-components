@@ -4,7 +4,8 @@ import { ErrorText, Label, Legend, RequirementBadge, SupportText } from '../';
 import { Select } from './Select';
 
 const meta = {
-  title: 'Component/DADS v2/Select',
+  id: 'Component/DADS v2/Select',
+  title: 'Component/セレクトボックス',
   component: Select,
   tags: ['autodocs'],
   argTypes: {

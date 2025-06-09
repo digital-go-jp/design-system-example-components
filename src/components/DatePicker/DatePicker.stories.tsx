@@ -34,7 +34,8 @@ import {
  * SeparatedタイプはSeparatedDatePickerコンポーネントを参照してください。
  */
 const meta = {
-  title: 'Component/DADS v2/DatePicker/DatePicker',
+  id: 'Component/DADS v2/DatePicker/DatePicker',
+  title: 'Component/日付ピッカー/Consolidated',
   tags: ['autodocs'],
   component: DatePicker,
   argTypes: {

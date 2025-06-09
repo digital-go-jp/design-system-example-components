@@ -6,7 +6,8 @@ import { EmergencyBannerButton } from './parts/Button';
 import { EmergencyBannerHeading } from './parts/Heading';
 
 const meta = {
-  title: 'Component/DADS v2/EmergencyBanner',
+  id: 'Component/DADS v2/EmergencyBanner',
+  title: 'Component/緊急時バナー',
   component: EmergencyBanner,
   tags: ['autodocs'],
   argTypes: {},

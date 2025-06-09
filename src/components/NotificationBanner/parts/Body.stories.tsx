@@ -4,7 +4,8 @@ import { Button } from '../../';
 import { NotificationBannerBody } from './Body';
 
 const meta = {
-  title: 'Component/DADS v2/NotificationBanner/Parts/Body',
+  id: 'Component/DADS v2/NotificationBanner/Parts/Body',
+  title: 'Component/ノティフィケーションバナー/Parts/Body',
   component: NotificationBannerBody,
   tags: ['autodocs'],
   parameters: {
