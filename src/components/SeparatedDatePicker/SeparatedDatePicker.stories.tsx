@@ -314,8 +314,12 @@ export const WithCalendar: Story = {
                           </CalendarGridBody>
                         </CalendarGrid>
                         <div className='flex self-stretch justify-between gap-4 p-4'>
-                          <Button variant='text' size='sm' onClick={() => state.close()}>
-                            閉じる
+                          <Button
+                            variant='text'
+                            size='sm'
+                            onClick={() => calendarState.setValue(null)}
+                          >
+                            削除
                           </Button>
                           <Button
                             variant='outline'
