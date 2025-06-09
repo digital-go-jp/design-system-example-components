@@ -14,7 +14,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
     e.preventDefault();
   };
 
-  const Checkbox = () => (
+  const checkbox = (
     <span
       className={`
         flex items-center justify-center shrink-0 rounded-[calc(1/8*100%)]
@@ -55,7 +55,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
       className='flex w-fit items-start py-2 data-[size=sm]:gap-1 data-[size=md]:gap-2 data-[size=lg]:gap-2'
       data-size={size}
     >
-      <Checkbox />
+      {checkbox}
       <span
         className='text-solid-gray-800 data-[size=sm]:pt-px data-[size=sm]:text-dns-16N-130 data-[size=md]:pt-1 data-[size=md]:text-dns-16N-130 data-[size=lg]:pt-2.5 data-[size=lg]:text-dns-17N-130'
         data-size={size}
@@ -64,6 +64,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
       </span>
     </label>
   ) : (
-    <Checkbox />
+    checkbox
   );
 });
