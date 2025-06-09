@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import {
   Pagination,
@@ -12,7 +12,8 @@ import {
 } from './Pagination';
 
 const meta = {
-  title: 'Component/DADS v1/Pagination',
+  id: 'Component/DADS v1/Pagination',
+  title: 'Component/DADS v1/ページネーション',
   component: Pagination,
   tags: ['autodocs'],
 } satisfies Meta<typeof Pagination>;

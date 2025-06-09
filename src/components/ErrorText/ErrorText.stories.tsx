@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ErrorText } from './ErrorText';
 
 const meta = {
-  title: 'Component/DADS v2/ErrorText',
+  id: 'Component/DADS v2/ErrorText',
+  title: 'Component/Parts/ErrorText',
   component: ErrorText,
   tags: ['autodocs'],
 } satisfies Meta<typeof ErrorText>;

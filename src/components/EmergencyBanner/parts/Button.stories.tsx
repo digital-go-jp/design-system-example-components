@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { EmergencyBannerButton } from './Button';
 
 const meta = {
-  title: 'Component/DADS v2/EmergencyBanner/Parts/Button',
+  id: 'Component/DADS v2/EmergencyBanner/Parts/Button',
+  title: 'Component/緊急時バナー/Parts/Button',
   component: EmergencyBannerButton,
   tags: ['autodocs'],
   argTypes: {

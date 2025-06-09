@@ -1,5 +1,5 @@
 import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useState } from 'react';
 import {
   Calendar,
@@ -34,7 +34,8 @@ import {
  * SeparatedタイプはSeparatedDatePickerコンポーネントを参照してください。
  */
 const meta = {
-  title: 'Component/DADS v2/DatePicker/DatePicker',
+  id: 'Component/DADS v2/DatePicker/DatePicker',
+  title: 'Component/日付ピッカー/Consolidated',
   tags: ['autodocs'],
   component: DatePicker,
   argTypes: {
@@ -129,21 +130,24 @@ export const Errored: Story = {
               <DatePickerYear
                 ref={yearRef}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                aria-invalid={true}
               />
               <DatePickerMonth
                 ref={monthRef}
                 defaultValue={10}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                aria-invalid={true}
               />
               <DatePickerDate
                 ref={dateRef}
                 defaultValue={28}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                aria-invalid={true}
               />
             </>
           )}
         </DatePicker>
-        <ErrorText id='date-picker-3-error-text'>＊年を入力してください。</ErrorText>
+        <ErrorText id='date-picker-3-error-text'>＊正しい日付を入力してください。</ErrorText>
       </fieldset>
     );
   },
@@ -354,8 +358,12 @@ export const WithCalendar: Story = {
                           </CalendarGridBody>
                         </CalendarGrid>
                         <div className='flex self-stretch justify-between gap-4 p-4'>
-                          <Button variant='text' size='sm' onClick={() => state.close()}>
-                            閉じる
+                          <Button
+                            variant='text'
+                            size='sm'
+                            onClick={() => calendarState.setValue(null)}
+                          >
+                            削除
                           </Button>
                           <Button
                             variant='outline'

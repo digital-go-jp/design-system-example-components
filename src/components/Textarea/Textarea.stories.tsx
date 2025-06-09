@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ErrorText, Label, RequirementBadge, SupportText } from '../';
 import { Textarea } from './Textarea';
 
 const meta = {
-  title: 'Component/DADS v2/Textarea',
+  id: 'Component/DADS v2/Textarea',
+  title: 'Component/テキストエリア',
   component: Textarea,
   tags: ['autodocs'],
   argTypes: {

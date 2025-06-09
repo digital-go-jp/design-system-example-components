@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Ul } from '../';
 import { Disclosure, DisclosureBackLink, DisclosureSummary } from './Disclosure';
 
 const meta = {
-  title: 'Component/DADS v2/Disclosure',
+  id: 'Component/DADS v2/Disclosure',
+  title: 'Component/ディスクロージャー',
   component: Disclosure,
   tags: ['autodocs'],
   argTypes: {},

@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { HamburgerWithLabelIcon } from './HamburgerWithLabelIcon';
 
 const meta = {
-  title: 'Component/DADS v2/HamburgerMenuButton/Parts/HamburgerWithLabelIcon',
+  id: 'Component/DADS v2/HamburgerMenuButton/Parts/HamburgerWithLabelIcon',
+  title: 'Component/ハンバーガーメニューボタン/Parts/HamburgerWithLabelIcon',
   component: HamburgerWithLabelIcon,
   tags: ['autodocs'],
   argTypes: {

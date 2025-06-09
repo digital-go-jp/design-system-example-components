@@ -1,11 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { useRef } from 'react';
 import { Button } from '../../';
 import { Dialog, DialogBody } from './Dialog';
 
 const meta = {
-  title: 'Component/DADS v1/ModalDialog',
+  id: 'Component/DADS v1/ModalDialog',
+  title: 'Component/DADS v1/モーダルダイアログ',
   component: Dialog,
   tags: ['autodocs'],
 } satisfies Meta<typeof Dialog>;

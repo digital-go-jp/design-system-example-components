@@ -1,11 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import React from 'react';
 import { Link } from '../';
 import { Button } from './Button';
 
 const meta = {
-  title: 'Component/DADS v2/Button',
+  id: 'Component/DADS v2/Button',
+  title: 'Component/ボタン',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

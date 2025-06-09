@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Button } from '../';
 import { NotificationBanner } from './NotificationBanner';
@@ -8,7 +8,8 @@ import { NotificationBannerHeader } from './parts/Header';
 import { NotificationBannerHeading } from './parts/Heading';
 
 const meta = {
-  title: 'Component/DADS v2/NotificationBanner',
+  id: 'Component/DADS v2/NotificationBanner',
+  title: 'Component/ノティフィケーションバナー',
   component: NotificationBanner,
   tags: ['autodocs'],
   argTypes: {

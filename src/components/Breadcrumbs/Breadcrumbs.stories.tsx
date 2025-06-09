@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Link } from '../Link/Link';
 import {
@@ -10,7 +10,8 @@ import {
 } from './Breadcrumbs';
 
 const meta = {
-  title: 'Component/DADS v2/Breadcrumbs',
+  id: 'Component/DADS v2/Breadcrumbs',
+  title: 'Component/パンくずリスト',
   component: Breadcrumbs,
   tags: ['autodocs'],
 } satisfies Meta<typeof Breadcrumbs>;

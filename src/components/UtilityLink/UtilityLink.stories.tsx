@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { UtilityLink, UtilityLinkExternalLinkIcon } from './UtilityLink';
 
 const meta = {
-  title: 'Component/DADS v2/UtilityLink',
+  id: 'Component/DADS v2/UtilityLink',
+  title: 'Component/ユーティリティリンク',
   component: UtilityLink,
   tags: ['autodocs'],
 } satisfies Meta<typeof UtilityLink>;

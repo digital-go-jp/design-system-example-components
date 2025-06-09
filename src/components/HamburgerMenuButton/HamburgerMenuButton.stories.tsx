@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useId, useRef, useState } from 'react';
 import { CloseIcon, CloseWithLabelIcon, HamburgerIcon, HamburgerWithLabelIcon } from './';
 import { HamburgerMenuButton } from './HamburgerMenuButton';
 
 const meta = {
-  title: 'Component/DADS v2/HamburgerMenuButton',
+  id: 'Component/DADS v2/HamburgerMenuButton',
+  title: 'Component/ハンバーガーメニューボタン',
   component: HamburgerMenuButton,
   tags: ['autodocs'],
 } satisfies Meta<typeof HamburgerMenuButton>;

@@ -10,7 +10,6 @@ export const Label = (props: LabelProps) => {
   const { children, className, size = 'md', ...rest } = props;
 
   return (
-    // biome-ignore lint/a11y/noLabelWithoutControl: rest/spread prop has `htmlFor` attribute
     <label
       className={`
         flex w-fit items-center gap-2 text-solid-gray-800

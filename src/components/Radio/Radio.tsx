@@ -14,12 +14,12 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
     e.preventDefault();
   };
 
-  const Radio = () => (
+  const radio = (
     <span
       className={`
         flex items-center justify-center shrink-0 rounded-full
         data-[size=sm]:size-6 data-[size=md]:size-8 data-[size=lg]:size-11
-        has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-solid-gray-420 forced-colors:has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-[CanvasText]
+        has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-solid-gray-420
       `}
       data-size={size}
     >
@@ -36,7 +36,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
           data-[size=lg]:border-[calc(3/16*1rem)]
           data-[error]:border-error-1 data-[error]:hover:border-red-1000 data-[error]:checked:before:bg-error-1 data-[error]:checked:hover:before:bg-red-1000
           aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:before:!bg-solid-gray-300
-          forced-colors:checked:before:!bg-[CanvasText] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText]
+          forced-colors:!border-[ButtonText] forced-colors:checked:!border-[Highlight] forced-colors:checked:before:!bg-[Highlight] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText]
         `}
         ref={ref}
         type='radio'
@@ -53,7 +53,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
       className='flex w-fit items-start py-2 data-[size=sm]:gap-1 data-[size=md]:gap-2 data-[size=lg]:gap-3'
       data-size={size}
     >
-      <Radio />
+      {radio}
       <span
         className='text-solid-gray-800 data-[size=sm]:pt-px data-[size=sm]:text-dns-16N-130 data-[size=md]:pt-1 data-[size=md]:text-dns-16N-130 data-[size=lg]:pt-2.5 data-[size=lg]:text-dns-17N-130'
         data-size={size}
@@ -62,6 +62,6 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
       </span>
     </label>
   ) : (
-    <Radio />
+    radio
   );
 });
