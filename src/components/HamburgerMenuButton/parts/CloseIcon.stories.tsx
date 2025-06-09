@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { CloseIcon } from './CloseIcon';
 
 const meta = {
-  title: 'Component/DADS v2/HamburgerMenuButton/Parts/CloseIcon',
+  id: 'Component/DADS v2/HamburgerMenuButton/Parts/CloseIcon',
+  title: 'Component/ハンバーガーメニューボタン/Parts/CloseIcon',
   component: CloseIcon,
   tags: ['autodocs'],
   argTypes: {},

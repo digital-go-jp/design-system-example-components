@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Legend } from './Legend';
 
 const meta = {
-  title: 'Component/DADS v2/Legend',
+  id: 'Component/DADS v2/Legend',
+  title: 'Component/フォームコントロールラベル/Legend',
   component: Legend,
   tags: ['autodocs'],
   argTypes: {

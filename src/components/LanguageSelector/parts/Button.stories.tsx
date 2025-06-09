@@ -1,11 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import React from 'react';
 import { LanguageSelectorArrowIcon, LanguageSelectorGlobeIcon } from './../';
 import { LanguageSelectorButton } from './Button';
 
 const meta = {
-  title: 'Component/DADS v2/LanguageSelector/Parts/Button',
+  id: 'Component/DADS v2/LanguageSelector/Parts/Button',
+  title: 'Component/ランゲージセレクター/Parts/Button',
   component: LanguageSelectorButton,
   tags: ['autodocs'],
   parameters: {

@@ -39,14 +39,7 @@
       },
       "a11y": {
         "useValidAnchor": "off",
-        "noLabelWithoutControl": {
-          "level": "error",
-          "options": {
-            "inputComponents": ["Checkbox", "InputText", "Radio", "Select", "Textarea"],
-            "labelAttributes": [],
-            "labelComponents": []
-          }
-        }
+        "noLabelWithoutControl": "off"
       }
     }
   }

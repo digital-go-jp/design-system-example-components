@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Label } from './Label';
 
 const meta = {
-  title: 'Component/DADS v2/Label',
+  id: 'Component/DADS v2/Label',
+  title: 'Component/フォームコントロールラベル/Label',
   component: Label,
   tags: ['autodocs'],
   argTypes: {

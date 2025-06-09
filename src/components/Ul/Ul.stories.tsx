@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Ol } from '../';
 import { Ul } from './Ul';
 
 const meta = {
-  title: 'Component/DADS v2/Ul',
+  id: 'Component/DADS v2/Ul',
+  title: 'Component/リスト/Ul',
   component: Ul,
   tags: ['autodocs'],
 } satisfies Meta<typeof Ul>;

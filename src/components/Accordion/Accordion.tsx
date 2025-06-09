@@ -27,11 +27,11 @@ export const AccordionSummary = (props: AccordionSummaryProps) => {
   return (
     <summary
       className={`
-        group/summary relative pl-[calc(var(--icon-size)+(12/16*1rem))] py-2 pr-2 cursor-default
-        desktop:pl-[calc(var(--icon-size)+(20/16*1rem))] desktop:py-3.5 desktop:pr-4
-        hover:bg-solid-gray-50
-        focus-visible:rounded-4 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
-        marker:[content:""] [&::-webkit-details-marker]:hidden ${className ?? ''}
+        group/summary relative block cursor-default py-2 pl-[calc(var(--icon-size)+(12/16*1rem))] pr-2
+        marker:[content:'']
+        hover:bg-solid-gray-50 focus-visible:rounded-4 focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:outline-black focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
+        desktop:py-3.5 desktop:pl-[calc(var(--icon-size)+(20/16*1rem))] desktop:pr-4
+        [&::-webkit-details-marker]:hidden ${className ?? ''}
       `}
       {...rest}
     >

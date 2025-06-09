@@ -1,4 +1,4 @@
-import { Description, Stories, Subtitle, Title } from '@storybook/blocks';
+import { Description, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
 import React, { type ComponentProps, useEffect, useRef, useState } from 'react';
 import {
   Checkbox,
@@ -12,7 +12,8 @@ import {
 } from '../';
 
 const meta = {
-  title: 'Component/DADS v2/Table',
+  id: 'Component/DADS v2/Table',
+  title: 'Component/テーブル',
   tags: ['autodocs'],
   parameters: {
     docs: {

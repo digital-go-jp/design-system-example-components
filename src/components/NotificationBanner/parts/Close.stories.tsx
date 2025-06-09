@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import { NotificationBannerClose } from './Close';
 
 const meta = {
-  title: 'Component/DADS v2/NotificationBanner/Parts/Close',
+  id: 'Component/DADS v2/NotificationBanner/Parts/Close',
+  title: 'Component/ノティフィケーションバナー/Parts/Close',
   component: NotificationBannerClose,
   tags: ['autodocs'],
   argTypes: {

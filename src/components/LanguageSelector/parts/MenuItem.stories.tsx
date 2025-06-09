@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { LanguageSelectorMenu } from './../';
 import { LanguageSelectorMenuItem } from './MenuItem';
 
 const meta = {
-  title: 'Component/DADS v2/LanguageSelector/Parts/MenuItem',
+  id: 'Component/DADS v2/LanguageSelector/Parts/MenuItem',
+  title: 'Component/ランゲージセレクター/Parts/MenuItem',
   component: LanguageSelectorMenuItem,
   tags: ['autodocs'],
   argTypes: {

@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ErrorText, Label, Legend, RequirementBadge, SupportText } from '../';
 import { Select } from './Select';
 
 const meta = {
-  title: 'Component/DADS v2/Select',
+  id: 'Component/DADS v2/Select',
+  title: 'Component/セレクトボックス',
   component: Select,
   tags: ['autodocs'],
   argTypes: {
