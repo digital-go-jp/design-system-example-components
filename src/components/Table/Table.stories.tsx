@@ -1,5 +1,5 @@
 import { Description, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
-import React, { type ComponentProps, useEffect, useRef, useState } from 'react';
+import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import {
   Checkbox,
   Link,
@@ -87,7 +87,7 @@ export const FirstRowAsHeaderCell = {
     return (
       <table className='w-full text-std-16N-170'>
         <thead>
-          <tr className='border-b border-black bg-solid-gray-50'>
+          <tr className='border-b border-black bg-solid-gray-100'>
             <th className='px-4 py-5 text-start align-top' scope='col'>
               ラベル
             </th>
@@ -144,7 +144,7 @@ export const FirstColumnAsHeaderCell = {
   render: () => {
     return (
       <table className='w-full text-std-16N-170'>
-        <colgroup className='border-r border-black bg-solid-gray-50'></colgroup>
+        <colgroup className='border-r border-black bg-solid-gray-100'></colgroup>
         <colgroup>
           <col className='border-r border-solid-gray-420' />
           <col className='border-r border-solid-gray-420' />
@@ -205,7 +205,7 @@ export const FirstRowAndColumnAsHeaderCell = {
     return (
       <table className='w-full text-std-16N-170'>
         <colgroup>
-          <col className='border-r border-black bg-solid-gray-50' />
+          <col className='border-r border-black bg-solid-gray-100' />
           <col />
           <col />
           <col />
@@ -213,8 +213,8 @@ export const FirstRowAndColumnAsHeaderCell = {
           <col />
         </colgroup>
         <thead>
-          <tr className='border-b border-black bg-solid-gray-50'>
-            <td className='border-b border-r border-solid-gray-420 px-4 py-5 align-top'></td>
+          <tr className='border-b border-black bg-solid-gray-100'>
+            <td className='border-b border-r border-solid-gray-500 px-4 py-5 align-top'></td>
             <th className='px-4 py-5 text-start align-top' scope='col'>
               ラベル
             </th>
@@ -234,7 +234,10 @@ export const FirstRowAndColumnAsHeaderCell = {
         </thead>
         <tbody>
           <tr className='border-b border-solid-gray-420'>
-            <th className='px-4 py-5 text-start align-top' scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              scope='row'
+            >
               ラベル
             </th>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -244,7 +247,10 @@ export const FirstRowAndColumnAsHeaderCell = {
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <th className='px-4 py-5 text-start align-top' scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              scope='row'
+            >
               ラベル
             </th>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -254,7 +260,10 @@ export const FirstRowAndColumnAsHeaderCell = {
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <th className='px-4 py-5 text-start align-top' scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              scope='row'
+            >
               ラベル
             </th>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -273,53 +282,53 @@ export const FirstRowAndColumnAsHeaderCell = {
 export const CondensedTable = {
   render: () => {
     return (
-      <table className='w-full text-dns-16N-120'>
+      <table className='w-full text-dns-16N-130'>
         <thead>
-          <tr className='border-b border-black bg-solid-gray-50'>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+          <tr className='border-b border-black bg-solid-gray-100'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               ラベル
             </th>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               ラベル
             </th>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               ラベル
             </th>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               ラベル
             </th>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               ラベル
             </th>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               ラベル
             </th>
           </tr>
         </thead>
         <tbody>
           <tr className='border-b border-solid-gray-420'>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
-            <td className='px-4 py-2.5 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
           </tr>
         </tbody>
       </table>
@@ -341,7 +350,7 @@ export const BorderOnRowAndColumn = {
           <col className='border border-solid-gray-420' />
         </colgroup>
         <thead>
-          <tr className='border-b border-black bg-solid-gray-50'>
+          <tr className='border-b border-black divide-x divide-solid-gray-536 bg-solid-gray-100'>
             <th className='px-4 py-5 text-start align-top' scope='col'>
               ラベル
             </th>
@@ -399,55 +408,55 @@ export const TableHeaderWithColspan = {
     return (
       <table className='w-full border border-solid-gray-420 text-std-16N-170'>
         <thead>
-          <tr className='bg-solid-gray-50'>
+          <tr className='bg-solid-gray-100'>
             <th
-              className='border-b border-r border-solid-gray-420 px-4 py-5 text-start align-top'
+              className='border-b border-r border-solid-gray-500 px-4 py-5 text-start align-top'
               colSpan={3}
               scope='col'
             >
               親ラベル
             </th>
             <th
-              className='border-b border-r border-solid-gray-420 px-4 py-5 text-start align-top'
+              className='border-b border-r border-solid-gray-500 px-4 py-5 text-start align-top'
               colSpan={3}
               scope='col'
             >
               親ラベル
             </th>
           </tr>
-          <tr className='border-b border-black bg-solid-gray-50'>
+          <tr className='border-b border-black bg-solid-gray-100'>
             <th
-              className='border-r border-solid-gray-420 px-4 py-5 text-start align-top'
+              className='border-r border-solid-gray-500 px-4 py-5 text-start align-top'
               scope='col'
             >
               子ラベル
             </th>
             <th
-              className='border-r border-solid-gray-420 px-4 py-5 text-start align-top'
+              className='border-r border-solid-gray-500 px-4 py-5 text-start align-top'
               scope='col'
             >
               子ラベル
             </th>
             <th
-              className='border-r border-solid-gray-420 px-4 py-5 text-start align-top'
+              className='border-r border-solid-gray-500 px-4 py-5 text-start align-top'
               scope='col'
             >
               子ラベル
             </th>
             <th
-              className='border-r border-solid-gray-420 px-4 py-5 text-start align-top'
+              className='border-r border-solid-gray-500 px-4 py-5 text-start align-top'
               scope='col'
             >
               子ラベル
             </th>
             <th
-              className='border-r border-solid-gray-420 px-4 py-5 text-start align-top'
+              className='border-r border-solid-gray-500 px-4 py-5 text-start align-top'
               scope='col'
             >
               子ラベル
             </th>
             <th
-              className='border-r border-solid-gray-420 px-4 py-5 text-start align-top'
+              className='border-r border-solid-gray-500 px-4 py-5 text-start align-top'
               scope='col'
             >
               子ラベル
@@ -491,8 +500,8 @@ export const TableHeaderWithRowspan = {
     return (
       <table className='w-full border border-solid-gray-420 text-std-16N-170'>
         <colgroup>
-          <col className='border-r border-solid-gray-420 bg-solid-gray-50' />
-          <col className='border-r border-black bg-solid-gray-50' />
+          <col className='border-r border-solid-gray-500 bg-solid-gray-100' />
+          <col className='border-r border-black bg-solid-gray-100' />
           <col />
           <col />
           <col />
@@ -500,10 +509,17 @@ export const TableHeaderWithRowspan = {
         </colgroup>
         <tbody>
           <tr className='border-b border-solid-gray-420'>
-            <th className='px-4 py-5 text-start align-top' rowSpan={2} scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              rowSpan={2}
+              scope='row'
+            >
               親ラベル
             </th>
-            <th className='px-4 py-5 text-start align-top' scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              scope='row'
+            >
               子ラベル
             </th>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -512,7 +528,10 @@ export const TableHeaderWithRowspan = {
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <th className='px-4 py-5 text-start align-top' scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              scope='row'
+            >
               子ラベル
             </th>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -521,10 +540,17 @@ export const TableHeaderWithRowspan = {
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <th className='px-4 py-5 text-start align-top' rowSpan={2} scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              rowSpan={2}
+              scope='row'
+            >
               親ラベル
             </th>
-            <th className='px-4 py-5 text-start align-top' scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              scope='row'
+            >
               子ラベル
             </th>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -533,7 +559,10 @@ export const TableHeaderWithRowspan = {
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <th className='px-4 py-5 text-start align-top' scope='row'>
+            <th
+              className='border-b border-solid-gray-500 px-4 py-5 text-start align-top'
+              scope='row'
+            >
               子ラベル
             </th>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -553,7 +582,7 @@ export const IndentedRows = {
     <table className='w-full text-std-16N-170'>
       <col className='w-8' />
       <thead>
-        <tr className='border-b border-black bg-solid-gray-50'>
+        <tr className='border-b border-black bg-solid-gray-100'>
           <td className='px-4 py-5 text-start align-top' colSpan={2}></td>
           <th className='px-4 py-5 text-start align-top' scope='col'>
             代表者名
@@ -608,7 +637,7 @@ export const StripeTable = {
     return (
       <table className='w-full text-std-16N-170'>
         <thead>
-          <tr className='border-b border-black bg-solid-gray-50'>
+          <tr className='border-b border-black bg-solid-gray-100'>
             <th className='px-4 py-5 text-start align-top' scope='col'>
               ラベル
             </th>
@@ -630,7 +659,7 @@ export const StripeTable = {
           </tr>
         </thead>
         <tbody>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb]'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -638,7 +667,7 @@ export const StripeTable = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb]'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -646,7 +675,7 @@ export const StripeTable = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb]'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -654,7 +683,7 @@ export const StripeTable = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb]'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -662,7 +691,7 @@ export const StripeTable = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb]'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -670,7 +699,7 @@ export const StripeTable = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb]'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -690,7 +719,7 @@ export const HighlightHoveredRow = {
     return (
       <table className='w-full text-std-16N-170'>
         <thead>
-          <tr className='border-b border-black bg-solid-gray-50'>
+          <tr className='border-b border-black bg-solid-gray-100'>
             <th className='px-4 py-5 text-start align-top' scope='col'>
               ラベル
             </th>
@@ -712,7 +741,7 @@ export const HighlightHoveredRow = {
           </tr>
         </thead>
         <tbody>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb] hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -720,7 +749,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb] hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -728,7 +757,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb] hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -736,7 +765,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb] hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -744,7 +773,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb] hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -752,7 +781,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 even:bg-[#f8f8fb] hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -768,79 +797,118 @@ export const HighlightHoveredRow = {
 
 /**
  * 選択可能なテーブル行
- *
- * ※全て選択機能は未実装です。
  */
 export const SelectableTable = {
   render: () => {
+    const checkAll = useRef<HTMLInputElement>(null);
+    const [checks, setChecks] = useState([false, true, false]);
+
+    useEffect(() => {
+      if (!checkAll.current) return;
+      const allChecked = checks.every(Boolean);
+      const noneChecked = checks.every((v) => !v);
+      checkAll.current.checked = allChecked;
+      checkAll.current.indeterminate = !allChecked && !noneChecked;
+    }, [checks]);
+
+    const handleCheckAllChange = () => {
+      if (!checkAll.current) return;
+      const checked = checkAll.current.indeterminate || checkAll.current.checked;
+      checkAll.current.checked = checked;
+      setChecks(checks.map(() => checked));
+    };
+
+    const handleIndividualChange = (index: number) => (e: ChangeEvent<HTMLInputElement>) => {
+      const newChecks = [...checks];
+      newChecks[index] = e.target.checked;
+      setChecks(newChecks);
+    };
+
     return (
-      <table className='w-full text-dns-16N-120'>
+      <table className='w-full text-dns-16N-130'>
         <thead>
-          <tr className='border-b border-black bg-solid-gray-50'>
+          <tr className='border-b border-black bg-solid-gray-100'>
             <th className='relative w-10' scope='col'>
-              <label className='absolute inset-0 grid justify-center pt-2'>
-                <Checkbox aria-label='行を選択' aria-description='すべての行を選択する' />
+              <label className='absolute inset-0 grid justify-center pt-2.5'>
+                <Checkbox
+                  aria-label='行を選択'
+                  aria-description='すべての行を選択する'
+                  ref={checkAll}
+                  onChange={handleCheckAllChange}
+                />
               </label>
             </th>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               タイトル
             </th>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               状態
             </th>
-            <th className='px-4 py-2.5 text-start align-top' scope='col'>
+            <th className='px-4 py-3 text-start align-top' scope='col'>
               コメント数
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr className='border-b border-solid-gray-420 [&:has(input:checked)]:bg-blue-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-blue-100'>
             <td className='relative'>
-              <label className='absolute inset-0 grid justify-center pt-2'>
-                <Checkbox aria-labelledby='selectable-table-row-1-title' />
+              <label className='absolute inset-0 grid justify-center pt-2.5'>
+                <Checkbox
+                  aria-labelledby='selectable-table-row-1-title'
+                  checked={checks[0]}
+                  onChange={handleIndividualChange(0)}
+                />
               </label>
             </td>
             <th
-              className='px-4 py-2.5 text-left align-top text-dns-16N-120'
+              className='px-4 py-3 text-left align-top text-dns-16N-130'
               id='selectable-table-row-1-title'
               scope='row'
             >
               記事タイトル1
             </th>
-            <td className='px-4 py-2.5 align-top'>公開中</td>
-            <td className='px-4 py-2.5 align-top'>10</td>
+            <td className='px-4 py-3 align-top'>公開中</td>
+            <td className='px-4 py-3 align-top'>10</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 [&:has(input:checked)]:bg-blue-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-blue-100'>
             <td className='relative'>
-              <label className='absolute inset-0 grid justify-center pt-2'>
-                <Checkbox aria-labelledby='selectable-table-row-2-title' />
+              <label className='absolute inset-0 grid justify-center pt-2.5'>
+                <Checkbox
+                  aria-labelledby='selectable-table-row-2-title'
+                  checked={checks[1]}
+                  onChange={handleIndividualChange(1)}
+                />
               </label>
             </td>
             <th
-              className='px-4 py-2.5 text-left align-top text-dns-16N-120'
+              className='px-4 py-3 text-left align-top text-dns-16N-130'
               id='selectable-table-row-2-title'
               scope='row'
             >
               記事タイトル2
             </th>
-            <td className='px-4 py-2.5 align-top'>下書き</td>
-            <td className='px-4 py-2.5 align-top'>0</td>
+            <td className='px-4 py-3 align-top'>下書き</td>
+            <td className='px-4 py-3 align-top'>0</td>
           </tr>
-          <tr className='border-b border-solid-gray-420 [&:has(input:checked)]:bg-blue-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-blue-100'>
             <td className='relative'>
-              <label className='absolute inset-0 grid justify-center pt-2'>
-                <Checkbox aria-labelledby='selectable-table-row-3-title' />
+              <label className='absolute inset-0 grid justify-center pt-2.5'>
+                <Checkbox
+                  aria-labelledby='selectable-table-row-3-title'
+                  checked={checks[2]}
+                  onChange={handleIndividualChange(2)}
+                />
               </label>
             </td>
             <th
-              className='px-4 py-2.5 text-left align-top text-dns-16N-120'
+              className='px-4 py-3 text-left align-top text-dns-16N-130'
               id='selectable-table-row-3-title'
               scope='row'
             >
               記事タイトル3
             </th>
-            <td className='px-4 py-2.5 align-top'>非公開</td>
-            <td className='px-4 py-2.5 align-top'>3</td>
+            <td className='px-4 py-3 align-top'>非公開</td>
+            <td className='px-4 py-3 align-top'>3</td>
           </tr>
         </tbody>
       </table>
@@ -850,7 +918,7 @@ export const SelectableTable = {
 
 /** ソート可能なテーブルヘッダー（2列目は列メニューあり） */
 export const SortableHeader = {
-  render: ({ size }) => {
+  render: () => {
     type Sort = 'ascending' | 'descending' | undefined;
 
     const [sortStates, setSortStates] = useState<Record<number, Sort>>({ 1: 'ascending' });
@@ -863,20 +931,22 @@ export const SortableHeader = {
       });
     };
 
-    const AscendingIcon = ({ sort }: { sort: Sort }) =>
-      sort && (
+    const SortIcon = ({ sort }: { sort: Sort }) =>
+      sort ? (
         <svg
-          className={`ml-1 inline-block ${sort === 'descending' ? 'rotate-180' : ''}`}
+          className={sort === 'descending' ? 'rotate-180' : ''}
           width='24'
           height='24'
-          viewBox='0 -960 960 960'
-          fill='none'
-          aria-hidden='true'
+          fill='black'
+          aria-hidden={true}
         >
-          <path
-            d='M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z'
-            fill='currentcolor'
-          />
+          <path d='M17 18.12L21.27 14L22 14.7L16.5 20L11 14.7L11.73 14L16 18.12V4H17V18.12Z' />
+          <path d='M14 8.92L11.73 11L9 8.52V20H6V8.52L3.27 11L1 8.93L7.5 3L14 8.93Z' />
+        </svg>
+      ) : (
+        <svg width='24' height='24' fill='black' aria-hidden='true'>
+          <path d='M17 18.11L21.27 14L22 14.7L16.5 20L11 14.7L11.73 14L16 18.12V4H17V18.12Z' />
+          <path d='M8 5.88L12.27 10L13 9.3L7.5 4L2 9.3L2.73 10L7 5.88V20H8V5.88Z' />
         </svg>
       );
 
@@ -891,32 +961,31 @@ export const SortableHeader = {
           <col className='border-r border-solid-gray-420' />
           <col className='border-r border-solid-gray-420' />
           <col className='border-r border-solid-gray-420' />
-          <col className='border-r border-solid-gray-420' />
         </colgroup>
         <thead>
-          <tr className='border-b border-black bg-solid-gray-50'>
-            {[...Array(6)].map((_, i) =>
-              i === showColumnMenuIndex ? (
-                <th
-                  // biome-ignore lint/suspicious/noArrayIndexKey: 例示のため
-                  key={i}
-                  className={`border-r border-solid-gray-420 px-4 ${size === 'dense' ? 'p-0' : 'py-3'} text-start align-top`}
-                  scope='col'
-                  aria-sort={sortStates[i] || 'none'}
-                >
-                  <div className='flex items-center justify-between gap-1'>
+          <tr className='border-b border-black divide-x divide-solid-gray-536 bg-solid-gray-100'>
+            {[...Array(5)].map((_, i) => (
+              <th
+                // biome-ignore lint/suspicious/noArrayIndexKey: 例示のため
+                key={i}
+                className='px-4 py-3 text-start align-top'
+                scope='col'
+                aria-sort={sortStates[i] || 'none'}
+              >
+                <div className='flex items-start justify-between'>
+                  <div className='flex items-start py-2'>
                     <button
-                      className='text-start underline underline-offset-[calc(3/16*1rem)] hover:decoration-[calc(3/16*1rem)] focus-visible:rounded-4 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300'
+                      className='inline-flex items-start gap-x-1 text-start underline underline-offset-[calc(3/16*1rem)] hover:decoration-[calc(3/16*1rem)] focus-visible:rounded-4 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300'
                       type='button'
                       onClick={() => handleSortClick(i)}
                     >
-                      <span className='min-h-11 flex items-center py-1'>
-                        <span>
-                          ラベル
-                          <AscendingIcon sort={sortStates[i]} />
-                        </span>
+                      ラベル
+                      <span className='pt-0.5'>
+                        <SortIcon sort={sortStates[i]} />
                       </span>
                     </button>
+                  </div>
+                  {i === showColumnMenuIndex && (
                     <button
                       className='flex size-11 shrink-0 items-center justify-end rounded-4 focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:outline-black focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300'
                       type='button'
@@ -936,76 +1005,160 @@ export const SortableHeader = {
                         />
                       </svg>
                     </button>
-                  </div>
-                </th>
-              ) : (
-                <th
-                  // biome-ignore lint/suspicious/noArrayIndexKey: 例示のため
-                  key={i}
-                  className='h-0 border-r border-solid-gray-420 p-0 text-start align-top'
-                  scope='col'
-                  aria-sort={sortStates[i] || 'none'}
-                >
-                  <button
-                    className={`block size-full px-4  ${size === 'dense' ? '' : 'py-3'} text-start underline underline-offset-[calc(3/16*1rem)] hover:decoration-[calc(3/16*1rem)] focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(-2/16*1rem)] focus-visible:outline-black`}
-                    type='button'
-                    onClick={() => handleSortClick(i)}
-                  >
-                    <span className='min-h-11 flex items-center py-1'>
-                      <span>
-                        ラベル
-                        <AscendingIcon sort={sortStates[i]} />
-                      </span>
-                    </span>
-                  </button>
-                </th>
-              ),
-            )}
+                  )}
+                </div>
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
           <tr className='border-b border-solid-gray-420'>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
           </tr>
           <tr className='border-b border-solid-gray-420'>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
-            <td className={`px-4 ${size === 'dense' ? 'py-2' : 'py-5'} align-top`}>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
+            <td className='px-4 py-5 align-top'>データ</td>
           </tr>
         </tbody>
       </table>
     );
   },
-  args: {
-    size: 'normal',
-  },
-  argTypes: {
-    size: {
-      type: 'string',
-      description: 'サイズ（密度）',
-      control: { type: 'radio' },
-      options: ['normal', 'dense'],
-      table: {
-        defaultValue: { summary: 'normal' },
-        type: { summary: "'normal' | 'dense'" },
-      },
-    },
+};
+
+/** ソート可能なテーブルヘッダー Dense（2列目は列メニューあり） */
+export const SortableHeaderDense = {
+  render: () => {
+    type Sort = 'ascending' | 'descending' | undefined;
+
+    const [sortStates, setSortStates] = useState<Record<number, Sort>>({ 1: 'ascending' });
+
+    const handleSortClick = (columnIndex: number) => {
+      setSortStates((prevStates) => {
+        return {
+          [columnIndex]: prevStates[columnIndex] === 'ascending' ? 'descending' : 'ascending',
+        };
+      });
+    };
+
+    const SortIcon = ({ sort }: { sort: Sort }) =>
+      sort ? (
+        <svg
+          className={sort === 'descending' ? 'rotate-180' : ''}
+          width='24'
+          height='24'
+          fill='black'
+          aria-hidden={true}
+        >
+          <path d='M17 18.12L21.27 14L22 14.7L16.5 20L11 14.7L11.73 14L16 18.12V4H17V18.12Z' />
+          <path d='M14 8.92L11.73 11L9 8.52V20H6V8.52L3.27 11L1 8.93L7.5 3L14 8.93Z' />
+        </svg>
+      ) : (
+        <svg width='24' height='24' fill='black' aria-hidden='true'>
+          <path d='M17 18.11L21.27 14L22 14.7L16.5 20L11 14.7L11.73 14L16 18.12V4H17V18.12Z' />
+          <path d='M8 5.88L12.27 10L13 9.3L7.5 4L2 9.3L2.73 10L7 5.88V20H8V5.88Z' />
+        </svg>
+      );
+
+    // 2列目は列メニューあり
+    const showColumnMenuIndex = 1;
+
+    return (
+      <table className='w-full table-fixed border border-solid-gray-420 text-dns-16N-130'>
+        <colgroup>
+          <col className='border-r border-solid-gray-420' />
+          <col className='border-r border-solid-gray-420' />
+          <col className='border-r border-solid-gray-420' />
+          <col className='border-r border-solid-gray-420' />
+          <col className='border-r border-solid-gray-420' />
+        </colgroup>
+        <thead>
+          <tr className='border-b border-black divide-x divide-solid-gray-536 bg-solid-gray-100'>
+            {[...Array(5)].map((_, i) => (
+              <th
+                // biome-ignore lint/suspicious/noArrayIndexKey: 例示のため
+                key={i}
+                className='px-4 py-0 text-start align-top'
+                scope='col'
+                aria-sort={sortStates[i] || 'none'}
+              >
+                <div className='flex items-start justify-between'>
+                  <div className='flex items-start py-3'>
+                    <button
+                      className='inline-flex items-start gap-x-1 text-start underline underline-offset-[calc(3/16*1rem)] hover:decoration-[calc(3/16*1rem)] focus-visible:rounded-4 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:bg-yellow-300 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300'
+                      type='button'
+                      onClick={() => handleSortClick(i)}
+                    >
+                      ラベル
+                      <span className='-mt-0.5'>
+                        <SortIcon sort={sortStates[i]} />
+                      </span>
+                    </button>
+                  </div>
+                  {i === showColumnMenuIndex && (
+                    <button
+                      className='flex size-11 shrink-0 items-center justify-end rounded-4 focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:outline-black focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300'
+                      type='button'
+                      aria-haspopup='true'
+                    >
+                      <svg
+                        width='24'
+                        height='24'
+                        viewBox='0 -960 960 960'
+                        fill='none'
+                        role='img'
+                        aria-label='列メニュー'
+                      >
+                        <path
+                          d='M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z'
+                          fill='currentcolor'
+                        />
+                      </svg>
+                    </button>
+                  )}
+                </div>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          <tr className='border-b border-solid-gray-420'>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+          </tr>
+          <tr className='border-b border-solid-gray-420'>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+          </tr>
+          <tr className='border-b border-solid-gray-420'>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+            <td className='px-4 py-3 align-top'>データ</td>
+          </tr>
+        </tbody>
+      </table>
+    );
   },
 };
 
@@ -1014,7 +1167,7 @@ export const LinkedTextInCell = {
   render: () => (
     <table className='w-full table-fixed text-std-16N-170'>
       <thead>
-        <tr className='border-b border-black bg-solid-gray-50'>
+        <tr className='border-b border-black bg-solid-gray-100'>
           <th className='px-4 py-5 text-start align-top' scope='col'>
             ラベル
           </th>
@@ -1089,7 +1242,7 @@ export const WithCaption = {
         <figcaption className='mb-4 text-start font-bold'>表1: テーブルキャプション</figcaption>
         <table className='w-full text-std-16N-170'>
           <thead>
-            <tr className='border-b border-black bg-solid-gray-50'>
+            <tr className='border-b border-black bg-solid-gray-100'>
               <th className='px-4 py-5 text-start align-top' scope='col'>
                 ラベル
               </th>
@@ -1151,7 +1304,7 @@ export const OverflowOnMobile = {
           <div className='px-4 pb-2'>
             <table className='mx-4 mb-2 w-full min-w-[calc(640/16*1rem)]'>
               <thead>
-                <tr className='border-b border-black bg-solid-gray-50'>
+                <tr className='border-b border-black bg-solid-gray-100'>
                   <th className='w-36 px-4 py-5 text-start align-top md:w-64' scope='col'>
                     項目
                   </th>
