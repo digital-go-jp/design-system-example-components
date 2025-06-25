@@ -254,11 +254,11 @@ export const Indeterminate: Story = {
       const noneChecked = checks.every((v) => !v);
       checkAll.current.checked = allChecked;
       checkAll.current.indeterminate = !allChecked && !noneChecked;
-    });
+    }, [checks]);
 
-    const handleCheckAllChange = (e) => {
+    const handleCheckAllChange = () => {
       if (!checkAll.current) return;
-      const checked = checkAll.current.indeterminate || e.target.checked;
+      const checked = checkAll.current.indeterminate || checkAll.current.checked;
       checkAll.current.checked = checked;
       setChecks(checks.map(() => checked));
     };
