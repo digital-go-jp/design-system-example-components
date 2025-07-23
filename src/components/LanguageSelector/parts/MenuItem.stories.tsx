@@ -19,7 +19,7 @@ const meta = {
     },
     isCondensed: {
       description:
-        '`true` を指定すると、メニュー項目の高さが32pxに設定されます。（標準は44px）設置領域に制限がある場合に使用してください。\n\n使用の際は`LanguageSelectorMenu`にも`isCondensed`を設定してください。',
+        '`true` を指定すると、メニュー項目の高さが36pxに設定されます。（標準は44px）設置領域に制限がある場合に使用してください。\n\n使用の際は`LanguageSelectorMenu`にも`isCondensed`を設定してください。',
       control: { type: 'boolean' },
       table: {
         defaultValue: { summary: 'false' },
