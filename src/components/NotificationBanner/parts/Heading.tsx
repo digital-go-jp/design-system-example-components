@@ -11,7 +11,7 @@ export const NotificationBannerHeading = (props: NotificationBannerHeadingProps)
 
   return (
     <Tag
-      className={`text-std-17B-170 text-solid-gray-900 col-start-1 desktop:mt-0.5 desktop:text-std-20B-160 ${className ?? ''}`}
+      className={`mt-1 text-std-17B-170 text-solid-gray-900 col-start-1 desktop:mt-0.5 desktop:text-std-20B-160 ${className ?? ''}`}
       {...rest}
     >
       {children}
