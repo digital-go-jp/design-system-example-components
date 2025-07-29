@@ -6,6 +6,7 @@ import { NotificationBannerBody } from './parts/Body';
 import { NotificationBannerClose } from './parts/Close';
 import { NotificationBannerHeader } from './parts/Header';
 import { NotificationBannerHeading } from './parts/Heading';
+import { NotificationBannerMobileClose } from './parts/MobileClose';
 
 const meta = {
   id: 'Component/DADS v2/NotificationBanner',
@@ -739,4 +740,19 @@ export const ColorChipWithButtonMobileHoriz = {
       </div>
     );
   },
+};
+
+/** 改行が多くなる場合に備えてモバイルでコンパクトタイプの閉じるボタンを使用している例 */
+export const MobileCompact: StoryObj = {
+  render: () => (
+    <NotificationBanner bannerStyle='standard' type='info1'>
+      <NotificationBannerHeader>
+        <NotificationBannerHeading level='h2'>登録期間が延長されました</NotificationBannerHeading>
+        <NotificationBannerMobileClose onClick={() => console.log('Clicked close')} />
+      </NotificationBannerHeader>
+      <NotificationBannerBody>
+        ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
+      </NotificationBannerBody>
+    </NotificationBanner>
+  ),
 };
