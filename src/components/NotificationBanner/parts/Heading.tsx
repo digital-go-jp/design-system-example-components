@@ -1,8 +1,8 @@
 import type { ComponentProps } from 'react';
-import type { NotifiationBannerHeadingLevel } from '../types';
+import type { NotificationBannerHeadingLevel } from '../types';
 
 type NotificationBannerHeadingProps = ComponentProps<'h2'> & {
-  level: NotifiationBannerHeadingLevel;
+  level: NotificationBannerHeadingLevel;
 };
 
 export const NotificationBannerHeading = (props: NotificationBannerHeadingProps) => {

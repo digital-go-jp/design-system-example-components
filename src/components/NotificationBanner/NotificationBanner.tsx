@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 import { NotificationBannerIcon } from './parts/Icon';
 import { bannerStyleClasses, bannerTypeClasses } from './styles';
-import type { NotifiationBannerStyle, NotifiationBannerType } from './types';
+import type { NotificationBannerStyle, NotificationBannerType } from './types';
 
 type Props = {
   className?: string;
   children: ReactNode;
-  bannerStyle: NotifiationBannerStyle;
-  type: NotifiationBannerType;
+  bannerStyle: NotificationBannerStyle;
+  type: NotificationBannerType;
 };
 
 export const NotificationBanner = (props: Props) => {

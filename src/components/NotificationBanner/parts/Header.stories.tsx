@@ -12,7 +12,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'NotificationBannerHeader はノティフケーションバナーのヘッダー領域のレイアウトに使用します。中にバナータイトルと閉じるボタンを配置することを想定して作られています。\n\n※ CSS Grid レイアウトの `subgrid` を使用しているため、NotificationBanner コンポーネント内以外で使用した場合に崩れる可能性がありますのでご注意ください。',
+          'NotificationBannerHeader はノティフィケーションバナーのヘッダー領域のレイアウトに使用します。中にバナータイトルと閉じるボタンを配置することを想定して作られています。\n\n※ CSS Grid レイアウトの `subgrid` を使用しているため、NotificationBanner コンポーネント内以外で使用した場合に崩れる可能性がありますのでご注意ください。',
       },
     },
   },

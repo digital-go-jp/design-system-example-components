@@ -17,7 +17,7 @@ const meta = {
     bannerStyle: {
       options: ['standard', 'color-chip'],
       control: { type: 'radio' },
-      description: 'ノティフケーションバナーのスタイルを選択します。',
+      description: 'ノティフィケーションバナーのスタイルを選択します。',
       table: {
         type: { summary: "'standard' | 'color-chip'" },
       },
@@ -25,7 +25,7 @@ const meta = {
     type: {
       options: ['info1', 'info2', 'warning', 'error', 'success'],
       control: { type: 'radio' },
-      description: 'ノティフケーションバナーで通知する情報属性の種類を選択します。',
+      description: 'ノティフィケーションバナーで通知する情報属性の種類を選択します。',
       table: {
         type: { summary: "'info1' | 'info2' | 'warning' | 'error' | 'success'" },
       },
