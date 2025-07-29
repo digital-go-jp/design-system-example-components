@@ -1,8 +1,8 @@
-# React サンプルコンポーネント
+# デジタル庁デザインシステム コードスニペット（React版）
 
-[デジタル庁デザインシステム](https://design.digital.go.jp/) のコンポーネントの一部をReact / Tailwind CSSベースで実装したサンプル集です。
+[デジタル庁デザインシステム](https://design.digital.go.jp/)をReact/Tailwind CSSで実装したサンプル集です。
 
-[Storybook](https://digital-go-jp.github.io/design-system-example-components/)で最新版を公開しています。
+[Storybook](https://design.digital.go.jp/dads/react/)で最新版を公開しています。
 
 ## 未実装コンポーネント
 
@@ -39,15 +39,13 @@ npm run storybook
 - サンプルコードは Google Chrome / Microsoft Edge / Safari / Firefox の最新版で動作を確認しています。
 - サンプルコードはプロジェクトの特性に合わせて自由に拡張してください。
 
-## Issues, Pull Requests
+## 不具合報告・機能要望について
 
-ご興味を持って頂きありがとうございます。  
-リリース直後のため、現在体制がまだ整っておりません。  
-そのため、何かお気づきの点やご要望がございましたら、まずはIssueの作成をお願いします。PRはそのIssueでの議論が終わった後に作成してください。  
-また、現時点ではコンポーネントそのものに関するIssueのみを受け付けておりますので、予めご了承ください。
+本コードスニペットに関する不具合や機能要望は、Issueを作成して報告してください。Pull Requestは現時点では受け付けておりません。
 
 ## 求人情報
 
 デジタル庁デザインシステムのチームメンバーを募集しています。行政のデジタル環境を支える基盤づくりに、あなたのスキルや経験を活かしてみませんか？　求人ページからご応募ください。
 
-- [プロダクトデザイナー（デザインシステム） - デジタル庁](https://herp.careers/v1/digitalsaiyo/IjQ4ovK9BFPl)
+- [プロダクトデザイナー](https://herp.careers/v1/digitalsaiyo/IjQ4ovK9BFPl)
+- [プロダクトデザイナー（アソシエイト）](https://herp.careers/v1/digitalsaiyo/yzcCCZJ9UY-f)
