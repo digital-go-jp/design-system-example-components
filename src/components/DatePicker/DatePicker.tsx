@@ -1,3 +1,5 @@
+'use client';
+
 import { type ComponentProps, type KeyboardEvent, type Ref, useRef } from 'react';
 
 export type DatePickerSize = 'lg' | 'md' | 'sm';

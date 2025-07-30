@@ -8,7 +8,7 @@ export const NotificationBannerHeader = (props: Props) => {
   return (
     <div
       className={`
-        grid grid-cols-subgrid col-start-2 -col-end-1 place-items-start
+        grid grid-cols-subgrid col-start-2 -col-end-1 self-start place-items-start
         [&>*:last-child]:-col-end-1
         ${className ?? ''}
       `}

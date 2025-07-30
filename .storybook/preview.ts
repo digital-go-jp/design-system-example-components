@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
 import './globals.css';
+import "./prose.css";
 
 const preview: Preview = {
   parameters: {
@@ -15,7 +16,10 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
-          'Getting Started',
+          'Documents',
+          [
+            'はじめに'
+          ],
           'Component',
           [
             'アコーディオン',

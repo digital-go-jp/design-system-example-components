@@ -19,7 +19,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'NotificationBannerClose はノティフケーションバナーの閉じるボタンに使用します。',
+        component:
+          'NotificationBannerClose はノティフィケーションバナーの閉じるボタンに使用します。',
       },
     },
   },
