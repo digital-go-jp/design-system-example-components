@@ -1,0 +1,49 @@
+name: Deploy Storybook to Production
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
+env:
+  AWS_DEFAULT_REGION: ap-northeast-1
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "npm"
+      - name: Install packages
+        run: |
+          npm ci
+      - name: Build
+        run: |
+          npm run storybook:build
+      - name: Define deploy_id
+        run: |
+          echo "deploy_id=${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}" >> $GITHUB_ENV
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.PROD_ROLE_TO_ASSUME }}
+          role-session-name: GitHubActions-${{ env.deploy_id }}
+          aws-region: ${{ env.AWS_DEFAULT_REGION }}
+      - name: copy files to s3 bucket
+        run: |
+          aws s3 sync --delete storybook-static s3://${{ secrets.PROD_BUCKET_NAME }}/dads/react/
+      - name: invalidate cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.PROD_CF_DIST_ID }} --paths "/dads/react/*"
