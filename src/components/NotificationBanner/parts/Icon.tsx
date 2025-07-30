@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react';
-import type { NotifiationBannerType } from '../types';
+import type { NotificationBannerType } from '../types';
 
 type IconProps = ComponentProps<'svg'>;
 
@@ -105,7 +105,7 @@ const SuccessIcon = (props: IconProps) => {
 };
 
 type NotificationBannerIconProps = ComponentProps<'svg'> & {
-  type: NotifiationBannerType;
+  type: NotificationBannerType;
 };
 
 export const NotificationBannerIcon = (props: NotificationBannerIconProps) => {

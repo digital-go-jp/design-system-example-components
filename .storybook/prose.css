@@ -1,0 +1,533 @@
+@scope (.prose) to (.sbdocs-preview, .docblock-argstable) {
+  :scope {
+    color: var(--color-neutral-solid-gray-800);
+    font-weight: normal;
+    font-size: calc(16 / 16 * 1rem);
+    line-height: 1.7;
+    font-family: var(--font-family-sans);
+    letter-spacing: 0.02em;
+    overflow-wrap: anywhere;
+    line-break: strict;
+    text-autospace: normal;
+    text-spacing-trim: trim-start;
+  }
+
+  @media (min-width: 48rem) {
+    :scope {
+      font-size: calc(17 / 16 * 1rem);
+    }
+  }
+
+  /* Heading */
+
+  :scope > h1 {
+    margin-top: 0;
+    margin-bottom: calc(32 / 16 * 1rem);
+    margin-left: calc(-2 / 16 * 1rem);
+    font-weight: bold;
+    font-size: calc(28 / 16 * 1rem);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 48rem) {
+    :scope > h1 {
+      margin-bottom: calc(48 / 16 * 1rem);
+      font-size: calc(45 / 16 * 1rem);
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+  }
+
+  :scope > h2 {
+    margin-top: calc(40 / 16 * 1rem);
+    margin-bottom: calc(24 / 16 * 1rem);
+    font-weight: bold;
+    font-size: calc(24 / 16 * 1rem);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 48rem) {
+    :scope > h2 {
+      margin-top: calc(64 / 16 * 1rem);
+      font-size: calc(32 / 16 * 1rem);
+    }
+  }
+
+  :scope > h3 {
+    margin-top: calc(32 / 16 * 1rem);
+    margin-bottom: calc(16 / 16 * 1rem);
+    font-weight: bold;
+    font-size: calc(22 / 16 * 1rem);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 48rem) {
+    :scope > h3 {
+      margin-top: calc(48 / 16 * 1rem);
+      margin-bottom: calc(24 / 16 * 1rem);
+      font-size: calc(24 / 16 * 1rem);
+    }
+  }
+
+  :scope > h4 {
+    margin-top: calc(24 / 16 * 1rem);
+    margin-bottom: calc(16 / 16 * 1rem);
+    font-weight: bold;
+    font-size: calc(18 / 16 * 1rem);
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
+  }
+
+  @media (min-width: 48rem) {
+    :scope > h4 {
+      margin-top: calc(40 / 16 * 1rem);
+      font-size: calc(20 / 16 * 1rem);
+      line-height: 1.5;
+    }
+  }
+
+  :scope > h5 {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: calc(18 / 16 * 1rem);
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
+  }
+
+  :scope > h6 {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: calc(16 / 16 * 1rem);
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
+  }
+
+  /* Paragraph */
+
+  :scope > p,
+  :scope > :is(blockquote, ol, ul, dl, table, details) p {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-bottom: calc(16 / 16 * 1rem);
+  }
+
+  @media (min-width: 48rem) {
+    :scope > p,
+    :scope > :is(blockquote, ol, ul, dl, table, details) p {
+      margin-bottom: calc(24 / 16 * 1rem);
+    }
+  }
+
+  /* List */
+
+  :scope > ul,
+  :scope > ol,
+  :scope > :is(blockquote, ol, ul, dl, table, details) ul,
+  :scope > :is(blockquote, ol, ul, dl, table, details) ol {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-bottom: calc(16 / 16 * 1rem);
+    padding-left: calc(32 / 16 * 1rem);
+  }
+
+  @media (min-width: 48rem) {
+    :scope > ul,
+    :scope > ol,
+    :scope > :is(blockquote, ol, dl, table, details) ul,
+    :scope > :is(blockquote, ul, dl, table, details) ol {
+      margin-top: calc(24 / 16 * 1rem);
+      margin-bottom: calc(24 / 16 * 1rem);
+    }
+  }
+
+  :scope > :is(blockquote, ol, ul, dl, table, details) ul,
+  :scope > :is(blockquote, ol, ul, dl, table, details) ol {
+    margin-top: calc(8 / 16 * 1rem);
+    margin-bottom: calc(8 / 16 * 1rem);
+  }
+
+  :scope > ul,
+  :scope > :is(blockquote, ol, dl, table, details) ul {
+    list-style-type: disc;
+  }
+
+  :scope > ul ul,
+  :scope > :is(blockquote, ol, dl, table, details) ul ul {
+    list-style-type: circle;
+  }
+
+  :scope > ul ul ul,
+  :scope > :is(blockquote, ol, dl, table, details) ul ul ul {
+    list-style-type: square;
+  }
+
+  :scope > ol,
+  :scope > :is(blockquote, ul, dl, table, details) ol {
+    list-style-type: decimal;
+  }
+
+  :scope > ol ol,
+  :scope > :is(blockquote, ul, dl, table, details) ol ol {
+    list-style-type: lower-latin;
+  }
+
+  :scope > :is(blockquote, ol, ul, dl, table, details) li + li {
+    margin-top: calc(8 / 16 * 1rem);
+  }
+
+  /* Definition list */
+
+  :scope > dl {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-bottom: calc(16 / 16 * 1rem);
+  }
+
+  :scope > dl dt {
+    font-weight: bold;
+    margin-top: calc(16 / 16 * 1rem);
+  }
+
+  :scope > dl dd {
+    margin-left: calc(32 / 16 * 1rem);
+    margin-top: calc(8 / 16 * 1rem);
+    margin-bottom: calc(8 / 16 * 1rem);
+  }
+
+  /* Blockquote */
+
+  :scope > blockquote {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-right: 0;
+    margin-bottom: calc(24 / 16 * 1rem);
+    margin-left: 0;
+    border-left: calc(8 / 16 * 1rem) solid var(--color-neutral-solid-gray-536);
+    padding-top: calc(8 / 16 * 1rem);
+    padding-bottom: calc(8 / 16 * 1rem);
+    padding-left: calc(24 / 16 * 1rem);
+  }
+
+  :scope > blockquote > *:first-child {
+    margin-top: 0;
+  }
+
+  :scope > blockquote > *:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Table */
+
+  :scope > table {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-bottom: calc(16 / 16 * 1rem);
+    box-sizing: border-box;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: calc(14 / 16 * 1rem);
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  @media (min-width: 48rem) {
+    :scope > table {
+      margin-top: calc(24 / 16 * 1rem);
+      margin-bottom: calc(24 / 16 * 1rem);
+      font-size: calc(16 / 16 * 1rem);
+    }
+  }
+
+  :scope > table thead {
+    background-color: var(--color-neutral-solid-gray-100);
+  }
+
+  :scope > table thead th {
+    border-bottom: 1px solid var(--color-neutral-black);
+  }
+
+  :scope > table th {
+    border-bottom: 1px solid black;
+    background-color: var(--color-neutral-solid-gray-100);
+    padding: calc(12 / 16 * 1rem) calc(8 / 16 * 1rem);
+    vertical-align: baseline;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  :scope > table td {
+    border-bottom: 1px solid var(--color-neutral-solid-gray-420);
+    padding: calc(12 / 16 * 1rem) calc(8 / 16 * 1rem);
+    vertical-align: baseline;
+    text-align: left;
+  }
+
+  @media (min-width: 48rem) {
+    :scope > table th {
+      padding: calc(20 / 16 * 1rem) calc(16 / 16 * 1rem);
+    }
+
+    :scope > table td {
+      padding: calc(20 / 16 * 1rem) calc(16 / 16 * 1rem);
+    }
+  }
+
+  :scope > table th[align="center"],
+  :scope > table td[align="center"] {
+    text-align: center;
+  }
+
+  :scope > table th[align="right"],
+  :scope > table td[align="right"] {
+    text-align: right;
+  }
+
+  /* Horizontal rule */
+
+  :scope > hr {
+    margin-top: calc(32 / 16 * 1rem);
+    margin-bottom: calc(32 / 16 * 1rem);
+    border: 0;
+    border-top: 1px solid var(--color-neutral-solid-gray-420);
+    opacity: 1;
+  }
+
+  /* Code block */
+
+  :scope > pre {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-bottom: calc(16 / 16 * 1rem);
+    overflow-x: auto;
+    background-color: var(--color-neutral-solid-gray-800);
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
+    color: var(--color-neutral-solid-gray-50);
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  :scope > pre code {
+    display: block;
+  }
+
+  @media (min-width: 48rem) {
+    :scope > pre {
+      font-size: calc(16 / 16 * 1rem);
+    }
+  }
+
+  /* Details and summary */
+
+  :scope > details {
+    margin-top: calc(16 / 16 * 1rem);
+    margin-bottom: calc(16 / 16 * 1rem);
+    border: 1px solid var(--color-neutral-solid-gray-420);
+    border-radius: calc(8 / 16 * 1rem);
+    padding: calc(16 / 16 * 1rem);
+  }
+
+  :scope > details > summary {
+    cursor: default;
+    font-weight: bold;
+  }
+
+  :scope > details[open] > summary {
+    margin-bottom: calc(16 / 16 * 1rem);
+  }
+
+  /* Link */
+
+  :scope a:any-link {
+    color: var(--color-primitive-blue-1000);
+    text-decoration: underline;
+    text-decoration-thickness: calc(1 / 16 * 1rem);
+    text-underline-offset: calc(3 / 16 * 1rem);
+  }
+
+  :scope a:visited {
+    color: var(--color-primitive-magenta-900);
+  }
+
+  @media (hover: hover) {
+    :scope a:hover {
+      color: var(--color-primitive-blue-900);
+      text-decoration-thickness: calc(3 / 16 * 1rem);
+    }
+  }
+
+  :scope a:active {
+    color: var(--color-primitive-orange-700);
+    text-decoration-thickness: calc(1 / 16 * 1rem);
+  }
+
+  :scope a:focus-visible {
+    outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black);
+    outline-offset: calc(2 / 16 * 1rem);
+    border-radius: calc(4 / 16 * 1rem);
+    background-color: var(--color-primitive-yellow-300);
+    box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300);
+  }
+
+  :scope a[target="_blank"]::after {
+    --_open-new-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 48 48' role='img'%3E%3Cpath d='M22 6V9H9V39H39V26H42V42H6V6H22ZM42 6V20H39V11.2L21 29L19 27L36.8 9H28V6H42Z'/%3E%3C/svg%3E");
+    --_spacer: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+    display: inline-block;
+    overflow: hidden;
+    width: calc(16 / 16 * 1rem);
+    height: calc(16 / 16 * 1rem);
+    background-color: currentcolor;
+    -webkit-mask: var(--_open-new-icon) 0 0 / 100%;
+    mask: var(--_open-new-icon) 0 0 / 100%;
+    vertical-align: -0.15em;
+    content: var(--_spacer) / "新規タブで開きます";
+  }
+
+  @media (forced-colors: active) {
+    :scope a[target="_blank"]::after {
+      background-color: LinkText;
+    }
+  }
+
+  /* Image */
+
+  :scope img,
+  :scope svg {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+    vertical-align: text-bottom;
+  }
+
+  /* Inline elements */
+
+  :scope u,
+  :scope ins {
+    text-decoration: underline;
+    text-underline-offset: calc(3 / 16 * 1rem);
+  }
+
+  :scope abbr[title] {
+    text-decoration: dotted underline;
+    text-underline-offset: calc(3 / 16 * 1rem);
+  }
+
+  :scope strong,
+  :scope b {
+    font-weight: bold;
+  }
+
+  :scope i,
+  :scope cite,
+  :scope em,
+  :scope var,
+  :scope dfn {
+    font-style: italic;
+  }
+
+  :scope code,
+  :scope kbd,
+  :scope samp {
+    color: inherit;
+    font: inherit;
+    font-family: var(--font-family-mono), monospace;
+    letter-spacing: 0;
+  }
+
+  :scope kbd {
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+  }
+
+  :scope mark {
+    background-color: var(--color-primitive-yellow-300);
+    padding: 0;
+    color: var(--color-neutral-solid-gray-900);
+  }
+
+  @media (forced-colors: active) {
+    :scope mark {
+      background-color: Highlight;
+      color: HighlightText;
+    }
+  }
+
+  :scope small {
+    font-size: smaller;
+  }
+
+  :scope s,
+  :scope del {
+    text-decoration: line-through;
+    text-decoration-thickness: calc(1 / 16 * 1rem);
+  }
+
+  :scope sup {
+    position: static;
+    vertical-align: super;
+    font-size: smaller;
+    line-height: 1;
+  }
+
+  :scope sub {
+    position: static;
+    vertical-align: sub;
+    font-size: smaller;
+    line-height: 1;
+  }
+
+  /* Print styles */
+
+  @media print {
+    :scope {
+      color: CanvasText;
+    }
+
+    :scope > pre {
+      background-color: Canvas;
+      color: CanvasText;
+      border-color: CanvasText;
+    }
+
+    :scope a::after {
+      content: " (" attr(href) ")";
+      font-size: calc(14 / 16 * 1rem);
+    }
+  }
+
+  /* Storybookドキュメント用のproseの上書き */
+
+  /* コードブロックのスタイル調整 */
+  :scope > pre:has(.docblock-source) {
+    overflow: visible;
+    background-color: transparent;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    color: currentcolor;
+  }
+
+  /* コードブロックとStoryのソースコード表示の文字サイズ調整 */
+  :scope .docs-story + div,
+  :scope .docblock-source {
+    font-size: calc(16 / 16 * 1rem);
+    line-height: 1.5;
+  }
+
+  :scope a {
+    font-family: inherit;
+  }
+
+  :scope code {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+  }
+}

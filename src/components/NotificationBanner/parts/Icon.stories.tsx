@@ -12,7 +12,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'NotificationBannerIcon はノティフケーションバナーのバナーアイコンに使用します。NotificationBanner コンポーネントに内包されているため、単体で使う必要はありません。',
+          'NotificationBannerIcon はノティフィケーションバナーのバナーアイコンに使用します。NotificationBanner コンポーネントに内包されているため、単体で使う必要はありません。',
       },
     },
   },

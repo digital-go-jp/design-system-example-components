@@ -10,12 +10,12 @@ export const CloseIcon = (props: CloseIconProps) => {
       className={className}
       fill='none'
       height='24'
-      viewBox='0 0 24 24'
+      viewBox='0 0 120 120'
       width='24'
       {...rest}
     >
       <path
-        d='M6.39961 18.6496L5.34961 17.5996L10.9496 11.9996L5.34961 6.39961L6.39961 5.34961L11.9996 10.9496L17.5996 5.34961L18.6496 6.39961L13.0496 11.9996L18.6496 17.5996L17.5996 18.6496L11.9996 13.0496L6.39961 18.6496Z'
+        d='M32 95L25 88L53 60L25 32L32 25L60 53L88 25L95 32L67 60L95 88L88 95L60 67L32 95Z'
         fill='currentColor'
       />
     </svg>

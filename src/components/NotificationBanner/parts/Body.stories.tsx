@@ -12,7 +12,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'NotificationBannerBody はノティフケーションバナーのコンテンツ領域に使用します。',
+          'NotificationBannerBody はノティフィケーションバナーのコンテンツ領域に使用します。',
       },
     },
   },

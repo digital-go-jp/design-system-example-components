@@ -21,7 +21,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'NotificationBannerHeading コンポーネントはノティフケーションバナーのタイトルに使用します。',
+          'NotificationBannerHeading コンポーネントはノティフィケーションバナーのタイトルに使用します。',
       },
     },
   },

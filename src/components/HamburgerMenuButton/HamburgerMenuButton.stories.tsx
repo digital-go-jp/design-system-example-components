@@ -1,7 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useId, useRef, useState } from 'react';
-import { CloseIcon, CloseWithLabelIcon, HamburgerIcon, HamburgerWithLabelIcon } from './';
-import { HamburgerMenuButton } from './HamburgerMenuButton';
+import {
+  CloseIcon,
+  CloseWithLabelIcon,
+  HamburgerIcon,
+  HamburgerWithLabelIcon,
+  HamburgerMenuButton,
+  HamburgerMenuIconButton,
+} from './';
 
 const meta = {
   id: 'Component/DADS v2/HamburgerMenuButton',
@@ -20,19 +26,18 @@ export const DesktopAndMobileCommon: Story = {
     return (
       <div className='m-4 flex flex-col gap-2'>
         <HamburgerMenuButton
-          className='p-0.5'
           aria-controls={`${sampleId}-menu`}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? (
             <>
-              <CloseIcon className='flex-none' />
+              <CloseIcon className='mt-0.5 flex-none' />
               閉じる
             </>
           ) : (
             <>
-              <HamburgerIcon className='flex-none' />
+              <HamburgerIcon className='mt-0.5 flex-none' />
               メニュー
             </>
           )}
@@ -55,13 +60,12 @@ export const MobileOnly: Story = {
           <h2 className='mb-8 text-std-32B-150'>モバイル条件付きコンポーネント</h2>
           <Story />
           <p className='mt-8 mb-4'>
-            モバイルデバイスでの表示時にヘッダーの領域が限定され、十分な領域が確保できない場合に限り、アイコンにラベルが内包された
-            <code>HamburgerWithLabelIcon</code>
-            によるモバイル条件付きコンポーネントを使用します。
+            モバイルデバイスでの表示時にヘッダーの領域が限定され、十分な領域が確保できない場合に限り、アイコンにラベルが内包されたモバイル条件付きコンポーネント（
+            <code>HamburgerMenuIconButton</code>）を使用します。
           </p>
           <p className='my-4'>
-            それ以外の場合は、原則として、<code>HamburgerIcon</code>
-            とテキストラベルの組み合わせから成るデスクトップ・モバイル共通コンポーネントを使用してください。
+            それ以外の場合は、原則として、アイコンとテキストラベルの組み合わせから成るデスクトップ・モバイル共通コンポーネント（
+            <code>HamburgerMenuButton</code>）を使用してください。
           </p>
         </div>
       </>
@@ -76,14 +80,14 @@ export const MobileOnly: Story = {
       <>
         <div className='m-4 flex gap-36'>
           <div className='relative'>
-            <HamburgerMenuButton
+            <HamburgerMenuIconButton
               className='hover:outline hover:outline-black'
               aria-controls={`${sampleJaId}-menu`}
               aria-expanded={isMenuJaOpen}
               onClick={() => setIsMenuJaOpen(!isMenuJaOpen)}
             >
               {isMenuJaOpen ? <CloseWithLabelIcon /> : <HamburgerWithLabelIcon />}
-            </HamburgerMenuButton>
+            </HamburgerMenuIconButton>
             {isMenuJaOpen && (
               <div
                 className='absolute h-40 w-44 border border-solid-gray-420 p-4 bg-white'
@@ -94,7 +98,7 @@ export const MobileOnly: Story = {
             )}
           </div>
           <div className='relative'>
-            <HamburgerMenuButton
+            <HamburgerMenuIconButton
               className='hover:outline hover:outline-black'
               aria-controls={`${sampleEnId}-menu`}
               aria-expanded={isMenuEnOpen}
@@ -105,7 +109,7 @@ export const MobileOnly: Story = {
               ) : (
                 <HamburgerWithLabelIcon isEnglish={true} />
               )}
-            </HamburgerMenuButton>
+            </HamburgerMenuIconButton>
             {isMenuEnOpen && (
               <div
                 className='absolute h-40 w-52 border border-solid-gray-420 p-4 bg-white'
@@ -171,8 +175,8 @@ export const WithDrawer: Story = {
     return (
       <>
         <div className='flex p-4'>
-          <HamburgerMenuButton className='p-1' onClick={() => drawerRef.current?.showModal()}>
-            <HamburgerIcon className='flex-none' />
+          <HamburgerMenuButton onClick={() => drawerRef.current?.showModal()}>
+            <HamburgerIcon className='mt-0.5 flex-none' />
             メニュー
           </HamburgerMenuButton>
         </div>
@@ -186,7 +190,7 @@ export const WithDrawer: Story = {
           </h2>
           <div className='flex p-4'>
             <HamburgerMenuButton className='p-1' onClick={() => drawerRef.current?.close()}>
-              <CloseIcon className='flex-none' />
+              <CloseIcon className='mt-0.5 flex-none' />
               閉じる
             </HamburgerMenuButton>
           </div>

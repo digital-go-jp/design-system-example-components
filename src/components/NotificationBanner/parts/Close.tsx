@@ -10,31 +10,29 @@ export const NotificationBannerClose = (props: Props) => {
   return (
     <button
       className={`
-        inline-flex items-center gap-0.5 -mt-2 -mr-3 text-solid-gray-900 border border-transparent rounded-8
-        desktop:px-2 desktop:py-0.5 desktop:mt-0 desktop:mr-0
-        hover:border-solid-gray-900
-        focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 focus-visible:bg-yellow-300 focus-visible:border-transparent
-
+        -mr-3 inline-flex items-center gap-1 rounded-6 px-3 pb-1.5 pt-1 text-solid-gray-900
+        hover:bg-solid-gray-50 hover:underline hover:underline-offset-[calc(3/16*1rem)]
+        focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:outline-black focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
       `}
       type='button'
       {...rest}
     >
       <svg
         aria-hidden={true}
-        className='desktop:size-[calc(30/16*1rem)]'
+        className='mt-0.5 size-6'
         fill='none'
-        height='44'
-        viewBox='0 0 44 44'
-        width='44'
+        height='24'
+        viewBox='0 0 24 24'
+        width='24'
       >
         <g>
           <path
-            d='M13.5789 32L12 30.4211L20.4211 22L12 13.5789L13.5789 12L22 20.4211L30.4211 12L32 13.5789L23.5789 22L32 30.4211L30.4211 32L22 23.5789L13.5789 32Z'
+            d='m6.4 18.6-1-1 5.5-5.6-5.6-5.6 1.1-1 5.6 5.5 5.6-5.6 1 1.1L13 12l5.6 5.6-1 1L12 13l-5.6 5.6Z'
             fill='currentColor'
           />
         </g>
       </svg>
-      <span className='sr-only text-oln-16N-100 desktop:not-sr-only'>{label ?? '閉じる'}</span>
+      <span className='text-oln-16N-100'>{label ?? '閉じる'}</span>
     </button>
   );
 };

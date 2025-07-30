@@ -15,7 +15,7 @@ export const HamburgerIcon = (props: HamburgerIconProps) => {
     >
       <path
         clipRule='evenodd'
-        d='M21 5.5H3V7H21V5.5ZM21 11.2998H3V12.7998H21V11.2998ZM3 17H21V18.5H3V17Z'
+        d='M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z'
         fill='currentColor'
         fillRule='evenodd'
       />
