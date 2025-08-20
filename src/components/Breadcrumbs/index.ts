@@ -1,7 +1,7 @@
 export {
-  Breadcrumbs,
-  BreadcrumbsLabel,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
+  Breadcrumbs,
+  BreadcrumbsLabel,
 } from './Breadcrumbs';

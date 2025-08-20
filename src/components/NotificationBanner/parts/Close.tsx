@@ -5,7 +5,7 @@ type Props = ComponentProps<'button'> & {
 };
 
 export const NotificationBannerClose = (props: Props) => {
-  const { className, children, label, ...rest } = props;
+  const { className, label, ...rest } = props;
 
   return (
     <button
@@ -13,6 +13,7 @@ export const NotificationBannerClose = (props: Props) => {
         -mr-3 inline-flex items-center gap-1 rounded-6 px-3 pb-1.5 pt-1 text-solid-gray-900
         hover:bg-solid-gray-50 hover:underline hover:underline-offset-[calc(3/16*1rem)]
         focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:outline-black focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
+        ${className ?? ''}
       `}
       type='button'
       {...rest}

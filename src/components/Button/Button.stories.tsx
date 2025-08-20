@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import React from 'react';
 import { Link } from '../';
 import { Button } from './Button';
 

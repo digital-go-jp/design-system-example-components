@@ -38,9 +38,9 @@ export {
 export { Legend } from './Legend';
 export {
   Link,
+  LinkExternalLinkIcon,
   linkActiveStyle,
   linkDefaultStyle,
-  LinkExternalLinkIcon,
   linkFocusStyle,
   linkHoverStyle,
   linkStyle,
@@ -59,6 +59,7 @@ export { RequirementBadge } from './RequirementBadge';
 export { Select } from './Select';
 export * from './SeparatedDatePicker';
 export { Slot } from './Slot';
+export { StatusBadge } from './StatusBadge';
 export { SupportText } from './SupportText';
 export { Textarea } from './Textarea';
 export { Ul, ulStyle } from './Ul';

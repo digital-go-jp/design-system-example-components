@@ -1,10 +1,10 @@
 export {
   Link,
   LinkExternalLinkIcon,
-  linkStyle,
-  linkDefaultStyle,
-  linkVisitedStyle,
-  linkHoverStyle,
-  linkFocusStyle,
   linkActiveStyle,
+  linkDefaultStyle,
+  linkFocusStyle,
+  linkHoverStyle,
+  linkStyle,
+  linkVisitedStyle,
 } from './Link';
