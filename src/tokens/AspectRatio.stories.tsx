@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { AspectRatio } from './AspectRatio';
 
 const meta = {

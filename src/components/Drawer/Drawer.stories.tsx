@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { useId, useRef } from 'react';
+import { useId, useRef } from 'react';
 import { CloseIcon, Divider, HamburgerIcon, HamburgerMenuButton } from '../';
 
 const meta = {

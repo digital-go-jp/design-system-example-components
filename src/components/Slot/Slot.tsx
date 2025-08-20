@@ -1,4 +1,4 @@
-import { Children, type HTMLAttributes, type ReactNode, cloneElement, isValidElement } from 'react';
+import { Children, cloneElement, type HTMLAttributes, isValidElement, type ReactNode } from 'react';
 
 type SlotProps = HTMLAttributes<HTMLElement> & {
   children?: ReactNode;

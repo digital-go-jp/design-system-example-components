@@ -1,6 +1,6 @@
 import { type CalendarDate, getLocalTimeZone, parseDate, today } from '@internationalized/date';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Calendar,
   CalendarCell,

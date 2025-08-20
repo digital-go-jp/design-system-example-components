@@ -2,7 +2,7 @@
 
 [デジタル庁デザインシステム](https://design.digital.go.jp/)をReact/Tailwind CSSで実装したサンプル集です。
 
-[Storybook](https://design.digital.go.jp/dads/react/)で最新版を公開しています。
+各コンポーネントの動作やスタイル、使用方法や実装上の注意点等は[コードスニペット（React版）Storybook](https://design.digital.go.jp/dads/react/)でもご確認いただけます。
 
 ## 未実装コンポーネント
 

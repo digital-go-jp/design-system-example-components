@@ -1,3 +1,35 @@
+<style>
+  /* Storyキャンバス */
+  .sbdocs-preview {
+    border: 1px solid var(--color-neutral-solid-gray-420) !important;
+  }
+
+  /* Storyキャンバス内コード */
+  .sbdocs-preview .token.attr-value {
+    color: #dba3ff !important;
+  }
+
+  /* ドキュメント内コードブロック */
+  .docblock-source .token.attr-name,
+  .docblock-source .token.property {
+    color: #e00 !important;
+  }
+
+  /* Argsテーブルのコントロール */
+  .docblock-argstable :focus:focus {
+    outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black) !important;
+    outline-offset: calc(2 / 16 * 1rem) !important;
+    box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300) !important;
+  }
+
+  /* Switchコントロール */
+  input[type="checkbox"][role="switch"]:checked ~ span:nth-of-type(1) {
+    color: #fff;
+  }
+  input[type="checkbox"][role="switch"]:not(:checked) ~ span:nth-of-type(2) {
+    color: #fff;
+  }
+</style>
 <script>
   document.documentElement.setAttribute("lang", "ja");
 </script>

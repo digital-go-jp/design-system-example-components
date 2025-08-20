@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React from 'react';
 import { Ul } from '../';
 import { Disclosure, DisclosureBackLink, DisclosureSummary } from './Disclosure';
 
@@ -36,57 +35,55 @@ export const Example: Story = {
 export const WithLongContent: Story = {
   render: () => {
     return (
-      <>
-        <Disclosure>
-          <DisclosureSummary id='disclosure-with-long-content'>
-            ディスクロージャータイトル
-          </DisclosureSummary>
-          <div className='pl-8 my-4 space-y-4'>
-            <p>
-              これはダミーテキストです。ダミーテキストは、デザインやレイアウトの作成時に使用される仮の文章です。ダミーテキストを使用すると、デザインの全体像を評価したり、テキストの配置や長さを確認したりすることができます。
-            </p>
-            <Ul>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-            </Ul>
-            <p>
-              これはダミーテキストです。ダミーテキストは、デザインやレイアウトの作成時に使用される仮の文章です。ダミーテキストを使用すると、デザインの全体像を評価したり、テキストの配置や長さを確認したりすることができます。
-            </p>
-            <Ul>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-              <li>リストアイテム</li>
-            </Ul>
-            <DisclosureBackLink
-              className='mt-4 [text-spacing-trim:trim-start]'
-              href='#disclosure-with-long-content'
-            >
-              「ディスクロージャータイトル」の先頭に戻る
-            </DisclosureBackLink>
-          </div>
-        </Disclosure>
-      </>
+      <Disclosure>
+        <DisclosureSummary id='disclosure-with-long-content'>
+          ディスクロージャータイトル
+        </DisclosureSummary>
+        <div className='pl-8 my-4 space-y-4'>
+          <p>
+            これはダミーテキストです。ダミーテキストは、デザインやレイアウトの作成時に使用される仮の文章です。ダミーテキストを使用すると、デザインの全体像を評価したり、テキストの配置や長さを確認したりすることができます。
+          </p>
+          <Ul>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+          </Ul>
+          <p>
+            これはダミーテキストです。ダミーテキストは、デザインやレイアウトの作成時に使用される仮の文章です。ダミーテキストを使用すると、デザインの全体像を評価したり、テキストの配置や長さを確認したりすることができます。
+          </p>
+          <Ul>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+            <li>リストアイテム</li>
+          </Ul>
+          <DisclosureBackLink
+            className='mt-4 [text-spacing-trim:trim-start]'
+            href='#disclosure-with-long-content'
+          >
+            「ディスクロージャータイトル」の先頭に戻る
+          </DisclosureBackLink>
+        </div>
+      </Disclosure>
     );
   },
 };

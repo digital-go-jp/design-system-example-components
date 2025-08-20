@@ -1,6 +1,6 @@
 export {
   Accordion,
-  AccordionSummary,
-  AccordionContent,
   AccordionBackLink,
+  AccordionContent,
+  AccordionSummary,
 } from './Accordion';

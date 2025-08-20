@@ -1,6 +1,6 @@
 import { CalendarDate, getLocalTimeZone, today } from '@internationalized/date';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Calendar,
   CalendarCell,
@@ -347,19 +347,17 @@ export const WithCalendar: Story = {
 export const Partial: Story = {
   render({ ...args }) {
     return (
-      <>
-        <div className='flex flex-col gap-8'>
-          <SeparatedDatePicker {...args}>
-            <SeparatedDatePickerYear />
-            <SeparatedDatePickerMonth />
-          </SeparatedDatePicker>
+      <div className='flex flex-col gap-8'>
+        <SeparatedDatePicker {...args}>
+          <SeparatedDatePickerYear />
+          <SeparatedDatePickerMonth />
+        </SeparatedDatePicker>
 
-          <SeparatedDatePicker {...args}>
-            <SeparatedDatePickerMonth />
-            <SeparatedDatePickerDate />
-          </SeparatedDatePicker>
-        </div>
-      </>
+        <SeparatedDatePicker {...args}>
+          <SeparatedDatePickerMonth />
+          <SeparatedDatePickerDate />
+        </SeparatedDatePicker>
+      </div>
     );
   },
 };

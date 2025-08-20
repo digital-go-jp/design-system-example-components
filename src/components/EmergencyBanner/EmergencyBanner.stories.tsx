@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React from 'react';
 import { EmergencyBanner } from './EmergencyBanner';
 import { EmergencyBannerBody } from './parts/Body';
 import { EmergencyBannerButton } from './parts/Button';

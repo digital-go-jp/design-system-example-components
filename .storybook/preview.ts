@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
+import { DocsTemplate } from './DocsTemplate';
+import dadsTheme from "./dadsTheme";
 import './globals.css';
 import "./prose.css";
 
@@ -54,8 +56,10 @@ const preview: Preview = {
     },
 
     docs: {
-      codePanel: true
-    }
+      theme: dadsTheme,
+      codePanel: true,
+      page: DocsTemplate,
+    },
   },
 };
 

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React from 'react';
 import { RequirementBadge } from './RequirementBadge';
 
 const meta = {
@@ -16,6 +15,9 @@ const meta = {
         type: { summary: 'boolean' },
       },
     },
+    children: {
+      table: { disable: true },
+    },
   },
 } satisfies Meta<typeof RequirementBadge>;
 
@@ -25,17 +27,8 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {
   args: {
     isOptional: false,
-    children: '※必須',
   },
-};
-
-export const Example: Story = {
-  render: () => {
-    return (
-      <div className='flex flex-col gap-8'>
-        <RequirementBadge>※必須</RequirementBadge>
-        <RequirementBadge isOptional={true}>※任意</RequirementBadge>
-      </div>
-    );
+  render: (args) => {
+    return <RequirementBadge {...args}>{args.isOptional ? '※任意' : '※必須'}</RequirementBadge>;
   },
 };
