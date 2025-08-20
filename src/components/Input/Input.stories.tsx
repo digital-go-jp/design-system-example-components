@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
-import { ErrorText, Label, RequirementBadge, SupportText } from '../';
+import { ErrorText, Label, RequirementBadge, StatusBadge, SupportText } from '../';
 import { Input } from './Input';
 
 const meta = {
@@ -26,15 +26,6 @@ const meta = {
         type: { summary: 'boolean' },
       },
     },
-    'aria-disabled': {
-      description:
-        '無効化する必要がある場合は `disabled` 属性ではなく `aria-disabled` 属性を使用します。',
-      control: { type: 'boolean' },
-      table: {
-        defaultValue: { summary: 'false' },
-        type: { summary: 'boolean' },
-      },
-    },
   },
 } satisfies Meta<typeof Input>;
 
@@ -42,90 +33,124 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  decorators: [
-    (Story, context) => (
+  render: (args) => {
+    const { isError } = args;
+
+    const formId = React.useId();
+    const supportTextId = React.useId();
+    const errorTextId = React.useId();
+
+    const describedBy = isError ? `${errorTextId} ${supportTextId}` : supportTextId;
+
+    return (
       <div className='flex flex-col items-start gap-2'>
-        <Label htmlFor={context.args.id}>
+        <Label htmlFor={formId}>
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
-        <SupportText id={context.args['aria-describedby']}>サポートテキスト</SupportText>
-        <Story />
+        <SupportText id={supportTextId}>サポートテキスト</SupportText>
+        <Input
+          aria-describedby={describedBy}
+          defaultValue='入力テキスト'
+          id={formId}
+          name='playground'
+          {...args}
+        />
+        {isError && <ErrorText id={errorTextId}>＊エラーテキスト</ErrorText>}
       </div>
-    ),
-  ],
+    );
+  },
   args: {
     blockSize: 'lg',
     isError: false,
-    id: 'test-playground',
-    'aria-describedby': 'test-playground-support-text',
-    'aria-disabled': false,
   },
 };
 
 export const Errored: Story = {
-  render: () => {
+  render: (args) => {
     const formId = React.useId();
+    const supportTextId = React.useId();
+    const errorTextId = React.useId();
+
+    const describedBy = `${errorTextId} ${supportTextId}`;
 
     return (
-      <div className='flex flex-col gap-8'>
-        <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-error`}>
-            ラベル<RequirementBadge>※必須</RequirementBadge>
-          </Label>
-          <SupportText id='error-support-text'>サポートテキスト</SupportText>
-          <Input
-            aria-describedby='error-support-text error-text'
-            aria-invalid={true}
-            id={`${formId}-error`}
-            isError={true}
-            name='error'
-            required
-            defaultValue=''
-          />
-          <ErrorText id='error-text'>＊エラーテキスト</ErrorText>
-        </div>
-
-        <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-filled-error`}>
-            ラベル<RequirementBadge>※必須</RequirementBadge>
-          </Label>
-          <SupportText id='filled-error-support-text'>サポートテキスト</SupportText>
-          <Input
-            aria-describedby='filled-error-support-text filled-error-text'
-            aria-invalid={true}
-            defaultValue='誤った入力内容'
-            id={`${formId}-filled-error`}
-            isError={true}
-            name='filled-error'
-            required
-          />
-          <ErrorText id='filled-error-text'>＊エラーテキスト</ErrorText>
-        </div>
+      <div className='flex flex-col items-start gap-2'>
+        <Label htmlFor={formId}>
+          ラベル<RequirementBadge>※必須</RequirementBadge>
+        </Label>
+        <SupportText id={supportTextId}>サポートテキスト</SupportText>
+        <Input aria-describedby={describedBy} id={formId} name='error' {...args} />
+        <ErrorText id={errorTextId}>＊エラーテキスト</ErrorText>
       </div>
     );
+  },
+  argTypes: {
+    isError: { table: { disable: true } },
+  },
+  args: {
+    blockSize: 'lg',
+    isError: true,
   },
 };
 
 export const Disabled: Story = {
-  render: () => {
+  render: (args) => {
     const formId = React.useId();
+    const supportTextId = React.useId();
 
     return (
-      <div className='flex flex-col gap-8'>
-        <div className='flex flex-col gap-2'>
-          <Label htmlFor={`${formId}-disabled`}>ラベル</Label>
-          <SupportText id='disabled-support-text'>
-            〜の理由により、この項目は無効化されています。
-          </SupportText>
-          <Input
-            aria-describedby='disabled-support-text'
-            aria-disabled={true}
-            defaultValue='入力テキスト'
-            id={`${formId}-disabled`}
-            name='disabled'
-          />
-        </div>
+      <div className='flex flex-col items-start gap-2'>
+        <Label htmlFor={formId}>
+          ラベル
+          <StatusBadge>無効</StatusBadge>
+        </Label>
+        <SupportText id={supportTextId}>〜の理由により、この項目は無効化されています。</SupportText>
+        <Input
+          aria-describedby={supportTextId}
+          aria-disabled={true}
+          defaultValue='入力テキスト'
+          id={formId}
+          name='disabled'
+          {...args}
+        />
       </div>
     );
+  },
+  argTypes: {
+    isError: { table: { disable: true } },
+  },
+  args: {
+    blockSize: 'lg',
+  },
+};
+
+export const Readonly: Story = {
+  render: (args) => {
+    const controlId = React.useId();
+    const supportTextId = React.useId();
+
+    return (
+      <div className='flex flex-col items-start gap-2'>
+        <Label htmlFor={controlId}>
+          ラベル
+          <StatusBadge>編集不可</StatusBadge>
+        </Label>
+        <SupportText id={supportTextId}>〜の理由により、この項目は編集できません。</SupportText>
+        <Input
+          aria-describedby={supportTextId}
+          defaultValue='入力テキスト'
+          id={controlId}
+          name='readonly'
+          readOnly
+          {...args}
+        />
+      </div>
+    );
+  },
+  argTypes: {
+    isError: { table: { disable: true } },
+  },
+  args: {
+    blockSize: 'lg',
   },
 };
