@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { useId, useRef, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 import {
   CloseIcon,
   CloseWithLabelIcon,
   HamburgerIcon,
-  HamburgerWithLabelIcon,
   HamburgerMenuButton,
   HamburgerMenuIconButton,
+  HamburgerWithLabelIcon,
 } from './';
 
 const meta = {
@@ -77,50 +77,48 @@ export const MobileOnly: Story = {
     const [isMenuJaOpen, setIsMenuJaOpen] = useState(false);
     const [isMenuEnOpen, setIsMenuEnOpen] = useState(false);
     return (
-      <>
-        <div className='m-4 flex gap-36'>
-          <div className='relative'>
-            <HamburgerMenuIconButton
-              className='hover:outline hover:outline-black'
-              aria-controls={`${sampleJaId}-menu`}
-              aria-expanded={isMenuJaOpen}
-              onClick={() => setIsMenuJaOpen(!isMenuJaOpen)}
+      <div className='m-4 flex gap-36'>
+        <div className='relative'>
+          <HamburgerMenuIconButton
+            className='hover:outline hover:outline-black'
+            aria-controls={`${sampleJaId}-menu`}
+            aria-expanded={isMenuJaOpen}
+            onClick={() => setIsMenuJaOpen(!isMenuJaOpen)}
+          >
+            {isMenuJaOpen ? <CloseWithLabelIcon /> : <HamburgerWithLabelIcon />}
+          </HamburgerMenuIconButton>
+          {isMenuJaOpen && (
+            <div
+              className='absolute h-40 w-44 border border-solid-gray-420 p-4 bg-white'
+              id={`${sampleJaId}-menu`}
             >
-              {isMenuJaOpen ? <CloseWithLabelIcon /> : <HamburgerWithLabelIcon />}
-            </HamburgerMenuIconButton>
-            {isMenuJaOpen && (
-              <div
-                className='absolute h-40 w-44 border border-solid-gray-420 p-4 bg-white'
-                id={`${sampleJaId}-menu`}
-              >
-                サンプルメニュー
-              </div>
-            )}
-          </div>
-          <div className='relative'>
-            <HamburgerMenuIconButton
-              className='hover:outline hover:outline-black'
-              aria-controls={`${sampleEnId}-menu`}
-              aria-expanded={isMenuEnOpen}
-              onClick={() => setIsMenuEnOpen(!isMenuEnOpen)}
-            >
-              {isMenuEnOpen ? (
-                <CloseWithLabelIcon isEnglish={true} />
-              ) : (
-                <HamburgerWithLabelIcon isEnglish={true} />
-              )}
-            </HamburgerMenuIconButton>
-            {isMenuEnOpen && (
-              <div
-                className='absolute h-40 w-52 border border-solid-gray-420 p-4 bg-white'
-                id={`${sampleEnId}-menu`}
-              >
-                Sample menu
-              </div>
-            )}
-          </div>
+              サンプルメニュー
+            </div>
+          )}
         </div>
-      </>
+        <div className='relative'>
+          <HamburgerMenuIconButton
+            className='hover:outline hover:outline-black'
+            aria-controls={`${sampleEnId}-menu`}
+            aria-expanded={isMenuEnOpen}
+            onClick={() => setIsMenuEnOpen(!isMenuEnOpen)}
+          >
+            {isMenuEnOpen ? (
+              <CloseWithLabelIcon isEnglish={true} />
+            ) : (
+              <HamburgerWithLabelIcon isEnglish={true} />
+            )}
+          </HamburgerMenuIconButton>
+          {isMenuEnOpen && (
+            <div
+              className='absolute h-40 w-52 border border-solid-gray-420 p-4 bg-white'
+              id={`${sampleEnId}-menu`}
+            >
+              Sample menu
+            </div>
+          )}
+        </div>
+      </div>
     );
   },
 };

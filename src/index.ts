@@ -44,7 +44,7 @@ export {
   SupportText,
   Textarea,
   Ul,
-  ulStyle,
   UtilityLink,
+  ulStyle,
   utilityLinkStyle,
 } from './components';

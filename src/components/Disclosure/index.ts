@@ -1,1 +1,1 @@
-export { Disclosure, DisclosureSummary, DisclosureBackLink } from './Disclosure';
+export { Disclosure, DisclosureBackLink, DisclosureSummary } from './Disclosure';

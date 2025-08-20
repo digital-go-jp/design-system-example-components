@@ -1,0 +1,81 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet" />
+<style>
+  @namespace xlink url(http://www.w3.org/1999/xlink);
+
+  /* color-scheme プロパティを初期値に上書き */
+  #root > div {
+    color-scheme: normal;
+  }
+  
+  /* パネル間のボーダー色 */
+  #root > div > div:has(nav) {
+    border-right-color: var(--color-neutral-solid-gray-420);
+  }
+  #root > div > div:has(#storybook-panel-root) {
+    border-top-color: var(--color-neutral-solid-gray-420);
+  }
+  [data-test-id="sb-preview-toolbar"] {
+    border-bottom: 1px solid var(--color-neutral-solid-gray-420);
+    box-shadow: none !important;
+  }
+
+  /* 検索フィールド */
+  [role="combobox"]:has(#storybook-explorer-searchfield) {
+    border: 1px solid var(--color-neutral-solid-gray-420);
+    box-shadow: none;
+  }
+  [role="combobox"]:has(#storybook-explorer-searchfield):has(input:focus) {
+    outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black);
+    outline-offset: calc(2 / 16 * 1rem);
+    box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300);
+  }
+  #storybook-explorer-searchfield:focus {
+    box-shadow: none;
+  }
+
+  /* 検索結果項目 */
+  .search-result-item[aria-selected="true"]:not(:hover) {
+    outline: 1px solid var(--color-primitive-blue-600);
+  }
+
+  /* ツリー全体フォーカス時 */
+  #storybook-explorer-menu:focus-visible {
+    outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black);
+  }
+
+  /* Documents, Foundations, Components のトグル */
+  button[data-action="collapse-root"]:focus-visible {
+    outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black);
+    outline-offset: calc(2 / 16 * 1rem);
+    border-radius: calc(4 / 16 * 1rem);
+    box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300);
+  }
+
+  /* ツリーのアイコン */
+  svg:has(use[xlink|href="#icon--document"]) {
+    color: var(--color-primitive-orange-700);
+  }
+  svg:has(use[xlink|href="#icon--story"]) {
+    color: var(--color-primitive-cyan-700);
+  }
+
+  /* Argsテーブルのコントロール */
+  .docblock-argstable :focus:focus {
+    outline: calc(4 / 16 * 1rem) solid var(--color-neutral-black) !important;
+    outline-offset: calc(2 / 16 * 1rem) !important;
+    box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-primitive-yellow-300) !important;
+  }
+
+  /* Switchコントロール */
+  input[type="checkbox"][role="switch"]:checked ~ span:nth-of-type(1) {
+    color: #fff;
+  }
+  input[type="checkbox"][role="switch"]:not(:checked) ~ span:nth-of-type(2) {
+    color: #fff;
+  }
+</style>
+<script>
+  document.documentElement.setAttribute("lang", "ja");
+</script>
