@@ -3,7 +3,7 @@ import { type ComponentProps, forwardRef } from 'react';
 export type DatePickerDateProps = ComponentProps<'input'> & {};
 
 export const DatePickerDate = forwardRef<HTMLInputElement, DatePickerDateProps>((props, ref) => {
-  const { className, 'aria-disabled': disabled, readOnly, ...rest } = props;
+  const { className, 'aria-disabled': ariaDisabled, readOnly, ...rest } = props;
 
   return (
     <label className='relative z-0 inline-flex flex-row-reverse last:pe-4 [&:has([aria-disabled="true"])]:pointer-events-none'>
@@ -13,8 +13,8 @@ export const DatePickerDate = forwardRef<HTMLInputElement, DatePickerDateProps>(
         type='text'
         inputMode='numeric'
         pattern='\d+'
-        readOnly={disabled ? true : readOnly}
-        aria-disabled={disabled}
+        readOnly={ariaDisabled === 'true' || ariaDisabled === true || readOnly}
+        aria-disabled={ariaDisabled}
         ref={ref}
         {...rest}
       />
