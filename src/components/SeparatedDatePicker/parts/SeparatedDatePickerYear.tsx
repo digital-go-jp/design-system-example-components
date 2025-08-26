@@ -12,7 +12,7 @@ export const SeparatedDatePickerYear = forwardRef<HTMLInputElement, SeparatedDat
           年
         </span>
         <input
-          className={`h-full w-[calc(72/16*1rem)] rounded-8 border border-solid-gray-600 bg-white text-center hover:border-solid-gray-900 focus:border-solid-gray-900 focus:outline focus:outline-4 focus:outline-offset-[calc(2/16*1rem)] focus:outline-black focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300 aria-disabled:bg-solid-gray-50 aria-disabled:text-solid-gray-420 aria-disabled:hover:border-solid-gray-600 aria-[invalid]:border-error-1 aria-[invalid=true]:hover:border-red-1000 forced-colors:aria-disabled:border-[GrayText] ${className ?? ''}`}
+          className={`h-full w-[calc(72/16*1rem)] rounded-8 border border-solid-gray-600 bg-white text-center read-only:[&:not([aria-disabled="true"])]:border-dashed hover:border-solid-gray-900 hover:read-only:border-solid-gray-600 focus:border-solid-gray-900 focus:outline focus:outline-4 focus:outline-offset-[calc(2/16*1rem)] focus:outline-black focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300 aria-disabled:bg-solid-gray-50 aria-disabled:text-solid-gray-420 aria-disabled:hover:border-solid-gray-600 aria-[invalid=true]:border-error-1 aria-[invalid=true]:hover:border-red-1000 forced-colors:[&:read-write]:aria-disabled:border-[GrayText] ${className ?? ''}`}
           type='text'
           inputMode='numeric'
           pattern='\d+'

@@ -65,16 +65,25 @@ const meta = {
         type: { summary: 'boolean' },
       },
     },
+    isReadonly: {
+      description: '編集不可（読み取り専用）状態であるかどうかを指定します。',
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
   args: {
     size: 'lg',
     isError: false,
     isDisabled: false,
-    children: ({ yearRef, monthRef, dateRef }) => (
+    isReadonly: false,
+    children: ({ yearRef, monthRef, dateRef, ...rest }) => (
       <>
-        <DatePickerYear ref={yearRef} />
-        <DatePickerMonth ref={monthRef} />
-        <DatePickerDate ref={dateRef} />
+        <DatePickerYear ref={yearRef} {...rest} />
+        <DatePickerMonth ref={monthRef} {...rest} />
+        <DatePickerDate ref={dateRef} {...rest} />
       </>
     ),
   },
@@ -95,11 +104,11 @@ export const WithFieldset: Story = {
         </Legend>
         <SupportText id='date-picker-1-support-text'>例：2025年01月20日</SupportText>
         <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef }) => (
+          {({ yearRef, monthRef, dateRef, ...rest }) => (
             <>
-              <DatePickerYear ref={yearRef} />
-              <DatePickerMonth ref={monthRef} />
-              <DatePickerDate ref={dateRef} />
+              <DatePickerYear ref={yearRef} {...rest} />
+              <DatePickerMonth ref={monthRef} {...rest} />
+              <DatePickerDate ref={dateRef} {...rest} />
             </>
           )}
         </DatePicker>
@@ -125,24 +134,24 @@ export const Errored: Story = {
         </Legend>
         <SupportText id='date-picker-3-support-text'>例：2025年01月20日</SupportText>
         <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef }) => (
+          {({ yearRef, monthRef, dateRef, ...rest }) => (
             <>
               <DatePickerYear
                 ref={yearRef}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                aria-invalid={true}
+                {...rest}
               />
               <DatePickerMonth
                 ref={monthRef}
                 defaultValue={10}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                aria-invalid={true}
+                {...rest}
               />
               <DatePickerDate
                 ref={dateRef}
                 defaultValue={28}
                 aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                aria-invalid={true}
+                {...rest}
               />
             </>
           )}
@@ -166,24 +175,71 @@ export const Disabled: Story = {
         <Legend>
           日付<RequirementBadge isOptional>※任意</RequirementBadge>
         </Legend>
-        <SupportText id='date-picker-5-support-text'>例：2025年01月20日</SupportText>
+        <SupportText id='date-picker-5-support-text'>
+          〜の理由により、この項目は編集できません。
+        </SupportText>
         <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef }) => (
+          {({ yearRef, monthRef, dateRef, ...rest }) => (
             <>
               <DatePickerYear
                 ref={yearRef}
-                aria-disabled={true}
                 aria-describedby='date-picker-5-support-text'
+                {...rest}
               />
               <DatePickerMonth
                 ref={monthRef}
-                aria-disabled={true}
                 aria-describedby='date-picker-5-support-text'
+                {...rest}
               />
               <DatePickerDate
                 ref={dateRef}
-                aria-disabled={true}
                 aria-describedby='date-picker-5-support-text'
+                {...rest}
+              />
+            </>
+          )}
+        </DatePicker>
+      </fieldset>
+    );
+  },
+};
+
+/**
+ * Readonly状態を表示した例
+ */
+export const Readonly: Story = {
+  args: {
+    isReadonly: true,
+  },
+  render({ ...args }) {
+    return (
+      <fieldset className='flex flex-col gap-2 items-start'>
+        <Legend>
+          日付<RequirementBadge isOptional>※任意</RequirementBadge>
+        </Legend>
+        <SupportText id='date-picker-6-support-text'>
+          〜の理由により、この項目は編集できません。
+        </SupportText>
+        <DatePicker {...args}>
+          {({ yearRef, monthRef, dateRef, ...rest }) => (
+            <>
+              <DatePickerYear
+                ref={yearRef}
+                value={2025}
+                aria-describedby='date-picker-6-support-text'
+                {...rest}
+              />
+              <DatePickerMonth
+                ref={monthRef}
+                value={10}
+                aria-describedby='date-picker-6-support-text'
+                {...rest}
+              />
+              <DatePickerDate
+                ref={dateRef}
+                value={28}
+                aria-describedby='date-picker-6-support-text'
+                {...rest}
               />
             </>
           )}
@@ -230,25 +286,28 @@ export const WithCalendar: Story = {
           return (
             <>
               <DatePicker size={size} {...args}>
-                {({ yearRef, monthRef, dateRef }) => (
+                {({ yearRef, monthRef, dateRef, ...rest }) => (
                   <>
                     <DatePickerYear
                       ref={yearRef}
                       value={yearInput}
                       onChange={(e) => setYearInput(e.target.value)}
                       onBlur={updateCalendarDate}
+                      {...rest}
                     />
                     <DatePickerMonth
                       ref={monthRef}
                       value={monthInput}
                       onChange={(e) => setMonthInput(e.target.value)}
                       onBlur={updateCalendarDate}
+                      {...rest}
                     />
                     <DatePickerDate
                       ref={dateRef}
                       value={dayInput}
                       onChange={(e) => setDayInput(e.target.value)}
                       onBlur={updateCalendarDate}
+                      {...rest}
                     />
                   </>
                 )}
