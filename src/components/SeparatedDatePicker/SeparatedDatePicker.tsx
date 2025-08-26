@@ -2,12 +2,20 @@ import type { ComponentProps } from 'react';
 
 export type SeparatedDatePickerSize = 'lg' | 'md' | 'sm';
 
-export type SeparatedDatePickerProps = ComponentProps<'div'> & {
+export type SeparatedDatePickerProps = Omit<ComponentProps<'div'>, 'children'> & {
   size?: SeparatedDatePickerSize;
+  isError?: boolean;
+  isReadonly?: boolean;
+  isDisabled?: boolean;
+  children: (props: {
+    readOnly?: boolean;
+    'aria-disabled'?: boolean;
+    'aria-invalid'?: boolean;
+  }) => JSX.Element;
 };
 
 export const SeparatedDatePicker = (props: SeparatedDatePickerProps) => {
-  const { className, size = 'lg', children, ...rest } = props;
+  const { className, size = 'lg', isError, isReadonly, isDisabled, children, ...rest } = props;
 
   return (
     <div className='pt-3 inline-block'>
@@ -16,7 +24,7 @@ export const SeparatedDatePicker = (props: SeparatedDatePickerProps) => {
         data-size={size}
         {...rest}
       >
-        {children}
+        {children({ readOnly: isReadonly, 'aria-disabled': isDisabled, 'aria-invalid': isError })}
       </div>
     </div>
   );
